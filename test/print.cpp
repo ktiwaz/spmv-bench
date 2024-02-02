@@ -5,7 +5,7 @@
 #include <spmm.h>
 
 int main(int argc, char **argv) {
-    MatrixLoader mtx;
+    Matrix mtx;
     COO *coo = mtx.coo;
     
     std::cout << "Rows: " << coo->rows << " | Cols: " << coo->cols << " | NNZ: " << coo->nnz << std::endl;

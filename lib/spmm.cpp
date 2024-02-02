@@ -6,7 +6,7 @@
 //
 // The constructor
 //
-MatrixLoader::MatrixLoader() {
+Matrix::Matrix() {
     // Test matrix
     // TODO: Change
     std::string input = "../square.mtx";
@@ -16,7 +16,7 @@ MatrixLoader::MatrixLoader() {
 //
 // Reads the file and loads the COO matrix
 //
-void MatrixLoader::initCOO(std::string input) {
+void Matrix::initCOO(std::string input) {
     coo = new COO;
     std::ifstream reader(input);
     if (!reader.is_open()) {
@@ -54,7 +54,7 @@ void MatrixLoader::initCOO(std::string input) {
 //
 // Splits a string into words
 //
-std::vector<std::string> MatrixLoader::split(std::string line) {
+std::vector<std::string> Matrix::split(std::string line) {
     std::vector<std::string> words;
     std::string buffer = "";
     for (char c : line) {

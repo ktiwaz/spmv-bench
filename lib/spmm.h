@@ -20,9 +20,9 @@ struct COO {
 //
 // The base class for loading and formatting a matrix
 //
-class MatrixLoader {
+class Matrix {
 public:
-    MatrixLoader();
+    Matrix();
     COO *coo;
 
 protected:
