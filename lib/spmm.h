@@ -24,10 +24,13 @@ class Matrix {
 public:
     Matrix();
     COO *coo;
+    
+    double *generateDense();
 
 protected:
     void initCOO(std::string input);
 private:
     std::vector<std::string> split(std::string line);
 };
+
 

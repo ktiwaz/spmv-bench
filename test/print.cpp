@@ -14,6 +14,15 @@ int main(int argc, char **argv) {
         std::cout << item.row << ", " << item.col << " = " << item.val << std::endl;
     }
     
+    std::cout << "==========" << std::endl;
+    double *mtx1 = mtx.generateDense();
+    for (size_t i = 0; i<coo->rows; i++) {
+        for (size_t j = 0; j<coo->cols; j++) {
+            std::cout << mtx1[i*coo->cols+j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    
     return 0;
 }
 

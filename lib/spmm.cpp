@@ -14,6 +14,21 @@ Matrix::Matrix() {
 }
 
 //
+// Generates a dense matrix from a sparse format
+//
+double *Matrix::generateDense() {
+    size_t denseLen = coo->rows * coo->cols;
+    double *mtx = new double[denseLen];
+    for (int i = 0; i<denseLen; i++) {
+        mtx[i] = 0;
+    }
+    for (auto item : coo->items) {
+        mtx[item.row * coo->cols + item.col] = item.val;
+    }
+    return mtx;
+}
+
+//
 // Reads the file and loads the COO matrix
 //
 void Matrix::initCOO(std::string input) {
@@ -44,8 +59,8 @@ void Matrix::initCOO(std::string input) {
         
         auto words = split(line);
         COOItem item;
-        item.row = std::stoi(words[0]);
-        item.col = std::stoi(words[1]);
+        item.row = std::stoi(words[0]) - 1;
+        item.col = std::stoi(words[1]) - 1;
         item.val = std::stod(words[2]);
         coo->items.push_back(item);
     }
