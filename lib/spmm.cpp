@@ -6,32 +6,57 @@
 //
 // The constructor
 //
-Matrix::Matrix() {
+SpM::SpM() {
     // Test matrix
     // TODO: Change
-    std::string input = "../square.mtx";
+    std::string input = "../test_rank2.mtx";
     initCOO(input);
+    rows = coo->rows;
+    cols = coo->cols;
+    generateDense();
+}
+
+//
+// Prints our dense matrix
+//
+void SpM::printDense() {
+    std::cout << "B: ";
+    for (size_t i = 0; i<(rows*cols); i++) {
+        std::cout << B[i] << ",";
+    }
+    std::cout << std::endl;
+}
+
+//
+// Prints the result matrix
+//
+void SpM::printResult() {
+    std::cout << "C: ";
+    for (size_t i = 0; i<(rows*cols); i++) {
+        std::cout << C[i] << ",";
+    }
+    std::cout << std::endl;
 }
 
 //
 // Generates a dense matrix from a sparse format
+// This also generates the result matrix and fills it with zeros
 //
-double *Matrix::generateDense() {
-    size_t denseLen = coo->rows * coo->cols;
-    double *mtx = new double[denseLen];
-    for (int i = 0; i<denseLen; i++) {
-        mtx[i] = 0;
+void SpM::generateDense() {
+    size_t len = rows * cols;
+    std::cout << "LEN: " << len << std::endl;
+    B = new double[len];
+    C = new double[len];
+    for (size_t i = 0; i<len; i++) {
+        B[i] = 1.7;
+        C[i] = 0.0;
     }
-    for (auto item : coo->items) {
-        mtx[item.row * coo->cols + item.col] = item.val;
-    }
-    return mtx;
 }
 
 //
 // Reads the file and loads the COO matrix
 //
-void Matrix::initCOO(std::string input) {
+void SpM::initCOO(std::string input) {
     coo = new COO;
     std::ifstream reader(input);
     if (!reader.is_open()) {
@@ -69,7 +94,7 @@ void Matrix::initCOO(std::string input) {
 //
 // Splits a string into words
 //
-std::vector<std::string> Matrix::split(std::string line) {
+std::vector<std::string> SpM::split(std::string line) {
     std::vector<std::string> words;
     std::string buffer = "";
     for (char c : line) {
