@@ -11,18 +11,16 @@
 // The constructor
 //
 SpM::SpM() {
-    init();
+    init("../test_rank2.mtx");
 }
 
-void SpM::init() {
+void SpM::init(std::string input) {
     // Test matrix
     // TODO: Change
-    std::string input = "../test_rank2.mtx";
     initCOO(input);
     rows = coo->rows;
     cols = coo->cols;
     generateDense();
-    format();
 }
 
 //

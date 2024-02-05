@@ -82,7 +82,7 @@ protected:
     double *B;
     double *C;
     
-    void init();
+    void init(std::string input);
     void initCOO(std::string input);
     void generateDense();
     double getTime();
