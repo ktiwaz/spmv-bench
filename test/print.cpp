@@ -14,6 +14,8 @@ int main(int argc, char **argv) {
     mtx.printResult();
     std::cout << "-----------------" << std::endl;
     
+    mtx.benchmark(100);
+    
     return 0;
 }
 

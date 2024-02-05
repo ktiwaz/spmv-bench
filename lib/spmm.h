@@ -26,6 +26,15 @@ public:
     SpM();
     void printDense();
     void printResult();
+    void benchmark(size_t iters);
+    
+    //
+    // The format method
+    // Called for formats that inherit this base class
+    //
+    virtual void format() {
+        std::cout << "COO- No formatting needed" << std::endl;
+    }
     
     //
     // The print method for the current sparse matrix
@@ -50,7 +59,9 @@ public:
     //
     // The calculation algorithm for the current format
     //
-    virtual void calculate() {
+    virtual double calculate() {
+        double start = getTime();
+        
         for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
             auto item = coo->items[arg0];
             size_t i = item.row;
@@ -60,6 +71,9 @@ public:
                 C[i*cols+k] += val * B[j*cols+k];
             }
         }
+        
+        double end = getTime();
+        return (double)(end-start);
     }
     
 protected:
@@ -68,8 +82,11 @@ protected:
     double *B;
     double *C;
     
+    void init();
     void initCOO(std::string input);
     void generateDense();
+    double getTime();
+    void printElapsedTime(double stime, double etime);
 private:
     std::vector<std::string> split(std::string line);
 };
