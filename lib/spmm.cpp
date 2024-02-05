@@ -10,8 +10,8 @@
 //
 // The constructor
 //
-SpM::SpM() {
-    init("../test_rank2.mtx");
+SpM::SpM(std::string input) {
+    init(input);
 }
 
 void SpM::init(std::string input) {

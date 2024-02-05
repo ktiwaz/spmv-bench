@@ -7,8 +7,7 @@
 
 class CSR : public SpM {
 public:
-    CSR() {
-        init("../test_rank2.mtx");
+    CSR(std::string input) : SpM(input) {
         format();
     }
     

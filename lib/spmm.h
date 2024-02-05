@@ -23,7 +23,7 @@ struct COO {
 //
 class SpM {
 public:
-    SpM();
+    SpM(std::string input);
     void printDense();
     void printResult();
     void benchmark(size_t iters);

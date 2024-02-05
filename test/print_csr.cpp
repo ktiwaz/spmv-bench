@@ -6,7 +6,7 @@
 #include <csr.h>
 
 int main(int argc, char **argv) {
-    CSR mtx;
+    CSR mtx("../test_rank2.mtx");
     mtx.printSparse();
     std::cout << "-----------------" << std::endl;
     mtx.printDense();
