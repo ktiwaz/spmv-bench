@@ -6,7 +6,7 @@
 #include <ell.h>
 
 int main(int argc, char **argv) {
-    ELL mtx("../test_rank2.mtx");
+    ELL mtx(argv[1]);
     mtx.printSparse();
     std::cout << "-----------------" << std::endl;
     mtx.printDense();

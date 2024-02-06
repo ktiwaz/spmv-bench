@@ -5,7 +5,7 @@
 #include <spmm.h>
 
 int main(int argc, char **argv) {
-    SpM mtx("../test_rank2.mtx");
+    SpM mtx(argv[1]);
     mtx.printSparse();
     std::cout << "-----------------" << std::endl;
     mtx.printDense();
