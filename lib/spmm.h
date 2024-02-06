@@ -67,7 +67,7 @@ public:
             size_t i = item.row;
             size_t j = item.col;
             double val = item.val;
-            for (size_t k = 0; k<rows; k++) {
+            for (size_t k = 0; k<cols; k++) {
                 C[i*cols+k] += val * B[j*cols+k];
             }
         }

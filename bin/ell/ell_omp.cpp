@@ -25,7 +25,7 @@ double ELL2::calculate() {
             uint64_t p = i * num_cols + n1;
             uint64_t j = colidx[p];
             #pragma omp simd
-            for (uint64_t k = 0; k<rows; k++) {
+            for (uint64_t k = 0; k<cols; k++) {
                 C[i*cols+k] += values[p] * B[j*cols+k];
             }
         }
