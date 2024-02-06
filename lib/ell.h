@@ -50,8 +50,8 @@ public:
         num_cols = max;
         
         // Create the column index rows
-        colidx = new uint64_t[rows * num_cols];
-        values = new double[rows * num_cols];
+        colidx = new uint64_t[rows * cols]; //num_cols
+        values = new double[rows * cols];   //num_cols
         uint64_t index = 0;
 
         /// Build the column coordinates/value array

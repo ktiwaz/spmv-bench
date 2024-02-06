@@ -1,0 +1,5 @@
+Test Name,Time (s)
+CSR Serial -O2 -march=native,0.839665
+CSR OMP -O2 -march=native,0.230826
+ELL Serial -O2 -march=native,0.188674
+ELL OMP -O2 -march=native,0.092407

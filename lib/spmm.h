@@ -77,7 +77,7 @@ public:
     }
     
 protected:
-    int rows, cols;
+    uint64_t rows, cols;
     COO *coo;
     double *B;
     double *C;

@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     int iters = std::stoi(argv[1]);
     CSR2 mtx(argv[2]);
     
-    std::cout << "Serial -O2 -march=native,";
+    std::cout << "CSR Serial -O2 -march=native,";
     mtx.benchmark(iters);
     
     return 0;

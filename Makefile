@@ -11,7 +11,8 @@ CSV=csv
 BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
-	$(BIN_OUTPUT)/csr_serial
+	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp \
+	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp
 
 ## The core
 all: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS)
@@ -46,6 +47,18 @@ $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 $(BIN_OUTPUT)/csr_serial: bin/csr/csr_serial.cpp build/libspmm.a
 	$(CXX) bin/csr/csr_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/csr_serial $(CXXFLAGS) -O2 -march=native
 
+$(BIN_OUTPUT)/csr_omp: bin/csr/csr_omp.cpp build/libspmm.a
+	$(CXX) bin/csr/csr_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+
+##
+## Builds the ELL executables
+##
+$(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp build/libspmm.a
+	$(CXX) bin/ell/ell_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/ell_serial $(CXXFLAGS) -O2 -march=native
+
+$(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp build/libspmm.a
+	$(CXX) bin/ell/ell_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+
 ########################################################################
 
 ##
@@ -59,11 +72,16 @@ clean:
 ##
 ## Runs the benchmarks
 ##
-RUN_COUNT=100
+RUN_COUNT=5
 
 run: $(BENCH_BINS)
-	echo "Test Name,Time (s)" > $(CSV)/csr.csv
-	$(BIN_OUTPUT)/csr_serial $(RUN_COUNT) test_rank2.mtx >> $(CSV)/csr.csv
+	echo "Test Name,Time (s)" > $(CSV)/bcsstk17.csv
+	
+	$(BIN_OUTPUT)/csr_serial $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
+	$(BIN_OUTPUT)/csr_omp $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
+	
+	$(BIN_OUTPUT)/ell_serial $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
+	$(BIN_OUTPUT)/ell_omp $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
 
 ########################################################################
 
