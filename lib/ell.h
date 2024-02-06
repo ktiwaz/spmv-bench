@@ -24,7 +24,6 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
-        std::cout << "Formatting ELL" << std::endl;
         num_cols = 0;
         
         // Calculate the maximum number of columns per row

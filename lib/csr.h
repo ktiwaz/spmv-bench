@@ -23,8 +23,6 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
-        std::cout << "Formatting CSR" << std::endl;
-        
         rowptr = new uint64_t[rows + 1];
         rowptr[rows] = coo->nnz;
         rowidx = new uint64_t[coo->nnz];

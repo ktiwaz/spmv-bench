@@ -36,8 +36,6 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
-        std::cout << "Formatting BCSR" << std::endl;
-        
         uint64_t num_nonzeros = coo->nnz;
         
         ///////////////////////////////////////////////
