@@ -1,0 +1,17 @@
+Test Name,Time (s)
+CSR Serial -O2 -march=native,0.010399
+CSR OMP -O2 -march=native,0.007590
+ELL Serial -O2 -march=native,0.010347
+ELL OMP -O2 -march=native,0.005501
+BCSR Serial -O2 -march=native 1x1,0.006283
+BCSR OMP -O2 -march=native 1x1,0.004428
+BCSR Serial -O2 -march=native 2x2,0.020797
+BCSR OMP -O2 -march=native 2x2,0.007406
+BCSR Serial -O2 -march=native 4x4,0.067083
+BCSR OMP -O2 -march=native 4x4,0.015098
+BCSR Serial -O2 -march=native 8x8,0.145964
+BCSR OMP -O2 -march=native 8x8,0.033691
+BCSR Serial -O2 -march=native 16x16,0.170364
+BCSR OMP -O2 -march=native 16x16,0.033038
+BCSR Serial -O2 -march=native 32x32,0.170456
+BCSR OMP -O2 -march=native 32x32,0.033727
