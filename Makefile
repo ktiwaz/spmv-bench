@@ -5,7 +5,8 @@ CXXFLAGS=-Ilib build/libspmm.a -std=c++17
 ## Test binaries
 TEST_SRC := $(wildcard test/*.cpp)
 TEST_OUTPUT = build/test
-TEST_BINS := $(patsubst test/%.cpp,$(TEST_OUTPUT)/%,$(TEST_SRC))
+TEST_BINS := $(patsubst test/%.cpp,$(TEST_OUTPUT)/%,$(TEST_SRC)) \
+	$(TEST_OUTPUT)/print_csr2
 
 CSV=csv
 BIN_OUTPUT = build/bin
@@ -32,13 +33,17 @@ build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
 build/spmm.o: lib/spmm.cpp
-	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2
+	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE
 	
 ##
 ## Build the test binaries
 ##
 $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
-	$(CXX) $< -o $@ $(CXXFLAGS) -O2
+	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
+
+$(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
+	g++ test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
+		-fopenmp -foffload=nvptx-none -fcf-protection=none -march=native
 	
 ########################################################################
 
@@ -82,9 +87,9 @@ clean:
 ##
 ## Runs the benchmarks
 ##
-RUN_COUNT=5
+RUN_COUNT=2
 
-run: $(BENCH_BINS) run_bcsstk17
+run: $(BENCH_BINS) run_bcsstk17 run_cant run_pdb1HYS run_rma10
 include run.mk
 
 ########################################################################

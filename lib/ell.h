@@ -121,7 +121,7 @@ public:
     //
     // The print method for the current sparse matrix
     //
-    void printSparse() override {
+    void printSparse(bool all = true) override {
         std::cout << "Rows: " << coo->rows << " | Cols: " << coo->cols << " | NNZ: " << coo->nnz << std::endl;
         std::cout << "----------" << std::endl;
         std::cout << "row: " << rows << std::endl;

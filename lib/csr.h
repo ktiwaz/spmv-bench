@@ -49,21 +49,30 @@ public:
     //
     // The print method for the current sparse matrix
     //
-    void printSparse() override {
+    void printSparse(bool all = true) override {
         std::cout << "Rows: " << coo->rows << " | Cols: " << coo->cols << " | NNZ: " << coo->nnz << std::endl;
         std::cout << "----------" << std::endl;
         std::cout << "Num_Rows: " << rows << std::endl;
         
         std::cout << "rowptr: ";
-        for (size_t i = 0; i<rows+1; i++) std::cout << rowptr[i] << ",";
+        for (size_t i = 0; i<rows+1; i++) {
+            if (i == 20 && !all) break;
+            std::cout << rowptr[i] << ",";
+        }
         std::cout << std::endl;
         
         std::cout << "rowidx: ";
-        for (size_t i = 0; i<coo->nnz; i++) std::cout << rowidx[i] << ",";
+        for (size_t i = 0; i<coo->nnz; i++) {
+            if (i == 20 && !all) break;
+            std::cout << rowidx[i] << ",";
+        }
         std::cout << std::endl;
         
         std::cout << "values: ";
-        for (size_t i = 0; i<coo->nnz; i++) std::cout << values[i] << ",";
+        for (size_t i = 0; i<coo->nnz; i++) {
+            if (i == 20 && !all) break;
+            std::cout << values[i] << ",";
+        }
         std::cout << std::endl;
     }
     

@@ -24,8 +24,8 @@ struct COO {
 class SpM {
 public:
     SpM(std::string input);
-    void printDense();
-    void printResult();
+    void printDense(bool all = true);
+    void printResult(bool all = true);
     void benchmark(size_t iters);
     
     //
@@ -39,20 +39,32 @@ public:
     //
     // The print method for the current sparse matrix
     //
-    virtual void printSparse() {
+    virtual void printSparse(bool all = true) {
         std::cout << "Rows: " << coo->rows << " | Cols: " << coo->cols << " | NNZ: " << coo->nnz << std::endl;
         std::cout << "----------" << std::endl;
         
         std::cout << "Rows: ";
-        for (auto item : coo->items) std::cout << item.row << ",";
+        for (size_t i = 0; i<coo->items.size(); i++) {
+            auto item = coo->items[i];
+            std::cout << item.row << ",";
+            if (i == 20 && !all) break;
+        }
         std::cout << std::endl;
         
         std::cout << "Cols: ";
-        for (auto item : coo->items) std::cout << item.col << ",";
+        for (size_t i = 0; i<coo->items.size(); i++) {
+            auto item = coo->items[i];
+            std::cout << item.col << ",";
+            if (i == 20 && !all) break;
+        }
         std::cout << std::endl;
         
         std::cout << "Vals: ";
-        for (auto item : coo->items) std::cout << item.val << ",";
+        for (size_t i = 0; i<coo->items.size(); i++) {
+            auto item = coo->items[i];
+            std::cout << item.val << ",";
+            if (i == 20 && !all) break;
+        }
         std::cout << std::endl;
     }
     

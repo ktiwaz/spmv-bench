@@ -55,10 +55,11 @@ void SpM::benchmark(size_t iters) {
 //
 // Prints our dense matrix
 //
-void SpM::printDense() {
+void SpM::printDense(bool all) {
     std::cout << "B: ";
     for (size_t i = 0; i<(rows*cols); i++) {
         std::cout << B[i] << ",";
+        if (i == 20 && !all) break;
     }
     std::cout << std::endl;
 }
@@ -66,10 +67,11 @@ void SpM::printDense() {
 //
 // Prints the result matrix
 //
-void SpM::printResult() {
+void SpM::printResult(bool all) {
     std::cout << "C: ";
     for (size_t i = 0; i<(rows*cols); i++) {
         std::cout << C[i] << ",";
+        if (i == 50 && !all) break;
     }
     std::cout << std::endl;
 }
