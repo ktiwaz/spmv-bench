@@ -12,7 +12,8 @@ BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
 	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp \
-	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp
+	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp \
+	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp
 
 ## The core
 all: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS)
@@ -58,6 +59,15 @@ $(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp build/libspmm.a
 
 $(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp build/libspmm.a
 	$(CXX) bin/ell/ell_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+	
+##
+## Builds the BCSR executables
+##
+$(BIN_OUTPUT)/bcsr_serial: bin/bcsr/bcsr_serial.cpp build/libspmm.a
+	$(CXX) bin/bcsr/bcsr_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/bcsr_serial $(CXXFLAGS) -O2 -march=native
+
+$(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp build/libspmm.a
+	$(CXX) bin/bcsr/bcsr_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 
 ########################################################################
 
@@ -74,14 +84,8 @@ clean:
 ##
 RUN_COUNT=5
 
-run: $(BENCH_BINS)
-	echo "Test Name,Time (s)" > $(CSV)/bcsstk17.csv
-	
-	$(BIN_OUTPUT)/csr_serial $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
-	$(BIN_OUTPUT)/csr_omp $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
-	
-	$(BIN_OUTPUT)/ell_serial $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
-	$(BIN_OUTPUT)/ell_omp $(RUN_COUNT) data/bcsstk17.mtx >> $(CSV)/bcsstk17.csv
+run: $(BENCH_BINS) run_bcsstk17
+include run.mk
 
 ########################################################################
 
