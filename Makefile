@@ -5,8 +5,8 @@ CXXFLAGS=-Ilib build/libspmm.a -std=c++17
 ## Test binaries
 TEST_SRC := $(wildcard test/*.cpp)
 TEST_OUTPUT = build/test
-TEST_BINS := $(patsubst test/%.cpp,$(TEST_OUTPUT)/%,$(TEST_SRC)) \
-	$(TEST_OUTPUT)/print_csr2
+TEST_BINS := $(patsubst test/%.cpp,$(TEST_OUTPUT)/%,$(TEST_SRC)) #\
+	#$(TEST_OUTPUT)/print_csr2
 
 CSV=csv
 BIN_OUTPUT = build/bin
