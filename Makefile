@@ -43,7 +43,7 @@ $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 
 $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
 	g++ test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
-		-fopenmp -foffload=nvptx-none -fcf-protection=none -march=native
+		-fopenmp #-foffload=nvptx-none -fcf-protection=none -march=native
 	
 ########################################################################
 
