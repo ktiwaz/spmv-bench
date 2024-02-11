@@ -1,8 +1,10 @@
 #!/bin/bash
 
-if [ ! -d ./csv ]
+if [ ! -d ./report ]
 then
-    mkdir csv
+    mkdir report
+    mkdir report/csv
+    mkdir report/images
 fi
 
 ##
@@ -10,7 +12,7 @@ fi
 ##
 function run() {
     echo "Running: $1"
-    CSV_FILE=csv/$1.csv
+    CSV_FILE=report/csv/$1.csv
     blocks=(1 2 4 8 16 32)
     iters=1
     
@@ -29,7 +31,7 @@ function run() {
     for t in "${blocks[@]}"
     do
         echo "csr_omp --threads $t"
-        printf "csr_omp," >> $CSV_FILE
+        printf "csr_omp -t $1," >> $CSV_FILE
         build/bin/csr_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
@@ -43,7 +45,7 @@ function run() {
     for t in "${blocks[@]}"
     do
         echo "ell_omp --threads $t"
-        printf "ell_omp," >> $CSV_FILE
+        printf "ell_omp -t $t," >> $CSV_FILE
         build/bin/ell_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
@@ -53,7 +55,7 @@ function run() {
     for b in "${blocks[@]}"
     do
         echo "bcsr_serial $b x $b"
-        printf "bcsr_serial," >> $CSV_FILE
+        printf "bcsr_serial $b x $b," >> $CSV_FILE
         build/bin/bcsr_serial data/$1.mtx --iters $iters --block $b >> $CSV_FILE
     done
     
@@ -62,11 +64,22 @@ function run() {
         for t in "${blocks[@]}"
         do
             echo "bcsr_omp $b x $b --threads $t"
-            printf "bcsr_omp," >> $CSV_FILE
+            printf "bcsr_omp $b x $b -t $t," >> $CSV_FILE
             build/bin/bcsr_omp data/$1.mtx --iters $iters --threads $t --block $b >> $CSV_FILE
         done
     done
 }
 
+function post_process() {
+    ./plot.sh "$1" "csv"
+    python process.py "$1"
+    for f in report/csv/$1/*.csv
+    do
+        input_csv=`basename $f .csv`
+        ./plot.sh $input_csv "csv/$1"
+    done
+}
+
 run "bcsstk17"
+post_process "bcsstk17"
 
