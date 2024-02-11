@@ -23,6 +23,10 @@ SpM::SpM(int argc, char **argv) {
             int b = std::stoi(arg);
             block_rows = b;
             block_cols = b;
+        } else if (arg == "--threads") {
+            arg = argv[i+1];
+            threads = std::stoi(arg);
+            i += 1;
         } else if (arg == "--debug") {
             printDebug = true;
         } else if (arg[0] == '-') {
@@ -40,6 +44,7 @@ void SpM::debug() {
     std::cout << "Input file: " << input << std::endl;
     std::cout << "Iters: " << iters << std::endl;
     std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
+    std::cout << "Threads: " << threads << std::endl;
     std::cout << "----------------------------" << std::endl;
     
     printSparse(false);
@@ -102,6 +107,7 @@ void SpM::report() {
     // Print configuration
     fprintf(stdout, ",%d", iters);
     fprintf(stdout, ",%dx%d", block_rows, block_cols);
+    fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
     fprintf(stdout, ",%ld,%ld,%ld,", coo->rows, coo->cols, coo->nnz);

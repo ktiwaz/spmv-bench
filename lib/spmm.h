@@ -113,6 +113,7 @@ protected:
     int iters = 1;
     int block_rows = 1;
     int block_cols = 1;
+    int threads = -1;
     bool printDebug = false;
     
     // Matrix data

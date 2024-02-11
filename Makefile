@@ -91,29 +91,4 @@ $(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp $(DEPS)
 clean:
 	rm -rf build/*
 
-########################################################################
-##
-## Runs the benchmarks
-##
-RUN_COUNT=2
-
-run: $(BENCH_BINS) run_bcsstk17 run_cant run_pdb1HYS run_rma10
-include run.mk
-
-########################################################################
-
-##
-## Runs the print targets
-##
-.PHONY: run_print
-run_print: $(TEST_BINS)
-	$(TEST_OUTPUT)/print test_rank2.mtx; \
-	printf "\n\n"; \
-	$(TEST_OUTPUT)/print_csr test_rank2.mtx; \
-	printf "\n\n"; \
-	$(TEST_OUTPUT)/print_ell test_rank2.mtx; \
-	printf "\n\n"; \
-	$(TEST_OUTPUT)/print_bcsr test_rank2.mtx 2 2; \
-	printf "\n\n";
-	$(TEST_OUTPUT)/print_bcsr test_rank2.mtx 4 4;
 
