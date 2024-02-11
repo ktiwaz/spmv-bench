@@ -23,10 +23,6 @@ SpM::SpM(int argc, char **argv) {
             int b = std::stoi(arg);
             block_rows = b;
             block_cols = b;
-        } else if (arg == "--bench-format") {
-            benchFormat = true;
-        } else if (arg == "--matrix-stats") {
-            printMatrixStats = true;
         } else if (arg == "--debug") {
             printDebug = true;
         } else if (arg[0] == '-') {
@@ -44,8 +40,6 @@ void SpM::debug() {
     std::cout << "Input file: " << input << std::endl;
     std::cout << "Iters: " << iters << std::endl;
     std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
-    std::cout << "Benchmark Format: " << benchFormat << std::endl;
-    std::cout << "Print Matrix Stats: " << printMatrixStats << std::endl;
     std::cout << "----------------------------" << std::endl;
     
     printSparse();
@@ -98,14 +92,15 @@ void SpM::report() {
 
     // Print timing information
     fprintf(stdout, "%lf", benchTime);
-    
-    if (benchFormat) {
-        fprintf(stdout, ",%lf", formatTime);
-    }
+    fprintf(stdout, ",%lf", formatTime);
     
     // Print configuration
     fprintf(stdout, ",%d", iters);
     fprintf(stdout, ",%dx%d", block_rows, block_cols);
+    
+    // Print matrix stats
+    fprintf(stdout, ",%ld,%ld,%ld,", coo->rows, coo->cols, coo->nnz);
+    reportFormat();
     
     fprintf(stdout, "\n");
 }
@@ -184,6 +179,9 @@ void SpM::initCOO() {
         item.val = std::stod(words[2]);
         coo->items.push_back(item);
     }
+    
+    // Sort it
+    coo->sort();
     
     // Set the row and column counts
     rows = coo->rows;

@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdint>
 #include <iostream>
+#include <algorithm>
 
 struct COOItem {
     size_t row;
@@ -16,6 +17,12 @@ struct COO {
     size_t rows;
     size_t cols;
     std::vector<COOItem> items;
+    
+    void sort() {
+        std::sort(items.begin(), items.end(), [](const COOItem& a, const COOItem& b) {
+            return a.row < b.row;
+        });
+    }
 };
 
 //
@@ -40,6 +47,12 @@ public:
         double end = getTime();
         formatTime = (double)(end-start);
     }
+    
+    //
+    // The format reporting method
+    // This depends on the format
+    //
+    virtual void reportFormat() {}
     
     //
     // The print method for the current sparse matrix
@@ -99,8 +112,6 @@ protected:
     int iters = 1;
     int block_rows = 1;
     int block_cols = 1;
-    bool benchFormat = false;
-    bool printMatrixStats = false;
     bool printDebug = false;
     
     // Matrix data

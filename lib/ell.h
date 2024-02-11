@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <iostream>
 #include <map>
+#include <cstdio>
 
 class ELL : public SpM {
 public:
@@ -16,6 +17,13 @@ public:
     uint64_t num_cols;
     uint64_t *colidx;
     double *values;
+    
+    //
+    // The format reporting method
+    //
+    void reportFormat() override {
+        fprintf(stdout, "%ld", num_cols);
+    }
     
     //
     // The format method
@@ -32,7 +40,7 @@ public:
         uint64_t buffer = 0;
         uint64_t current = coo->items[0].row;
         //uint64_t current = coo->nnz;
-        for (uint64_t i = 1; i < coo->nnz; i++)
+        for (uint64_t i = 0; i < coo->nnz; i++)
         {
           if (coo->items[i].row == current)
           {
@@ -51,8 +59,8 @@ public:
         num_cols = max;
         
         // Create the column index rows
-        colidx = new uint64_t[rows * cols]; //num_cols
-        values = new double[rows * cols];   //num_cols
+        colidx = new uint64_t[rows * num_cols]; //num_cols
+        values = new double[rows * num_cols];   //num_cols
         uint64_t index = 0;
 
         /// Build the column coordinates/value array
