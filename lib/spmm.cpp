@@ -69,6 +69,7 @@ void SpM::printElapsedTime(double stime, double etime) {
 void SpM::benchmark() {
     std::vector<double> times;
     for (size_t i = 0; i<iters; i++) {
+        if (i>0) for (size_t i = 0; i<(rows * cols); i++) C[i] = 0.0;
         double t = calculate();
         times.push_back(t);
     }
@@ -93,6 +94,7 @@ void SpM::report() {
     // Print timing information
     fprintf(stdout, "%lf", benchTime);
     fprintf(stdout, ",%lf", formatTime);
+    fprintf(stdout, ",%lf", benchTime + formatTime);
     
     // Print verification information
     fprintf(stdout, ",%ld", verifyResults);
@@ -130,7 +132,7 @@ void SpM::verify() {
     for (size_t i = 0; i<lens; i++) {
         if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
             ++results;
-            if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
+            //if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
         }
     }
     
