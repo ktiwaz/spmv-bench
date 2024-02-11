@@ -27,6 +27,8 @@ SpM::SpM(int argc, char **argv) {
             benchFormat = true;
         } else if (arg == "--matrix-stats") {
             printMatrixStats = true;
+        } else if (arg == "--debug") {
+            printDebug = true;
         } else if (arg[0] == '-') {
             std::cerr << "Error: Invalid option: " << arg << std::endl;
         } else {
@@ -79,8 +81,33 @@ void SpM::benchmark() {
     
     double avg = 0;
     for (auto t : times) avg += t;
-    avg = avg / iters;
-    fprintf(stdout, "%lf\n", avg);
+    benchTime = avg / iters;
+    //fprintf(stdout, "%lf\n", avg);
+}
+
+//
+// The reporting method
+//
+void SpM::report() {
+    // Print debug information
+    // In reality, this would never be printed in CSV
+    if (printDebug) {
+        debug();
+        std::cout << "----------------------" << std::endl;
+    }
+
+    // Print timing information
+    fprintf(stdout, "%lf", benchTime);
+    
+    if (benchFormat) {
+        fprintf(stdout, ",%lf", formatTime);
+    }
+    
+    // Print configuration
+    fprintf(stdout, ",%d", iters);
+    fprintf(stdout, ",%dx%d", block_rows, block_cols);
+    
+    fprintf(stdout, "\n");
 }
 
 //

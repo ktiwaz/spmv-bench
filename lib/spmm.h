@@ -28,6 +28,7 @@ public:
     void printDense(bool all = true);
     void printResult(bool all = true);
     void benchmark();
+    void report();
     
     //
     // The format method
@@ -100,6 +101,7 @@ protected:
     int block_cols = 1;
     bool benchFormat = false;
     bool printMatrixStats = false;
+    bool printDebug = false;
     
     // Matrix data
     uint64_t rows, cols;
@@ -109,6 +111,7 @@ protected:
     
     // Other data
     double formatTime = 0;
+    double benchTime = 0;
     
     // Functions
     void initCOO();

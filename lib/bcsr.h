@@ -29,6 +29,8 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        double start = getTime();
+        
         initCOO();
         uint64_t num_nonzeros = coo->nnz;
         
@@ -169,6 +171,9 @@ public:
         for (uint64_t i = 0; i<A2pos.size(); i++) colptr[i] = A2pos[i];
         for (uint64_t i = 0; i<A2crd.size(); i++) colidx[i] = A2crd[i];
         for (uint64_t i = 0; i<Aval_nc.size(); i++) values[i] = Aval_nc[i];
+        
+        double end = getTime();
+        formatTime = (double)(end-start);
     }
     
     //

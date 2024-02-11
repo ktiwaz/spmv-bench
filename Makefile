@@ -32,7 +32,7 @@ check_dir:
 build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
-build/spmm.o: lib/spmm.cpp lib/spmm.h
+build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bcsr.h
 	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE -g
 	
 ##

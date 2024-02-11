@@ -21,6 +21,8 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        double start = getTime();
+        
         initCOO();
         
         rowptr = new uint64_t[rows + 1];
@@ -44,6 +46,9 @@ public:
             values[curr_idx] = item.val;
             curr_idx++;
         }
+        
+        double end = getTime();
+        formatTime = (double)(end-start);
     }
     
     //

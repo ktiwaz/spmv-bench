@@ -22,6 +22,8 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        double start = getTime();
+        
         initCOO();
         num_cols = 0;
         
@@ -115,6 +117,9 @@ public:
             }
           }
         }
+        
+        double end = getTime();
+        formatTime = (double)(end-start);
     }
     
     //
