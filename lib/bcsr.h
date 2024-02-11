@@ -9,18 +9,11 @@
 
 class BCSR : public SpM {
 public:
-    BCSR(std::string input, uint64_t block_rows, uint64_t block_cols) : SpM(input) {
-        this->block_rows = block_rows;
-        this->block_cols = block_cols;
-        format();
-    }
+    explicit BCSR(int argc, char **argv) : SpM(argc, argv) {}
     
     //
     // Our data structures
     //
-    uint64_t block_rows = 0;
-    uint64_t block_cols = 0;
-    
     uint64_t num_blocks;
 
     uint64_t *colptr;
@@ -36,6 +29,7 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        initCOO();
         uint64_t num_nonzeros = coo->nnz;
         
         ///////////////////////////////////////////////

@@ -6,16 +6,17 @@
 #include <ell.h>
 
 int main(int argc, char **argv) {
-    ELL mtx(argv[1]);
-    mtx.printSparse();
-    std::cout << "-----------------" << std::endl;
-    mtx.printDense();
-    std::cout << "-----------------" << std::endl;
+    ELL mtx(argc, argv);
+    mtx.format();
     mtx.calculate();
-    mtx.printResult();
-    std::cout << "-----------------" << std::endl;
+    mtx.debug();
     
-    mtx.benchmark(100);
+    std::cout << "---------------" << std::endl;
+    
+    ELL mtx2(argc, argv);
+    mtx2.format();
+    mtx2.benchmark();
+    mtx2.debug();
     
     return 0;
 }

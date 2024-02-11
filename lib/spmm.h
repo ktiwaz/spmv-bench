@@ -23,17 +23,21 @@ struct COO {
 //
 class SpM {
 public:
-    SpM(std::string input);
+    SpM(int argc, char **argv);
+    void debug();
     void printDense(bool all = true);
     void printResult(bool all = true);
-    void benchmark(size_t iters);
+    void benchmark();
     
     //
     // The format method
     // Called for formats that inherit this base class
     //
     virtual void format() {
-        std::cout << "COO- No formatting needed" << std::endl;
+        double start = getTime();
+        initCOO();
+        double end = getTime();
+        formatTime = (double)(end-start);
     }
     
     //
@@ -89,13 +93,25 @@ public:
     }
     
 protected:
+    // Option variables
+    std::string input = "";
+    int iters = 1;
+    int block_rows = 1;
+    int block_cols = 1;
+    bool benchFormat = false;
+    bool printMatrixStats = false;
+    
+    // Matrix data
     uint64_t rows, cols;
     COO *coo;
     double *B;
     double *C;
     
-    void init(std::string input);
-    void initCOO(std::string input);
+    // Other data
+    double formatTime = 0;
+    
+    // Functions
+    void initCOO();
     void generateDense();
     double getTime();
     void printElapsedTime(double stime, double etime);

@@ -32,14 +32,14 @@ check_dir:
 build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
-build/spmm.o: lib/spmm.cpp
-	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE
+build/spmm.o: lib/spmm.cpp lib/spmm.h
+	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE -g
 	
 ##
 ## Build the test binaries
 ##
 $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
-	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
+	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp -g
 
 # GPU test binaries
 gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/gpu_csr1
@@ -52,33 +52,35 @@ $(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
 	nvcc test/gpu/gpu_csr1.cu -o $(TEST_OUTPUT)/gpu_csr1 $(NVFLAGS) -O2 -g
 	
 ########################################################################
+BASE=bin/main.cpp build/libspmm.a
+DEPS=build/libspmm.a bin/main.cpp
 
 ##
 ## Builds the CSR executables
 ##
-$(BIN_OUTPUT)/csr_serial: bin/csr/csr_serial.cpp build/libspmm.a
-	$(CXX) bin/csr/csr_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/csr_serial $(CXXFLAGS) -O2 -march=native
+$(BIN_OUTPUT)/csr_serial: bin/csr/csr_serial.cpp $(DEPS)
+	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_serial.cpp -o $(BIN_OUTPUT)/csr_serial $(CXXFLAGS) -O2 -march=native
 
-$(BIN_OUTPUT)/csr_omp: bin/csr/csr_omp.cpp build/libspmm.a
-	$(CXX) bin/csr/csr_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+$(BIN_OUTPUT)/csr_omp: bin/csr/csr_omp.cpp $(DEPS)
+	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_omp.cpp -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 
 ##
 ## Builds the ELL executables
 ##
-$(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp build/libspmm.a
-	$(CXX) bin/ell/ell_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/ell_serial $(CXXFLAGS) -O2 -march=native
+$(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp $(DEPS)
+	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_serial.cpp -o $(BIN_OUTPUT)/ell_serial $(CXXFLAGS) -O2 -march=native
 
-$(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp build/libspmm.a
-	$(CXX) bin/ell/ell_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+$(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp $(DEPS)
+	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_omp.cpp -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 	
 ##
 ## Builds the BCSR executables
 ##
-$(BIN_OUTPUT)/bcsr_serial: bin/bcsr/bcsr_serial.cpp build/libspmm.a
-	$(CXX) bin/bcsr/bcsr_serial.cpp build/libspmm.a -o $(BIN_OUTPUT)/bcsr_serial $(CXXFLAGS) -O2 -march=native
+$(BIN_OUTPUT)/bcsr_serial: bin/bcsr/bcsr_serial.cpp $(DEPS)
+	$(CXX) -Ibin/bcsr $(BASE) bin/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial $(CXXFLAGS) -O2 -march=native
 
-$(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp build/libspmm.a
-	$(CXX) bin/bcsr/bcsr_omp.cpp build/libspmm.a -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+$(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp $(DEPS)
+	$(CXX)  -Ibin/bcsr $(BASE) bin/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 
 ########################################################################
 

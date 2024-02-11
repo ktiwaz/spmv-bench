@@ -1,22 +1,9 @@
-// A simple test executable for testing
-// the COO loading functionality of the matrix
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
-#include <spmm.h>
-#include <ell.h>
-
-class ELL2 : public ELL {
-public:
-    explicit ELL2(std::string input) : ELL(input) {}
-    double calculate() override;
-};
+#include "matrix.h"
 
 //
 // The calculation algorithm for the current format
 //
-double ELL2::calculate() {
+double Matrix::calculate() {
     double start = getTime();
     
     #pragma omp parallel for
@@ -33,15 +20,5 @@ double ELL2::calculate() {
     
     double end = getTime();
     return (double)(end-start);
-}
-
-int main(int argc, char **argv) {
-    int iters = std::stoi(argv[1]);
-    ELL2 mtx(argv[2]);
-    
-    std::cout << "ELL OMP -O2 -march=native,";
-    mtx.benchmark(iters);
-    
-    return 0;
 }
 

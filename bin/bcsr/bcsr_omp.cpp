@@ -1,22 +1,9 @@
-// A simple test executable for testing
-// the COO loading functionality of the matrix
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
-#include <spmm.h>
-#include <bcsr.h>
-
-class BCSR2 : public BCSR {
-public:
-    explicit BCSR2(std::string input, int block_row, int block_col) : BCSR(input, block_row, block_col) {}
-    double calculate() override;
-};
+#include "matrix.h"
 
 //
 // The calculation algorithm for the current format
 //
-double BCSR2::calculate() {
+double Matrix::calculate() {
     double start = getTime();
     
     #pragma omp parallel for
@@ -39,17 +26,5 @@ double BCSR2::calculate() {
     
     double end = getTime();
     return (double)(end-start);
-}
-
-int main(int argc, char **argv) {
-    int iters = std::stoi(argv[1]);
-    int block_row = std::stoi(argv[3]);
-    int block_col = std::stoi(argv[4]);
-    BCSR2 mtx(argv[2], block_row, block_col);
-    
-    std::cout << "BCSR OMP -O2 -march=native " << block_row << "x" << block_col << ",";
-    mtx.benchmark(iters);
-    
-    return 0;
 }
 

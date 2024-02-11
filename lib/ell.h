@@ -8,9 +8,7 @@
 
 class ELL : public SpM {
 public:
-    ELL(std::string input) : SpM(input) {
-        format();
-    }
+    explicit ELL(int argc, char **argv) : SpM(argc, argv) {}
     
     //
     // Our data structures
@@ -24,6 +22,7 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        initCOO();
         num_cols = 0;
         
         // Calculate the maximum number of columns per row

@@ -10,17 +10,48 @@
 //
 // The constructor
 //
-SpM::SpM(std::string input) {
-    init(input);
+SpM::SpM(int argc, char **argv) {
+    for (int i = 1; i<argc; i++) {
+        std::string arg = argv[i];
+        if (arg == "--iters") {
+            arg = argv[i+1];
+            iters = std::stoi(arg);
+            i += 1;
+        } else if (arg == "--block") {
+            arg = argv[i+1];
+            i += 1;
+            int b = std::stoi(arg);
+            block_rows = b;
+            block_cols = b;
+        } else if (arg == "--bench-format") {
+            benchFormat = true;
+        } else if (arg == "--matrix-stats") {
+            printMatrixStats = true;
+        } else if (arg[0] == '-') {
+            std::cerr << "Error: Invalid option: " << arg << std::endl;
+        } else {
+            input = arg;
+        }
+    }
 }
 
-void SpM::init(std::string input) {
-    // Test matrix
-    // TODO: Change
-    initCOO(input);
-    rows = coo->rows;
-    cols = coo->cols;
-    generateDense();
+void SpM::debug() {
+    std::cout << "----------------------------" << std::endl;
+    std::cout << "<COMMAND LINE ARGS>" << std::endl;
+    std::cout << std::endl;
+    std::cout << "Input file: " << input << std::endl;
+    std::cout << "Iters: " << iters << std::endl;
+    std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
+    std::cout << "Benchmark Format: " << benchFormat << std::endl;
+    std::cout << "Print Matrix Stats: " << printMatrixStats << std::endl;
+    std::cout << "----------------------------" << std::endl;
+    
+    printSparse();
+    std::cout << "-----------------" << std::endl;
+    printDense();
+    std::cout << "-----------------" << std::endl;
+    printResult();
+    std::cout << "-----------------" << std::endl;
 }
 
 //
@@ -39,7 +70,7 @@ void SpM::printElapsedTime(double stime, double etime) {
 //
 // Calls and collections benchmarking info
 //
-void SpM::benchmark(size_t iters) {
+void SpM::benchmark() {
     std::vector<double> times;
     for (size_t i = 0; i<iters; i++) {
         double t = calculate();
@@ -93,7 +124,7 @@ void SpM::generateDense() {
 //
 // Reads the file and loads the COO matrix
 //
-void SpM::initCOO(std::string input) {
+void SpM::initCOO() {
     coo = new COO;
     std::ifstream reader(input);
     if (!reader.is_open()) {
@@ -126,6 +157,11 @@ void SpM::initCOO(std::string input) {
         item.val = std::stod(words[2]);
         coo->items.push_back(item);
     }
+    
+    // Set the row and column counts
+    rows = coo->rows;
+    cols = coo->cols;
+    generateDense();
 }
 
 //

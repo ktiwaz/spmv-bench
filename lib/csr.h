@@ -7,10 +7,8 @@
 
 class CSR : public SpM {
 public:
-    CSR(std::string input) : SpM(input) {
-        format();
-    }
-    
+    explicit CSR(int argc, char **argv) : SpM(argc, argv) {}
+
     //
     // Our data structures
     //
@@ -23,6 +21,8 @@ public:
     // Called for formats that inherit this base class
     //
     void format() override {
+        initCOO();
+        
         rowptr = new uint64_t[rows + 1];
         rowptr[rows] = coo->nnz;
         rowidx = new uint64_t[coo->nnz];

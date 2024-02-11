@@ -8,20 +8,17 @@
 #include <bcsr.h>
 
 int main(int argc, char **argv) {
-    std::string input = std::string(argv[1]);
-    int block_row = std::stoi(argv[2]);
-    int block_col = std::stoi(argv[3]);
-    BCSR mtx(input, block_row, block_col);
-    
-    mtx.printSparse();
-    std::cout << "-----------------" << std::endl;
-    mtx.printDense();
-    std::cout << "-----------------" << std::endl;
+    BCSR mtx(argc, argv);
+    mtx.format();
     mtx.calculate();
-    mtx.printResult();
-    std::cout << "-----------------" << std::endl;
+    mtx.debug();
     
-    mtx.benchmark(100);
+    std::cout << "---------------" << std::endl;
+    
+    BCSR mtx2(argc, argv);
+    mtx2.format();
+    mtx2.benchmark();
+    mtx2.debug();
     
     return 0;
 }
