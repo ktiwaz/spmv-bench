@@ -14,18 +14,8 @@ public:
     //
     // Our data structures
     //
-    uint64_t num_cols;
-    uint64_t avg_num_cols;
     uint64_t *colidx;
     double *values;
-    
-    //
-    // The format reporting method
-    //
-    void reportFormat() override {
-        fprintf(stdout, "%ld", num_cols);
-        fprintf(stdout, ",%ld", avg_num_cols);
-    }
     
     //
     // The format method

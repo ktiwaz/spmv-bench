@@ -50,12 +50,6 @@ public:
     }
     
     //
-    // The format reporting method
-    // This depends on the format
-    //
-    virtual void reportFormat() {}
-    
-    //
     // The print method for the current sparse matrix
     //
     virtual void printSparse(bool all = true) {
@@ -127,6 +121,8 @@ protected:
     double formatTime = 0;
     double benchTime = 0;
     uint64_t verifyResults = 0;
+    uint64_t num_cols = 0;
+    uint64_t avg_num_cols = 0;
     
     // Functions
     void initCOO();

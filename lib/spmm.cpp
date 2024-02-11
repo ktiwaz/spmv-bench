@@ -106,12 +106,13 @@ void SpM::report() {
     
     // Print configuration
     fprintf(stdout, ",%d", iters);
-    fprintf(stdout, ",%dx%d", block_rows, block_cols);
+    fprintf(stdout, ",%d,%d", block_rows, block_cols);
     fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
-    fprintf(stdout, ",%ld,%ld,%ld,", coo->rows, coo->cols, coo->nnz);
-    reportFormat();
+    fprintf(stdout, ",%ld,%ld,%ld", coo->rows, coo->cols, coo->nnz);
+    fprintf(stdout, ",%ld", num_cols);
+    fprintf(stdout, ",%ld", avg_num_cols);
     
     fprintf(stdout, "\n");
 }
