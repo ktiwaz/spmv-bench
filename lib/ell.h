@@ -15,6 +15,7 @@ public:
     // Our data structures
     //
     uint64_t num_cols;
+    uint64_t avg_num_cols;
     uint64_t *colidx;
     double *values;
     
@@ -23,6 +24,7 @@ public:
     //
     void reportFormat() override {
         fprintf(stdout, "%ld", num_cols);
+        fprintf(stdout, ",%ld", avg_num_cols);
     }
     
     //
@@ -38,8 +40,9 @@ public:
         // Calculate the maximum number of columns per row
         uint64_t max = 0;
         uint64_t buffer = 0;
-        uint64_t current = coo->items[0].row;
+        //uint64_t current = coo->items[0].row;
         //uint64_t current = coo->nnz;
+        uint64_t current = 0;
         for (uint64_t i = 0; i < coo->nnz; i++)
         {
           if (coo->items[i].row == current)
@@ -58,76 +61,83 @@ public:
           max = buffer;
         num_cols = max;
         
-        // Create the column index rows
-        colidx = new uint64_t[rows * num_cols]; //num_cols
-        values = new double[rows * num_cols];   //num_cols
-        uint64_t index = 0;
-
-        /// Build the column coordinates/value array
-        for (uint64_t i = 0; i < rows; i++)
+        // Create a map to make padding more efficient
+        current = coo->items[0].row;
+        std::map<uint64_t, std::vector<uint64_t>> row_map;
+        std::map<uint64_t, std::vector<double>> val_map;
+        row_map[current] = std::vector<uint64_t>();
+        val_map[current] = std::vector<double>();
+        
+        for (uint64_t i = 0; i < coo->nnz; i++) {
+          uint64_t cur_row = coo->items[i].row;
+          if (cur_row != current)
+          {
+            current = cur_row;
+            row_map[current] = std::vector<uint64_t>();
+            val_map[current] = std::vector<double>();
+          }
+          row_map[cur_row].push_back(coo->items[i].col);
+          val_map[cur_row].push_back(coo->items[i].val);
+        }
+        
+        /*for (auto it = row_map.begin(); it != row_map.end(); it++)
         {
-          /// In this loop, get all non-zero column coordinates and track
-          /// how many we have found
-          uint64_t found_cols = 0;
-          for (uint64_t j = 0; j < coo->nnz; j++)
-          {
-            if (coo->items[j].row == i)
-            {
-              ++found_cols;
-            }
-          }
+            std::cout << it->first    // string (key)
+                      << ": [";
+            for (auto v : it->second) std::cout << v << " ";
+            std::cout << "]" << std::endl;
+        }*/
 
-          /// If the number of columns we have found in the row is less than
-          /// the block, we need to add some zeros to create the block
-          if (found_cols == num_cols)
-          {
-            for (uint64_t j = 0; j < coo->nnz; j++)
-            {
-              if (coo->items[j].row == i)
-              {
-                colidx[index] = coo->items[j].col;
-                values[index] = coo->items[j].val;
-                ++index;
-              }
-            }
-            continue;
-          }
-
-          /// If there were no found columns, we'll just add zeros
-          if (found_cols == 0)
-          {
-            for (uint64_t j = 0; j < num_cols; j++)
-            {
-              colidx[index] = j;
-              values[index] = 0;
+        /// Create the column coordinate list
+        colidx = new uint64_t[rows * num_cols];
+        values = new double[rows * num_cols];
+        uint64_t index = 0;
+        uint64_t avg_sum = 0;
+        
+        // Iterate over each row, and add the non-zero elements
+        for (uint64_t i = 0; i<rows; i++) {
+            uint64_t cols = 0;
+            auto current_cols = row_map[i];
+            auto current_vals = val_map[i];
+            avg_sum += current_cols.size();
+            for (uint64_t j = 0; j<current_cols.size(); j++) {
+              colidx[index] = current_cols[j];
+              values[index] = current_vals[j];
               ++index;
+              ++cols;
             }
-            continue;
-          }
+            
+            if (cols < num_cols) {
+                // Loop while cols < num_cols
+                // - set col = 0
+                // - check if col is non-zero
+                // -- advance col
+                // -- repeat
+                int col = 0;
+                while (cols < num_cols) {
+                    while (col < num_cols) {
+                        if (std::find(current_cols.begin(), current_cols.end(), col) == current_cols.end()) {
+                          //Not Found
+                          break;
+                        }
+                        ++col;
+                    }
+                    
+                    colidx[index] = col;
+                    values[index] = 0;
+                    ++index;
+                    ++cols;
+                    ++col;
+                }
 
-          /// If we have an odd number, we need to add preceeding elements before
-          /// the actual non-zero indicies
-          for (uint64_t j = 0; j < coo->nnz; j++)
-          {
-            if (coo->items[j].row == i)
-            {
-              // TODO: This IS NOT portable
-              for (uint64_t k = 0; k < coo->items[j].col && found_cols < num_cols; k++)
-              {
-                colidx[index] = k;
-                values[index] = 0;
-                ++index;
-                ++found_cols;
-              }
-              colidx[index] = coo->items[j].col;
-              values[index] = coo->items[j].val;
-              ++index;
             }
-          }
         }
         
         double end = getTime();
         formatTime = (double)(end-start);
+        
+        // Average
+        avg_num_cols = avg_sum / rows;
     }
     
     //
@@ -140,11 +150,17 @@ public:
         std::cout << "cols: " << num_cols << std::endl;
         
         std::cout << "colidx: ";
-        for (uint64_t i = 0; i<(rows*num_cols); i++) std::cout << colidx[i] << ",";
+        for (uint64_t i = 0; i<(rows*num_cols); i++) {
+            std::cout << colidx[i] << ",";
+            if (!all && i > 30) break;
+        }
         std::cout << std::endl;
         
         std::cout << "values: ";
-        for (uint64_t i = 0; i<(rows*num_cols); i++) std::cout << values[i] << ",";
+        for (uint64_t i = 0; i<(rows*num_cols); i++) {
+            std::cout << values[i] << ",";
+            if (!all && i > 30) break;
+        }
         std::cout << std::endl;
     }
     

@@ -36,6 +36,7 @@ public:
     void printResult(bool all = true);
     void benchmark();
     void report();
+    void verify();
     
     //
     // The format method
@@ -119,10 +120,12 @@ protected:
     COO *coo;
     double *B;
     double *C;
+    double *C_check;
     
     // Other data
     double formatTime = 0;
     double benchTime = 0;
+    uint64_t verifyResults = 0;
     
     // Functions
     void initCOO();

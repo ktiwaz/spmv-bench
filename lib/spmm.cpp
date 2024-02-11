@@ -42,11 +42,11 @@ void SpM::debug() {
     std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
     std::cout << "----------------------------" << std::endl;
     
-    printSparse();
+    printSparse(false);
     std::cout << "-----------------" << std::endl;
-    printDense();
+    printDense(false);
     std::cout << "-----------------" << std::endl;
-    printResult();
+    printResult(false);
     std::cout << "-----------------" << std::endl;
 }
 
@@ -94,6 +94,9 @@ void SpM::report() {
     fprintf(stdout, "%lf", benchTime);
     fprintf(stdout, ",%lf", formatTime);
     
+    // Print verification information
+    fprintf(stdout, ",%ld", verifyResults);
+    
     // Print configuration
     fprintf(stdout, ",%d", iters);
     fprintf(stdout, ",%dx%d", block_rows, block_cols);
@@ -103,6 +106,35 @@ void SpM::report() {
     reportFormat();
     
     fprintf(stdout, "\n");
+}
+
+//
+// A verification method
+//
+void SpM::verify() {
+    // Perform COO calculation
+    // We assume COO is correct- regular dense would take too long
+    for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
+        auto item = coo->items[arg0];
+        size_t i = item.row;
+        size_t j = item.col;
+        double val = item.val;
+        for (size_t k = 0; k<cols; k++) {
+            C_check[i*cols+k] += val * B[j*cols+k];
+        }
+    }
+    
+    // Now, perform the verification
+    uint64_t results = 0;
+    size_t lens = rows * cols;
+    for (size_t i = 0; i<lens; i++) {
+        if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
+            ++results;
+            if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
+        }
+    }
+    
+    verifyResults = results;
 }
 
 //
@@ -137,9 +169,11 @@ void SpM::generateDense() {
     size_t len = rows * cols;
     B = new double[len];
     C = new double[len];
+    C_check = new double[len];
     for (size_t i = 0; i<len; i++) {
         B[i] = 1.7;
         C[i] = 0.0;
+        C_check[i] = 0.0;
     }
 }
 
