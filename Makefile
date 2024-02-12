@@ -33,13 +33,13 @@ build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
 build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bcsr.h
-	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE -g
+	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE
 	
 ##
 ## Build the test binaries
 ##
 $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
-	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp -g
+	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
 
 # GPU test binaries
 gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/gpu_csr1
