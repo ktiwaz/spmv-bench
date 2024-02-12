@@ -72,7 +72,7 @@ function run() {
 
 function post_process() {
     ./plot.sh "$1" "csv"
-    python process.py "$1"
+    python3 process.py "$1"
     for f in report/csv/$1/*.csv
     do
         input_csv=`basename $f .csv`
@@ -82,4 +82,13 @@ function post_process() {
 
 run "bcsstk17"
 post_process "bcsstk17"
+
+run "cant"
+post_process "cant"
+
+run "pdb1HYS"
+post_process "pdb1HYS"
+
+run "rma10"
+post_process "rma10"
 

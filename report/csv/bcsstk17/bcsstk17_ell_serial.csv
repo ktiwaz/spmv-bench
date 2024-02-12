@@ -1,3 +1,0 @@
-Name,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,Threads,Rows,Cols,NNZ,Max Cols,Avg Cols
-csr_serial,0.563743,0.742852,1.306595,0,1,1,1,-1,10974,10974,219812,0,0
-ell_serial,2.652858,0.771249,3.424107,0,1,1,1,-1,10974,10974,219812,108,20
