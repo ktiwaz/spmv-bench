@@ -21,7 +21,7 @@ __global__ void cuda_compute_csr(double *C, double *B, size_t rows, size_t cols,
 
 class CSR2 : public CSR {
 public:
-    explicit CSR2(std::string input) : CSR(input) {}
+    explicit CSR2(int argc, char **argv) : CSR(argc, argv) {}
 
     double calculate() override {
         double start = getTime();
@@ -56,16 +56,9 @@ public:
 };
 
 int main(int argc, char **argv) {
-    CSR2 mtx(argv[1]);
-    
-    mtx.printSparse(false);
-    std::cout << "-----------------" << std::endl;
-    mtx.printDense(false);
-    std::cout << "-----------------" << std::endl;
-    double time = mtx.calculate();
-    fprintf(stdout, "%lf\n", time);
-    mtx.printResult(false);
-    std::cout << "-----------------" << std::endl;
+    CSR2 mtx(argc, argv);
+    mtx.format();
+    mtx.debug();
     
     return 0;
 }

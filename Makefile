@@ -46,7 +46,7 @@ gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/gpu_csr1
 
 $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
 	g++ test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
-		-fopenmp -foffload=nvptx-none -fcf-protection=none -march=native
+		-fopenmp -foffload=nvptx-none -fcf-protection=none -march=native -fno-stack-protector
 
 $(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
 	nvcc test/gpu/gpu_csr1.cu -o $(TEST_OUTPUT)/gpu_csr1 $(NVFLAGS) -O2 -g

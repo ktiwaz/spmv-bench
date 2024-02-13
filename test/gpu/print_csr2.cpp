@@ -9,7 +9,7 @@
 
 class CSR2 : public CSR {
 public:
-    explicit CSR2(std::string input) : CSR(input) {}
+    explicit CSR2(int argc, char **argv) : CSR(argc, argv) {}
 
     double calculate() override {
         double start = getTime();
@@ -20,21 +20,24 @@ public:
         double *_C = C;
         double *_values = values;
         size_t i = 0;
+        size_t _rows = rows;
         
-        #pragma omp target map(to: _rowptr[0:rows+1], _rowidx[0:rowptr[rows]], _values[0:_rowptr[rows]]) \
-            map(tofrom: _C[0:rows*cols]) map(_B[0:rows*cols])
-        //#pragma omp parallel for collapse(2)
+        //#pragma omp target parallel for map(to: _rowptr[0:rows+1], _rowidx[0:rowptr[rows]], _values[0:_rowptr[rows]]) \
+        //    map(tofrom: _C[0:rows*cols]) map(_B[0:rows*cols])
+        #pragma omp target parallel for \
+            map(to: _rows, _rowptr[0:rows+1], _rowidx[0:coo->nnz], _values[0:coo->nnz], _B[0:rows*cols]) \
+            map(from: _C[0:rows*cols])
         for (i = 0; i < rows; i++) {
             size_t _i = i;
             for (uint64_t p = _rowptr[_i]; p < _rowptr[_i+1]; p++) {
                 uint64_t j = _rowidx[p];
-                #pragma omp simd
                 for (uint64_t k = 0; k < cols; k++) {
                     _C[i * cols + k] += _values[p] * _B[j * cols + k];
                 }
             }
         }
-
+        
+        C = _C;
         
         double end = getTime();
         return (double)(end-start);
@@ -42,15 +45,9 @@ public:
 };
 
 int main(int argc, char **argv) {
-    CSR2 mtx(argv[1]);
-    
-    mtx.printSparse(false);
-    std::cout << "-----------------" << std::endl;
-    mtx.printDense(false);
-    std::cout << "-----------------" << std::endl;
-    mtx.calculate();
-    mtx.printResult(false);
-    std::cout << "-----------------" << std::endl;
+    CSR2 mtx(argc, argv);
+    mtx.format();
+    mtx.debug();
     
     return 0;
 }
