@@ -7,6 +7,16 @@ then
     mkdir report/images
 fi
 
+if [ ! -d ./report/csv ]
+then
+    mkdir report/csv
+fi
+
+if [ ! -d ./report/images ]
+then
+    mkdir report/images
+fi
+
 ##
 ## $1 -> Input name
 ##
@@ -14,7 +24,7 @@ function run() {
     echo "Running: $1"
     CSV_FILE=report/csv/$1.csv
     blocks=(1 2 4 8 16 32)
-    iters=1
+    iters=100
     
     printf "" > $CSV_FILE
     printf "Name,Avg Run Time (s),Format Time (s),Total Time (s)," >> $CSV_FILE
@@ -80,6 +90,45 @@ function post_process() {
     done
 }
 
+##
+## 512 synthetic matrix
+##
+run "512x8"
+post_process "512x8"
+
+run "512x16"
+post_process "512x16"
+
+run "512x32"
+post_process "512x32"
+
+run "512x128"
+post_process "512x128"
+
+run "512x512"
+post_process "512x512"
+
+##
+## 1024 synthetic matrices
+##
+run "1024x8"
+post_process "1024x8"
+
+run "1024x16"
+post_process "1024x16"
+
+run "1024x32"
+post_process "1024x32"
+
+run "1024x512"
+post_process "1024x512"
+
+run "1024x1024"
+post_process "1024x1024"
+
+##
+## Real world matrices
+##
 run "bcsstk17"
 post_process "bcsstk17"
 
