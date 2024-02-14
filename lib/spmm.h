@@ -120,7 +120,7 @@ protected:
     // Other data
     double formatTime = 0;
     double benchTime = 0;
-    uint64_t verifyResults = 0;
+    uint64_t verifyResults = -1;
     uint64_t num_cols = 0;
     uint64_t avg_num_cols = 0;
     

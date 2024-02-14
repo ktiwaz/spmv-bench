@@ -32,6 +32,20 @@ function run() {
     echo "" >> $CSV_FILE
     
     ##
+    ## COO
+    ##
+    echo "coo_serial"
+    printf "coo_serial," >> $CSV_FILE
+    build/bin/coo_serial data/$1.mtx --iters $iters >> $CSV_FILE
+    
+    for t in "${blocks[@]}"
+    do
+        echo "coo_omp --threads $t"
+        printf "coo_omp -t $1," >> $CSV_FILE
+        build/bin/coo_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+    done
+    
+    ##
     ## CSR
     ##
     echo "csr_serial"
@@ -125,7 +139,7 @@ post_process "1024x512"
 
 run "1024x1024"
 post_process "1024x1024"
-
+exit 0
 ##
 ## Real world matrices
 ##

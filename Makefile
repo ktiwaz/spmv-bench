@@ -1,5 +1,5 @@
-CC=clang
-CXX=clang++
+CC=gcc
+CXX=g++
 CXXFLAGS=-Ilib build/libspmm.a -std=c++17
 NVFLAGS=-Ilib build/libspmm.a
 
@@ -12,6 +12,7 @@ CSV=csv
 BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
+	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp \
 	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp \
 	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp \
 	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp
@@ -32,7 +33,7 @@ check_dir:
 build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
-build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bcsr.h
+build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bell.h lib/bcsr.h
 	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE
 	
 ##
@@ -54,6 +55,15 @@ $(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
 ########################################################################
 BASE=bin/main.cpp build/libspmm.a
 DEPS=build/libspmm.a bin/main.cpp
+
+##
+## Builds the COO executables
+##
+$(BIN_OUTPUT)/coo_serial: bin/coo/coo_serial.cpp $(DEPS)
+	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_serial.cpp -o $(BIN_OUTPUT)/coo_serial $(CXXFLAGS) -O2 -march=native
+
+$(BIN_OUTPUT)/coo_omp: bin/coo/coo_omp.cpp $(DEPS)
+	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_omp.cpp -o $(BIN_OUTPUT)/coo_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 
 ##
 ## Builds the CSR executables

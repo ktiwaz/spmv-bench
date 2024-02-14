@@ -53,6 +53,8 @@ void SpM::debug() {
     std::cout << "-----------------" << std::endl;
     printResult(false);
     std::cout << "-----------------" << std::endl;
+    
+    std::cout << "Verification: " << verifyResults << std::endl;
 }
 
 //
