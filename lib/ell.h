@@ -16,6 +16,7 @@ public:
     //
     uint64_t *colidx;
     double *values;
+    uint64_t num_cols = 0;
     
     //
     // The format method
@@ -82,14 +83,12 @@ public:
         colidx = new uint64_t[rows * num_cols];
         values = new double[rows * num_cols];
         uint64_t index = 0;
-        uint64_t avg_sum = 0;
         
         // Iterate over each row, and add the non-zero elements
         for (uint64_t i = 0; i<rows; i++) {
             uint64_t cols = 0;
             auto current_cols = row_map[i];
             auto current_vals = val_map[i];
-            avg_sum += current_cols.size();
             for (uint64_t j = 0; j<current_cols.size(); j++) {
               colidx[index] = current_cols[j];
               values[index] = current_vals[j];
@@ -125,9 +124,6 @@ public:
         
         double end = getTime();
         formatTime = (double)(end-start);
-        
-        // Average
-        avg_num_cols = avg_sum / rows;
     }
     
     //

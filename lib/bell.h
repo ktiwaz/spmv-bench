@@ -19,6 +19,7 @@ public:
     uint64_t *collen;
     uint64_t *colidx;
     double *values;
+    uint64_t num_cols = 0;
     
     //
     // The format method

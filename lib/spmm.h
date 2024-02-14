@@ -35,6 +35,7 @@ public:
     void printDense(bool all = true);
     void printResult(bool all = true);
     void benchmark();
+    void computeStats();
     void report();
     void verify();
     
@@ -138,8 +139,10 @@ protected:
     double benchTime = 0;
     double benchGflops = 0;
     uint64_t verifyResults = -1;
-    uint64_t num_cols = 0;
-    uint64_t avg_num_cols = 0;
+    uint64_t max_num_cols = 0;      // Maximum number of columns per row
+    uint64_t avg_num_cols = 0;      // Average number of columns per row
+    uint64_t variance = 0;
+    uint64_t std_deviation = 0;
     
     // Functions
     void initCOO();

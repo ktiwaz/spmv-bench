@@ -28,7 +28,8 @@ function run() {
     
     printf "" > $CSV_FILE
     printf "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS," >> $CSV_FILE
-    printf "Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols" >> $CSV_FILE
+    printf "Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ," >> $CSV_FILE
+    printf "Max Cols,Avg Cols,Variance,Std Deviation" >> $CSV_FILE
     echo "" >> $CSV_FILE
     
     ##
@@ -107,17 +108,14 @@ function post_process() {
 ##
 ## 512 synthetic matrix
 ##
-run "bcsstk17"
-post_process "bcsstk17"
+run "512x8"
+post_process "512x8"
 
 if [[ $1 == "--test" ]]
 then
     echo "Test mode- exiting now."
     exit 0
 fi
-
-run "512x8"
-post_process "512x8"
 
 run "512x16"
 post_process "512x16"

@@ -1,9 +1,11 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <map>
 #include <stdlib.h>
 #include <time.h>
 #include <sys/time.h>
+#include <cmath>
 
 #include "spmm.h"
 
@@ -97,9 +99,80 @@ void SpM::benchmark() {
 }
 
 //
+// Computes matrix statistics
+//
+void SpM::computeStats() {
+    // Build the map
+    uint64_t current = coo->items[0].row;
+    std::map<uint64_t, std::vector<uint64_t>> row_map;
+    row_map[current] = std::vector<uint64_t>();
+    
+    for (uint64_t i = 0; i < coo->nnz; i++) {
+      uint64_t cur_row = coo->items[i].row;
+      if (cur_row != current)
+      {
+        current = cur_row;
+        row_map[current] = std::vector<uint64_t>();
+      }
+      row_map[cur_row].push_back(coo->items[i].col);
+    }
+    
+    //
+    // Start computing the stats
+    //
+    // First, get the longest row
+    uint64_t max = 0;
+    uint64_t max_row = 0;
+    for (uint64_t i = 0; i<rows; i++) {
+        uint64_t sz = row_map[i].size();
+        if (sz > max) {
+            max = sz;
+            max_row = i;
+        }
+    }
+    
+    max_num_cols = max;
+    
+    // Second, compute the average number of columns per row
+    uint64_t size = 0;
+    for (uint64_t i = 0; i<rows; i++) {
+        size += row_map[i].size();
+    }
+    
+    avg_num_cols = size / rows;
+    
+    // Third, compute the variance of the number of columns per row
+    size = 0;
+    for (uint64_t i = 0; i<rows; i++) {
+        uint64_t sq = row_map[i].size() - avg_num_cols;
+        size += (sq * sq);
+    }
+    
+    variance = size / rows;
+    
+    // Fourth, compute the standard deviation
+    std_deviation = sqrt(variance);
+    
+    // Print the map if desired
+    if (printDebug) {
+        for (auto it = row_map.begin(); it != row_map.end(); it++)
+        {
+            std::cout << it->first    // string (key)
+                      << ": [";
+            for (auto v : it->second) std::cout << v << " ";
+            std::cout << "]" << std::endl;
+        }
+        
+        std::cout << "----------------------" << std::endl;
+    }
+}
+
+//
 // The reporting method
 //
 void SpM::report() {
+    computeStats();
+    
     // Print debug information
     // In reality, this would never be printed in CSV
     if (printDebug) {
@@ -124,8 +197,10 @@ void SpM::report() {
     // Print matrix stats
     fprintf(stdout, ",%ld", getFlopCount());
     fprintf(stdout, ",%ld,%ld,%ld", coo->rows, coo->cols, coo->nnz);
-    fprintf(stdout, ",%ld", num_cols);
+    fprintf(stdout, ",%ld", max_num_cols);
     fprintf(stdout, ",%ld", avg_num_cols);
+    fprintf(stdout, ",%ld", variance);
+    fprintf(stdout, ",%ld", std_deviation);
     
     fprintf(stdout, "\n");
 }
