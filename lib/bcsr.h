@@ -200,6 +200,27 @@ public:
     }
     
     //
+    // Return BCSR FLOPs
+    //
+    uint64_t getFlopCount() override {
+        uint64_t fops = 0;
+        
+        for (uint64_t n1 = 0; n1<num_blocks; n1++) {
+            for (uint64_t bi = 0; bi<block_rows; bi++) {
+                for (uint64_t n2 = colptr[n1]; n2<colptr[n1+1]; n2++) {
+                    for (uint64_t bj = 0; bj<block_cols; bj++) {
+                        for (uint64_t k = 0; k<rows; k++) {
+                            fops += 2;
+                        }
+                    }
+                }
+            }
+        }
+        
+        return fops;
+    }
+    
+    //
     // The calculation algorithm for the current format
     //
     double calculate() override {

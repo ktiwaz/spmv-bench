@@ -24,11 +24,11 @@ function run() {
     echo "Running: $1"
     CSV_FILE=report/csv/$1.csv
     blocks=(1 2 4 8 16 32)
-    iters=100
+    iters=1
     
     printf "" > $CSV_FILE
-    printf "Name,Avg Run Time (s),Format Time (s),Total Time (s)," >> $CSV_FILE
-    printf "Verification,Iters,Block Row,Block Col,Threads,Rows,Cols,NNZ,Max Cols,Avg Cols" >> $CSV_FILE
+    printf "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS," >> $CSV_FILE
+    printf "Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols" >> $CSV_FILE
     echo "" >> $CSV_FILE
     
     ##
@@ -107,6 +107,15 @@ function post_process() {
 ##
 ## 512 synthetic matrix
 ##
+run "bcsstk17"
+post_process "bcsstk17"
+
+if [[ $1 == "--test" ]]
+then
+    echo "Test mode- exiting now."
+    exit 0
+fi
+
 run "512x8"
 post_process "512x8"
 

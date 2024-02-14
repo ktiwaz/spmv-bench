@@ -1,0 +1,8 @@
+Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,Rows,Cols,NNZ,Max Cols,Avg Cols
+csr_serial,FLOPS: 90
+bcsr_serial 1 x 1,FLOPS: 90
+bcsr_serial 2 x 2,FLOPS: 90
+bcsr_serial 4 x 4,FLOPS: 90
+bcsr_serial 8 x 8,FLOPS: 90
+bcsr_serial 16 x 16,FLOPS: 90
+bcsr_serial 32 x 32,FLOPS: 90

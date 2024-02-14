@@ -131,6 +131,23 @@ public:
     }
     
     //
+    // Return ELL FLOPs
+    //
+    uint64_t getFlopCount() override {
+        uint64_t fops = 0;
+        
+        for (uint64_t i = 0; i<rows; i++) {
+            for (uint64_t n1 = 0; n1<num_cols; n1++) {
+                for (uint64_t k = 0; k<rows; k++) {
+                    fops += 2;
+                }
+            }
+        }
+        
+        return fops;
+    }
+    
+    //
     // The print method for the current sparse matrix
     //
     void printSparse(bool all = true) override {

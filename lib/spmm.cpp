@@ -75,15 +75,24 @@ void SpM::printElapsedTime(double stime, double etime) {
 //
 void SpM::benchmark() {
     std::vector<double> times;
+    std::vector<double> gflops;
+    
     for (size_t i = 0; i<iters; i++) {
         if (i>0) for (size_t i = 0; i<(rows * cols); i++) C[i] = 0.0;
         double t = calculate();
         times.push_back(t);
+        
+        double g = getFlopCount() / (1.0e9 * t);
+        gflops.push_back(g);
     }
     
     double avg = 0;
     for (auto t : times) avg += t;
     benchTime = avg / iters;
+    
+    double g_avg = 0;
+    for (auto g : gflops) g_avg += g;
+    benchGflops = g_avg / iters;
     //fprintf(stdout, "%lf\n", avg);
 }
 
@@ -102,6 +111,7 @@ void SpM::report() {
     fprintf(stdout, "%lf", benchTime);
     fprintf(stdout, ",%lf", formatTime);
     fprintf(stdout, ",%lf", benchTime + formatTime);
+    fprintf(stdout, ",%lf", benchGflops);
     
     // Print verification information
     fprintf(stdout, ",%ld", verifyResults);
@@ -112,6 +122,7 @@ void SpM::report() {
     fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
+    fprintf(stdout, ",%ld", getFlopCount());
     fprintf(stdout, ",%ld,%ld,%ld", coo->rows, coo->cols, coo->nnz);
     fprintf(stdout, ",%ld", num_cols);
     fprintf(stdout, ",%ld", avg_num_cols);

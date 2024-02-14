@@ -1,3 +1,3 @@
 Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,Rows,Cols,NNZ,Max Cols,Avg Cols
-csr_serial,FLOPS: 4194304
-ell_serial,FLOPS: 4194304
+csr_serial,FLOPS: 90
+ell_serial,FLOPS: 100

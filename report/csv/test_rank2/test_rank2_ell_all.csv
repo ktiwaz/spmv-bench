@@ -1,0 +1,15 @@
+Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,Rows,Cols,NNZ,Max Cols,Avg Cols
+csr_serial,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+csr_omp -t test_rank2,FLOPS: 90
+ell_serial,FLOPS: 100
+ell_omp -t 1,FLOPS: 100
+ell_omp -t 2,FLOPS: 100
+ell_omp -t 4,FLOPS: 100
+ell_omp -t 8,FLOPS: 100
+ell_omp -t 16,FLOPS: 100
+ell_omp -t 32,FLOPS: 100

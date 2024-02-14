@@ -50,6 +50,22 @@ public:
     }
     
     //
+    // Returns the number of floating point operations for
+    // the given algorithm.
+    //
+    virtual uint64_t getFlopCount() {
+        uint64_t fops = 0;
+    
+        for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
+            for (size_t k = 0; k<cols; k++) {
+                fops += 2;
+            }
+        }
+        
+        return fops;
+    }
+    
+    //
     // The print method for the current sparse matrix
     //
     virtual void printSparse(bool all = true) {
@@ -120,6 +136,7 @@ protected:
     // Other data
     double formatTime = 0;
     double benchTime = 0;
+    double benchGflops = 0;
     uint64_t verifyResults = -1;
     uint64_t num_cols = 0;
     uint64_t avg_num_cols = 0;
