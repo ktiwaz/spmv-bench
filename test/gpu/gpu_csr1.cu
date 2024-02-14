@@ -58,6 +58,8 @@ public:
 int main(int argc, char **argv) {
     CSR2 mtx(argc, argv);
     mtx.format();
+    mtx.calculate();
+    mtx.verify();
     mtx.debug();
     
     return 0;

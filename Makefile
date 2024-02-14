@@ -43,14 +43,21 @@ $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
 
 # GPU test binaries
-gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/gpu_csr1
+gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/omp_test1 $(TEST_OUTPUT)/gpu_csr1 $(TEST_OUTPUT)/gpu_test1
 
 $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
-	g++ test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
-		-fopenmp -foffload=nvptx-none -fcf-protection=none -march=native -fno-stack-protector
+	g++-10 test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
+		-fopenmp -foffload=nvptx-none -fcf-protection=none -fno-stack-protector
+
+$(TEST_OUTPUT)/omp_test1: test/gpu/omp_test1.cpp build/libspmm.a
+	g++-10 test/gpu/omp_test1.cpp -o $(TEST_OUTPUT)/omp_test1 $(CXXFLAGS) -O2 \
+		-fopenmp -foffload=nvptx-none -fcf-protection=none -fno-stack-protector
 
 $(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
 	nvcc test/gpu/gpu_csr1.cu -o $(TEST_OUTPUT)/gpu_csr1 $(NVFLAGS) -O2 -g
+
+$(TEST_OUTPUT)/gpu_test1: test/gpu/gpu_test1.cu build/libspmm.a
+	nvcc test/gpu/gpu_test1.cu -o $(TEST_OUTPUT)/gpu_test1 $(NVFLAGS) -O2 -g
 	
 ########################################################################
 BASE=bin/main.cpp build/libspmm.a

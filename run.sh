@@ -139,7 +139,7 @@ post_process "1024x512"
 
 run "1024x1024"
 post_process "1024x1024"
-exit 0
+
 ##
 ## Real world matrices
 ##
