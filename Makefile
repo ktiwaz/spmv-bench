@@ -51,6 +51,10 @@ $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
 	$(CXX16) test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
 		-fopenmp-targets=nvptx64 -fopenmp
 
+$(TEST_OUTPUT)/print_ell2: test/gpu/print_ell2.cpp build/libspmm.a
+	$(CXX16) test/gpu/print_ell2.cpp -o $(TEST_OUTPUT)/print_ell2 $(CXXFLAGS) -O2 \
+		-fopenmp-targets=nvptx64 -fopenmp
+
 $(TEST_OUTPUT)/omp_test1: test/gpu/omp_test1.cpp build/libspmm.a
 	$(CXX16) test/gpu/omp_test1.cpp -o $(TEST_OUTPUT)/omp_test1 $(CXXFLAGS) -O2 \
 		-fopenmp-targets=nvptx64 -fopenmp
