@@ -38,6 +38,7 @@ function run() {
     echo "coo_serial"
     printf "coo_serial," >> $CSV_FILE
     build/bin/coo_serial data/$1.mtx --iters $iters >> $CSV_FILE
+    exit
     
     for t in "${blocks[@]}"
     do
@@ -123,6 +124,15 @@ function post_process() {
         ./plot.sh $input_csv "csv/$1"
     done
 }
+
+for mtx in data/*.mtx
+do
+    input_mtx=`basename $mtx .mtx`
+    run $input_mtx
+    post_process $input_mtx
+done
+
+exit
 
 ##
 ## 512 synthetic matrix
