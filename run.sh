@@ -46,6 +46,8 @@ function run() {
         build/bin/coo_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
+    echo "coo_omp_gpu"
+    printf "coo_omp_gpu," >> $CSV_FILE
     build/bin/coo_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
@@ -62,6 +64,8 @@ function run() {
         build/bin/csr_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
+    echo "csr_omp_gpu"
+    printf "csr_omp_gpu," >> $CSV_FILE
     build/bin/csr_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
@@ -78,6 +82,8 @@ function run() {
         build/bin/ell_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
+    echo "ell_omp_gpu"
+    printf "ell_omp_gpu," >> $CSV_FILE
     build/bin/ell_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
@@ -102,8 +108,8 @@ function run() {
     
     for b in "${blocks[@]}"
     do
-        echo "bcsr_serial $b x $b"
-        printf "bcsr_serial $b x $b," >> $CSV_FILE
+        echo "bcsr_omp_gpu $b x $b"
+        printf "bcsr_omp_gpu $b x $b," >> $CSV_FILE
         build/bin/bcsr_omp_gpu data/$1.mtx --iters $iters --block $b >> $CSV_FILE
     done
 }
