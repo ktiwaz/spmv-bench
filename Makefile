@@ -39,6 +39,8 @@ build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bell.h lib/bcsr.h
 ##
 ## Build the test binaries
 ##
+CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
+
 $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
 
@@ -46,12 +48,12 @@ $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/omp_test1 $(TEST_OUTPUT)/gpu_csr1 $(TEST_OUTPUT)/gpu_test1
 
 $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
-	g++-10 test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
-		-fopenmp -foffload=nvptx-none -fcf-protection=none -fno-stack-protector
+	$(CXX16) test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
+		-fopenmp-targets=nvptx64 -fopenmp
 
 $(TEST_OUTPUT)/omp_test1: test/gpu/omp_test1.cpp build/libspmm.a
-	g++-10 test/gpu/omp_test1.cpp -o $(TEST_OUTPUT)/omp_test1 $(CXXFLAGS) -O2 \
-		-fopenmp -foffload=nvptx-none -fcf-protection=none -fno-stack-protector
+	$(CXX16) test/gpu/omp_test1.cpp -o $(TEST_OUTPUT)/omp_test1 $(CXXFLAGS) -O2 \
+		-fopenmp-targets=nvptx64 -fopenmp
 
 $(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
 	nvcc test/gpu/gpu_csr1.cu -o $(TEST_OUTPUT)/gpu_csr1 $(NVFLAGS) -O2 -g
