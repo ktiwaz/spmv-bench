@@ -4,6 +4,12 @@ CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Ilib build/libspmm.a -std=c++17
 NVFLAGS=-Ilib build/libspmm.a
 
+ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
+    CXX=g++
+else
+    CXX=$(CXX16)
+endif
+
 ## Test binaries
 TEST_SRC := $(wildcard test/*.cpp)
 TEST_OUTPUT = build/test
@@ -13,13 +19,19 @@ CSV=csv
 BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
-	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp $(BIN_OUTPUT)/coo_omp_gpu \
-	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp $(BIN_OUTPUT)/csr_omp_gpu \
-	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp $(BIN_OUTPUT)/ell_omp_gpu \
-	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu
+	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp \
+	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp \
+	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp \
+	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp
+BENCH_GPU_BINS=\
+    $(BIN_OUTPUT)/coo_omp_gpu \
+	$(BIN_OUTPUT)/csr_omp_gpu \
+	$(BIN_OUTPUT)/ell_omp_gpu \
+	$(BIN_OUTPUT)/bcsr_omp_gpu
 
 ## The core
-all: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS)
+all: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS) $(BENCH_GPU_BINS)
+local: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS)
 
 .PHONY: clean_dir
 check_dir:
