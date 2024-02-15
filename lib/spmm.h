@@ -46,6 +46,17 @@ public:
     virtual void format() {
         double start = getTime();
         initCOO();
+        
+        coo_rows = new uint64_t[coo->nnz];
+        coo_cols = new uint64_t[coo->nnz];
+        coo_vals = new double[coo->nnz];
+        for (uint64_t i = 0; i<coo->nnz; i++) {
+            auto item = coo->items[i];
+            coo_rows[i] = item.row;
+            coo_cols[i] = item.col;
+            coo_vals[i] = item.val;
+        }
+        
         double end = getTime();
         formatTime = (double)(end-start);
     }
@@ -133,6 +144,11 @@ protected:
     double *B;
     double *C;
     double *C_check;
+    
+    // COO matrix data
+    uint64_t *coo_rows;
+    uint64_t *coo_cols;
+    double *coo_vals;
     
     // Other data
     double formatTime = 0;
