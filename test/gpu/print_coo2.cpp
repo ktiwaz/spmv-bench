@@ -35,6 +35,8 @@ public:
             }
         }
         
+        C = _C;
+        
         double end = getTime();
         return (double)(end-start);
     }

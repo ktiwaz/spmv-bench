@@ -8,6 +8,7 @@ int main(int argc, char **argv) {
     SpM mtx(argc, argv);
     mtx.format();
     mtx.calculate();
+    mtx.verify();
     mtx.debug();
     
     std::cout << "---------------" << std::endl;
@@ -15,6 +16,7 @@ int main(int argc, char **argv) {
     SpM mtx2(argc, argv);
     mtx2.format();
     mtx2.benchmark();
+    mtx2.verify();
     mtx2.debug();
     
     return 0;
