@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <csr.h>
+#include <ell.h>
 
 class ELL2 : public ELL {
 public:
@@ -20,6 +20,8 @@ public:
         size_t _num_cols = num_cols;
         uint64_t *_colidx = colidx;
         double *_values = values;
+        double *_B = B;
+        double *_C = C;
         
         #pragma omp target teams distribute parallel for \
             map(to: _rows, _cols, _num_cols, _colidx[0:rows*num_cols], _values[0:rows*num_cols], _B[0:rows*cols]) \
