@@ -1,3 +1,3 @@
-Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols
-csr_serial,1.268791,0.999122,2.267913,3.802387,0,1,1,1,-1,4824433776,10974,10974,219812,0,0
-ell_serial,6.309889,1.011907,7.321796,4.122512,0,1,1,1,-1,26012594016,10974,10974,219812,108,20
+Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols,Variance,Std Deviation
+csr_serial,1.025870,1.378322,2.404192,4.702774,0,1,1,1,-1,4824433776,10974,10974,219812,108,20,79,8
+ell_serial,4.651549,1.419517,6.071066,5.592243,0,1,1,1,-1,26012594016,10974,10974,219812,108,20,79,8
