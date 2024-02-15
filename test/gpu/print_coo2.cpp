@@ -5,11 +5,10 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <csr.h>
 
-class COO : public SpM {
+class COO2 : public SpM {
 public:
-    explicit COO(int argc, char **argv) : SpM(argc, argv) {}
+    explicit COO2(int argc, char **argv) : SpM(argc, argv) {}
 
     double calculate() override {
         double start = getTime();
@@ -24,7 +23,7 @@ public:
         uint64_t *_coo_cols = coo_cols;
         
         #pragma omp target teams distribute parallel for \
-            map(to: _cols, nnz, _rowptr[0:rows+1], _rowidx[0:nnz], _values[0:nnz], _B[0:rows*cols]) \
+            map(to: _cols, nnz, _coo_rows[0:nnz], _coo_cols[0:nnz], _coo_vals[0:nnz], _B[0:rows*cols]) \
             map(tofrom: _C[0:rows*cols])
         for (arg0 = 0; arg0<nnz; arg0++) {
             size_t _arg0 = arg0;
@@ -42,7 +41,7 @@ public:
 };
 
 int main(int argc, char **argv) {
-    COO mtx(argc, argv);
+    COO2 mtx(argc, argv);
     mtx.format();
     mtx.calculate();
     mtx.verify();
