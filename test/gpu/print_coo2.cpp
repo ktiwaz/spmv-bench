@@ -27,8 +27,8 @@ public:
             map(tofrom: _C[0:rows*cols])
         for (arg0 = 0; arg0<nnz; arg0++) {
             size_t _arg0 = arg0;
-            size_t i = _coo_rows[_arg0];
-            size_t j = _coo_cols[_arg0];
+            uint64_t i = _coo_rows[_arg0];
+            uint64_t j = _coo_cols[_arg0];
             double val = _coo_vals[_arg0];
             for (size_t k = 0; k<_cols; k++) {
                 _C[i*_cols+k] += val * _B[j*_cols+k];
