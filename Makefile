@@ -1,5 +1,6 @@
 CC=gcc
-CXX=g++
+CXX=/opt/llvm/llvm-16.x-install/bin/clang++
+CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Ilib build/libspmm.a -std=c++17
 NVFLAGS=-Ilib build/libspmm.a
 
@@ -12,10 +13,10 @@ CSV=csv
 BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
-	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp \
-	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp \
-	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp \
-	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp
+	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp $(BIN_OUTPUT)/coo_omp_gpu \
+	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp $(BIN_OUTPUT)/csr_omp_gpu \
+	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp $(BIN_OUTPUT)/ell_omp_gpu \
+	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu
 
 ## The core
 all: check_dir build/libspmm.a $(TEST_BINS) $(BENCH_BINS)
@@ -39,8 +40,6 @@ build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bell.h lib/bcsr.h
 ##
 ## Build the test binaries
 ##
-CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-
 $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
 
@@ -88,6 +87,10 @@ $(BIN_OUTPUT)/coo_serial: bin/coo/coo_serial.cpp $(DEPS)
 
 $(BIN_OUTPUT)/coo_omp: bin/coo/coo_omp.cpp $(DEPS)
 	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_omp.cpp -o $(BIN_OUTPUT)/coo_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+	
+$(BIN_OUTPUT)/coo_omp_gpu: bin/coo/coo_omp_gpu.cpp $(DEPS)
+	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu $(CXXFLAGS) -O2 -march=native \
+		-fopenmp-targets=nvptx64 -fopenmp
 
 ##
 ## Builds the CSR executables
@@ -98,6 +101,10 @@ $(BIN_OUTPUT)/csr_serial: bin/csr/csr_serial.cpp $(DEPS)
 $(BIN_OUTPUT)/csr_omp: bin/csr/csr_omp.cpp $(DEPS)
 	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_omp.cpp -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
 
+$(BIN_OUTPUT)/csr_omp_gpu: bin/csr/csr_omp_gpu.cpp $(DEPS)
+	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_omp_gpu $(CXXFLAGS) -O2 -march=native \
+		-fopenmp-targets=nvptx64 -fopenmp
+
 ##
 ## Builds the ELL executables
 ##
@@ -106,6 +113,10 @@ $(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp $(DEPS)
 
 $(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp $(DEPS)
 	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_omp.cpp -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+
+$(BIN_OUTPUT)/ell_omp_gpu: bin/ell/ell_omp_gpu.cpp $(DEPS)
+	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_omp_gpu $(CXXFLAGS) -O2 -march=native \
+		-fopenmp-targets=nvptx64 -fopenmp
 	
 ##
 ## Builds the BCSR executables
@@ -115,6 +126,10 @@ $(BIN_OUTPUT)/bcsr_serial: bin/bcsr/bcsr_serial.cpp $(DEPS)
 
 $(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp $(DEPS)
 	$(CXX)  -Ibin/bcsr $(BASE) bin/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) -O2 -march=native -fopenmp
+
+$(BIN_OUTPUT)/bcsr_omp_gpu: bin/bcsr/bcsr_omp_gpu.cpp $(DEPS)
+	$(CXX)  -Ibin/bcsr $(BASE) bin/bcsr/bcsr_omp_gpu.cpp -o $(BIN_OUTPUT)/bcsr_omp_gpu $(CXXFLAGS) -O2 -march=native \
+		-fopenmp-targets=nvptx64 -fopenmp
 
 ########################################################################
 
