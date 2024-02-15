@@ -45,7 +45,9 @@ $(TEST_OUTPUT)/%: test/%.cpp build/libspmm.a
 	$(CXX) $< -o $@ $(CXXFLAGS) -O2 -fopenmp
 
 # GPU test binaries
-gpu_test: $(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/omp_test1 $(TEST_OUTPUT)/gpu_csr1 $(TEST_OUTPUT)/gpu_test1
+gpu_test: \
+	$(TEST_OUTPUT)/print_csr2 $(TEST_OUTPUT)/print_ell2 \
+	$(TEST_OUTPUT)/omp_test1 $(TEST_OUTPUT)/gpu_csr1 $(TEST_OUTPUT)/gpu_test1
 
 $(TEST_OUTPUT)/print_csr2: test/gpu/print_csr2.cpp build/libspmm.a
 	$(CXX16) test/gpu/print_csr2.cpp -o $(TEST_OUTPUT)/print_csr2 $(CXXFLAGS) -O2 \
