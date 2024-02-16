@@ -24,7 +24,7 @@ function run() {
     echo "Running: $1"
     CSV_FILE=report/csv/$1.csv
     blocks=(1 2 4 8 16 32)
-    iters=1
+    iters=10
     
     printf "" > $CSV_FILE
     printf "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS," >> $CSV_FILE
@@ -38,7 +38,6 @@ function run() {
     echo "coo_serial"
     printf "coo_serial," >> $CSV_FILE
     build/bin/coo_serial data/$1.mtx --iters $iters >> $CSV_FILE
-    exit
     
     for t in "${blocks[@]}"
     do
@@ -132,62 +131,4 @@ do
     post_process $input_mtx
 done
 
-exit
-
-##
-## 512 synthetic matrix
-##
-run "512x8"
-post_process "512x8"
-
-if [[ $1 == "--test" ]]
-then
-    echo "Test mode- exiting now."
-    exit 0
-fi
-
-run "512x16"
-post_process "512x16"
-
-run "512x32"
-post_process "512x32"
-
-run "512x128"
-post_process "512x128"
-
-run "512x512"
-post_process "512x512"
-
-##
-## 1024 synthetic matrices
-##
-run "1024x8"
-post_process "1024x8"
-
-run "1024x16"
-post_process "1024x16"
-
-run "1024x32"
-post_process "1024x32"
-
-run "1024x512"
-post_process "1024x512"
-
-run "1024x1024"
-post_process "1024x1024"
-
-##
-## Real world matrices
-##
-run "bcsstk17"
-post_process "bcsstk17"
-
-run "cant"
-post_process "cant"
-
-run "pdb1HYS"
-post_process "pdb1HYS"
-
-run "rma10"
-post_process "rma10"
-
+echo "Done!!"
