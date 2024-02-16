@@ -39,6 +39,17 @@ python3 ../gen.py 512 512 32
 python3 ../gen.py 512 512 128
 python3 ../gen.py 512 512 512
 
+##
+## For testing mode
+##
+if [[ $1 == "--test" ]]
+then
+    exit 0
+fi
+
+##
+## Download real-world sources
+##
 wget https://suitesparse-collection-website.herokuapp.com/MM/HB/bcsstk13.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/HB/bcsstk17.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/cant.tar.gz
