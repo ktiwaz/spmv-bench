@@ -76,16 +76,6 @@ $(TEST_OUTPUT)/print_ell2: test/gpu/print_ell2.cpp build/libspmm.a
 $(TEST_OUTPUT)/print_bcsr2: test/gpu/print_bcsr2.cpp build/libspmm.a
 	$(CXX16) test/gpu/print_bcsr2.cpp -o $(TEST_OUTPUT)/print_bcsr2 $(CXXFLAGS) -O2 \
 		-fopenmp-targets=nvptx64 -fopenmp
-
-$(TEST_OUTPUT)/omp_test1: test/gpu/omp_test1.cpp build/libspmm.a
-	$(CXX16) test/gpu/omp_test1.cpp -o $(TEST_OUTPUT)/omp_test1 $(CXXFLAGS) -O2 \
-		-fopenmp-targets=nvptx64 -fopenmp
-
-$(TEST_OUTPUT)/gpu_csr1: test/gpu/gpu_csr1.cu build/libspmm.a
-	nvcc test/gpu/gpu_csr1.cu -o $(TEST_OUTPUT)/gpu_csr1 $(NVFLAGS) -O2 -g
-
-$(TEST_OUTPUT)/gpu_test1: test/gpu/gpu_test1.cu build/libspmm.a
-	nvcc test/gpu/gpu_test1.cu -o $(TEST_OUTPUT)/gpu_test1 $(NVFLAGS) -O2 -g
 	
 ########################################################################
 BASE=bin/main.cpp build/libspmm.a
