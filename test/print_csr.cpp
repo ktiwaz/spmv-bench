@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <spmm.h>
-#include <csr.h>
+#include <csr/csr.h>
 
 int main(int argc, char **argv) {
     CSR mtx(argc, argv);

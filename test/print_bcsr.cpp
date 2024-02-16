@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <bcsr.h>
+#include <bcsr/bcsr.h>
 
 int main(int argc, char **argv) {
     BCSR mtx(argc, argv);

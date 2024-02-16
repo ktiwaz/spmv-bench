@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <csr.h>
+#include <csr/csr.h>
 
 class CSR2 : public CSR {
 public:

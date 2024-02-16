@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <ell.h>
+#include <ell/ell.h>
 
 class ELL2 : public ELL {
 public:

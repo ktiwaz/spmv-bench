@@ -1,10 +1,9 @@
 CC=clang
 CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Ilib build/libspmm.a -std=c++17 -O2 -march=native
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -O2 -march=native
 OMPFLAGS=-fopenmp
 GPUFLAGS=
-NVFLAGS=-Ilib build/libspmm.a
 
 ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
     CXX=clang++
@@ -47,8 +46,8 @@ check_dir:
 build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
-build/spmm.o: lib/spmm.cpp lib/spmm.h lib/csr.h lib/ell.h lib/bell.h lib/bcsr.h
-	$(CXX) lib/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native
+build/spmm.o: src/spmm.cpp src/spmm.h src/csr/csr.h src/ell/ell.h src/bell/bell.h src/bcsr/bcsr.h
+	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native
 	
 ##
 ## Build the test binaries
@@ -60,56 +59,56 @@ $(GPU_TEST_OUTPUT)/%: test/gpu/%.cpp build/libspmm.a
 	$(CXX) $< -o $@ $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 	
 ########################################################################
-BASE=bin/main.cpp build/libspmm.a
-DEPS=build/libspmm.a bin/main.cpp
+BASE=src/main.cpp build/libspmm.a
+DEPS=build/libspmm.a src/main.cpp
 
 ##
 ## Builds the COO executables
 ##
-$(BIN_OUTPUT)/coo_serial: bin/coo/coo_serial.cpp $(DEPS)
-	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_serial.cpp -o $(BIN_OUTPUT)/coo_serial $(CXXFLAGS)
+$(BIN_OUTPUT)/coo_serial: src/coo/coo_serial.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_serial.cpp -o $(BIN_OUTPUT)/coo_serial $(CXXFLAGS)
 
-$(BIN_OUTPUT)/coo_omp: bin/coo/coo_omp.cpp $(DEPS)
-	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_omp.cpp -o $(BIN_OUTPUT)/coo_omp $(CXXFLAGS) $(OMPFLAGS)
+$(BIN_OUTPUT)/coo_omp: src/coo/coo_omp.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp.cpp -o $(BIN_OUTPUT)/coo_omp $(CXXFLAGS) $(OMPFLAGS)
 	
-$(BIN_OUTPUT)/coo_omp_gpu: bin/coo/coo_omp_gpu.cpp $(DEPS)
-	$(CXX) -Ibin/coo $(BASE) bin/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+$(BIN_OUTPUT)/coo_omp_gpu: src/coo/coo_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
 ##
 ## Builds the CSR executables
 ##
-$(BIN_OUTPUT)/csr_serial: bin/csr/csr_serial.cpp $(DEPS)
-	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_serial.cpp -o $(BIN_OUTPUT)/csr_serial $(CXXFLAGS)
+$(BIN_OUTPUT)/csr_serial: src/csr/csr_serial.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_serial.cpp -o $(BIN_OUTPUT)/csr_serial $(CXXFLAGS)
 
-$(BIN_OUTPUT)/csr_omp: bin/csr/csr_omp.cpp $(DEPS)
-	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_omp.cpp -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) $(OMPFLAGS)
+$(BIN_OUTPUT)/csr_omp: src/csr/csr_omp.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_omp.cpp -o $(BIN_OUTPUT)/csr_omp $(CXXFLAGS) $(OMPFLAGS)
 
-$(BIN_OUTPUT)/csr_omp_gpu: bin/csr/csr_omp_gpu.cpp $(DEPS)
-	$(CXX) -Ibin/csr $(BASE) bin/csr/csr_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+$(BIN_OUTPUT)/csr_omp_gpu: src/csr/csr_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
 ##
 ## Builds the ELL executables
 ##
-$(BIN_OUTPUT)/ell_serial: bin/ell/ell_serial.cpp $(DEPS)
-	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_serial.cpp -o $(BIN_OUTPUT)/ell_serial $(CXXFLAGS)
+$(BIN_OUTPUT)/ell_serial: src/ell/ell_serial.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_serial.cpp -o $(BIN_OUTPUT)/ell_serial $(CXXFLAGS)
 
-$(BIN_OUTPUT)/ell_omp: bin/ell/ell_omp.cpp $(DEPS)
-	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_omp.cpp -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) $(OMPFLAGS)
+$(BIN_OUTPUT)/ell_omp: src/ell/ell_omp.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_omp.cpp -o $(BIN_OUTPUT)/ell_omp $(CXXFLAGS) $(OMPFLAGS)
 
-$(BIN_OUTPUT)/ell_omp_gpu: bin/ell/ell_omp_gpu.cpp $(DEPS)
-	$(CXX) -Ibin/ell $(BASE) bin/ell/ell_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+$(BIN_OUTPUT)/ell_omp_gpu: src/ell/ell_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 	
 ##
 ## Builds the BCSR executables
 ##
-$(BIN_OUTPUT)/bcsr_serial: bin/bcsr/bcsr_serial.cpp $(DEPS)
-	$(CXX) -Ibin/bcsr $(BASE) bin/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial $(CXXFLAGS)
+$(BIN_OUTPUT)/bcsr_serial: src/bcsr/bcsr_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial $(CXXFLAGS)
 
-$(BIN_OUTPUT)/bcsr_omp: bin/bcsr/bcsr_omp.cpp $(DEPS)
-	$(CXX)  -Ibin/bcsr $(BASE) bin/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) $(OMPFLAGS)
+$(BIN_OUTPUT)/bcsr_omp: src/bcsr/bcsr_omp.cpp $(DEPS)
+	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp $(CXXFLAGS) $(OMPFLAGS)
 
-$(BIN_OUTPUT)/bcsr_omp_gpu: bin/bcsr/bcsr_omp_gpu.cpp $(DEPS)
-	$(CXX)  -Ibin/bcsr $(BASE) bin/bcsr/bcsr_omp_gpu.cpp -o $(BIN_OUTPUT)/bcsr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+$(BIN_OUTPUT)/bcsr_omp_gpu: src/bcsr/bcsr_omp_gpu.cpp $(DEPS)
+	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp_gpu.cpp -o $(BIN_OUTPUT)/bcsr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
 ########################################################################
 

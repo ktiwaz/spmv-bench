@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <spmm.h>
-#include <ell.h>
+#include <ell/ell.h>
 
 int main(int argc, char **argv) {
     ELL mtx(argc, argv);

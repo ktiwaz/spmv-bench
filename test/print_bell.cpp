@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <spmm.h>
-#include <bell.h>
+#include <bell/bell.h>
 
 int main(int argc, char **argv) {
     BELL mtx(argc, argv);

@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 #include <spmm.h>
-#include <bcsr.h>
+#include <bcsr/bcsr.h>
 
 class BCSR2 : public BCSR {
 public:
