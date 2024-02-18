@@ -17,6 +17,7 @@ public:
     uint64_t blocks = 0;
     uint64_t rows_per_block = 0;
     uint64_t *collen;
+    uint64_t *colstart;
     uint64_t *colidx;
     double *values;
     uint64_t num_cols = 0;
@@ -69,7 +70,9 @@ public:
         rows_per_block = rows / blocks;
         
         collen = new uint64_t[blocks];
+        colstart = new uint64_t[blocks];
         uint64_t index = 0;
+        uint64_t c_start = 0;
         
         std::cout << "Rows Per Block: " << rows_per_block << std::endl;
         
@@ -84,6 +87,10 @@ public:
             }
             row_blocks[bi] = max;
             collen[index] = max;
+            
+            colstart[index] = c_start;
+            c_start += max * blocks;
+            
             ++index;
             
             //std::cout << "--> Max: " << max << std::endl;
@@ -97,7 +104,7 @@ public:
         
         for (uint64_t bi = 0; bi<rows; bi += rows_per_block) {
             uint64_t max_cols = row_blocks[bi];
-            std::cout << "Max_cols: " << max_cols << std::endl;
+            //std::cout << "Max_cols: " << max_cols << std::endl;
             
             for (uint64_t i = bi; i<(bi+rows_per_block); i++) {
                 uint64_t cols = 0;
@@ -169,6 +176,13 @@ public:
         }
         std::cout << std::endl;
         
+        std::cout << "colstart: ";
+        for (uint64_t i = 0; i<blocks; i++) {
+            std::cout << colstart[i] << ",";
+            if (!all && i > 30) break;
+        }
+        std::cout << std::endl;
+        
         std::cout << "colidx: ";
         for (uint64_t i = 0; i<num_cols; i++) {
             std::cout << colidx[i] << ",";
@@ -190,32 +204,32 @@ public:
     double calculate() override {
         double start = getTime();
         
-        uint64_t offset = 0;
-        for (uint64_t bi = 0; bi<rows; bi += rows_per_block) {
-            //uint64_t p1 = bi / blocks;
-            uint64_t num_cols = collen[bi / blocks];
-            std::cout << "--> bi:  " << bi << " | " << num_cols << std::endl;
-            for (uint64_t i = bi; i<(bi+rows_per_block); i++) {
-                for (uint64_t n1 = 0; n1<num_cols; n1++) {
-                    uint64_t p = offset;
+        for (uint64_t bi = 0; bi<blocks; bi++) {
+            uint64_t cl = collen[bi];
+            uint64_t cs = colstart[bi];
+            printf("%ld -> %ld, %ld\n", bi, cl, cs);
+            for (uint64_t n1 = 0; n1<blocks; n1++) {
+                uint64_t i = bi * blocks + n1;
+                for (uint64_t n2 = 0; n2<cl; n2++) {
+                    uint64_t p = cs + (n1*cl+n2);
                     uint64_t j = colidx[p];
-                    
-                    printf("(%ld, %ld) -> p: %ld, %ld\n", i, j, p, p + (num_cols * i + n1));
+                    for (uint64_t k = 0; k<cols; k++) {
+                        C[i*cols+k] += values[p] * B[j*cols+k];
+                    }
                 }
             }
-            offset += rows_per_block * num_cols;
-            std::cout << "---" << std::endl;
         }
         
-        /*for (uint64_t i = 0; i<rows; i++) {
-            for (uint64_t n1 = 0; n1<num_cols; n1++) {
-                uint64_t p = i * num_cols + n1;
-                uint64_t j = colidx[p];
-                for (uint64_t k = 0; k<rows; k++) {
-                    C[i*cols+k] += values[p] * B[j*cols+k];
-                }
-            }
-        }*/
+        //for bi in range(blocks):
+            //cl = collens[bi]
+            //cs = colstart[bi]
+            //print(bi, " -> ", cl, " ", cs)
+            //for n1 in range(blocks):
+                //i = bi * blocks + n1
+                //print("--",i)
+                //for n2 in range(cl):
+                    //idx = cs+(n1*cl+n2)
+                    //print("----", n2, " ", idx)
         
         double end = getTime();
         return (double)(end-start);
