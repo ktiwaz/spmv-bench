@@ -155,7 +155,7 @@ void SpM::computeStats() {
     
     // Print the map if desired
     if (printDebug) {
-        for (auto it = row_map.begin(); it != row_map.end(); it++)
+        /*for (auto it = row_map.begin(); it != row_map.end(); it++)
         {
             std::cout << it->first    // string (key)
                       << ": [";
@@ -163,7 +163,7 @@ void SpM::computeStats() {
             std::cout << "]" << std::endl;
         }
         
-        std::cout << "----------------------" << std::endl;
+        std::cout << "----------------------" << std::endl;*/
     }
 }
 
@@ -178,6 +178,11 @@ void SpM::report() {
     if (printDebug) {
         debug();
         std::cout << "----------------------" << std::endl;
+        
+        //std::cout << "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,";
+        //std::cout << "Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,";
+        //std::cout << "Max Cols,Avg Cols,Variance,Std Deviation";
+        //std::cout << std::endl;
     }
 
     // Print timing information
@@ -217,9 +222,19 @@ void SpM::verify() {
         size_t j = item.col;
         double val = item.val;
         for (size_t k = 0; k<cols; k++) {
-            C_check[i*cols+k] += val * B[j*cols+k];
+            C_check[i*cols+j] += val * B[k*cols+j];
         }
     }
+    
+    /*for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
+        size_t i = coo_rows[arg0];
+        size_t j = coo_cols[arg0];
+        double val = coo_vals[arg0];
+        for (size_t k = 0; k<rows; k++) {
+            //C[i*cols+k] += val * B[j*cols+k];
+            C_check[i*cols+j] += val * B[k*cols+j];
+        }
+    }*/
     
     // Now, perform the verification
     uint64_t results = 0;
@@ -268,6 +283,7 @@ void SpM::generateDense() {
     C = new double[len];
     C_check = new double[len];
     for (size_t i = 0; i<len; i++) {
+        //B[i] = (double)i;
         B[i] = 1.7;
         C[i] = 0.0;
         C_check[i] = 0.0;

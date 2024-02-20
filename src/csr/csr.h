@@ -108,7 +108,7 @@ public:
             for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
                 uint64_t j = rowidx[p];
                 for (uint64_t k = 0; k<rows; k++) {
-                    C[i*cols+k] += values[p] * B[j*cols+k];
+                    C[i*cols+j] += values[p] * B[k*cols+j];
                 }
             }
         }

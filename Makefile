@@ -26,6 +26,7 @@ BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
 	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp $(BIN_OUTPUT)/coo_omp_gpu \
+	    $(BIN_OUTPUT)/coo_transpose_serial \
 	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp $(BIN_OUTPUT)/csr_omp_gpu \
 	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp $(BIN_OUTPUT)/ell_omp_gpu \
 	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu
@@ -73,6 +74,9 @@ $(BIN_OUTPUT)/coo_omp: src/coo/coo_omp.cpp $(DEPS)
 	
 $(BIN_OUTPUT)/coo_omp_gpu: src/coo/coo_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+
+$(BIN_OUTPUT)/coo_transpose_serial: src/coo/coo_transpose_serial.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_serial.cpp -o $(BIN_OUTPUT)/coo_transpose_serial $(CXXFLAGS)
 
 ##
 ## Builds the CSR executables

@@ -120,7 +120,7 @@ public:
             size_t j = coo_cols[arg0];
             double val = coo_vals[arg0];
             for (size_t k = 0; k<cols; k++) {
-                C[i*cols+k] += val * B[j*cols+k];
+                C[i*cols+j] += val * B[k*cols+j];
             }
         }
         

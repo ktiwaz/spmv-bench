@@ -235,7 +235,7 @@ public:
                             uint64_t j = colidx[n2] * block_cols + bj;
                             uint64_t index = n2*(block_rows*block_cols) + bi * block_cols + bj;
                             
-                            C[i*cols+k] += values[index] * B[i*cols+j];
+                            C[i*cols+j] += values[index] * B[k*cols+j];
                         }
                     }
                 }

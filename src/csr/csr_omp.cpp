@@ -16,7 +16,7 @@ double Matrix::calculate() {
             uint64_t j = rowidx[p];
             #pragma omp simd
             for (uint64_t k = 0; k<cols; k++) {
-                C[i*cols+k] += values[p] * B[j*cols+k];
+                C[i*cols+j] += values[p] * B[k*cols+j];
             }
         }
     }

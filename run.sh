@@ -24,7 +24,7 @@ function run() {
     echo "Running: $1"
     CSV_FILE=report/csv/$1.csv
     blocks=(1 2 4 8 16 32)
-    iters=10
+    iters=1
     
     printf "" > $CSV_FILE
     printf "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS," >> $CSV_FILE
