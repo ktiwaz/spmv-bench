@@ -283,8 +283,8 @@ void SpM::generateDense() {
     C = new double[len];
     C_check = new double[len];
     for (size_t i = 0; i<len; i++) {
-        //B[i] = (double)i;
-        B[i] = 1.7;
+        B[i] = (double)i;
+        //B[i] = 1.7;
         C[i] = 0.0;
         C_check[i] = 0.0;
     }

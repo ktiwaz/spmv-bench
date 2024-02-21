@@ -39,16 +39,32 @@ function run() {
     printf "coo_serial," >> $CSV_FILE
     build/bin/coo_serial data/$1.mtx --iters $iters >> $CSV_FILE
     
+    echo "coo_transpose_serial"
+    printf "coo_transpose_serial," >> $CSV_FILE
+    build/bin/coo_transpose_serial data/$1.mtx --iters $iters >> $CSV_FILE
+    
     for t in "${blocks[@]}"
     do
         echo "coo_omp --threads $t"
         printf "coo_omp -t $1," >> $CSV_FILE
         build/bin/coo_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "coo_transpose_omp --threads $t"
+        printf "coo_transpose_omp -t $1," >> $CSV_FILE
+        build/bin/coo_transpose_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "coo_transpose_omp_omp --threads $t"
+        printf "coo_transpose_omp_omp -t $1," >> $CSV_FILE
+        build/bin/coo_transpose_omp_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
     echo "coo_omp_gpu"
     printf "coo_omp_gpu," >> $CSV_FILE
     build/bin/coo_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
+    
+    echo "coo_transpose_omp_gpu"
+    printf "coo_transpose_omp_gpu," >> $CSV_FILE
+    build/bin/coo_transpose_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
     ## CSR
@@ -57,16 +73,32 @@ function run() {
     printf "csr_serial," >> $CSV_FILE
     build/bin/csr_serial data/$1.mtx --iters $iters >> $CSV_FILE
     
+    echo "csr_transpose_serial"
+    printf "csr_transpose_serial," >> $CSV_FILE
+    build/bin/csr_transpose_serial data/$1.mtx --iters $iters >> $CSV_FILE
+    
     for t in "${blocks[@]}"
     do
         echo "csr_omp --threads $t"
         printf "csr_omp -t $1," >> $CSV_FILE
         build/bin/csr_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "csr_transpose_omp --threads $t"
+        printf "csr_transpose_omp -t $1," >> $CSV_FILE
+        build/bin/csr_transpose_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "csr_transpose_omp_omp --threads $t"
+        printf "csr_transpose_omp_omp -t $1," >> $CSV_FILE
+        build/bin/csr_transpose_omp_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
     echo "csr_omp_gpu"
     printf "csr_omp_gpu," >> $CSV_FILE
     build/bin/csr_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
+    
+    echo "csr_transpose_omp_gpu"
+    printf "csr_transpose_omp_gpu," >> $CSV_FILE
+    build/bin/csr_transpose_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
     ## ELL
@@ -75,16 +107,32 @@ function run() {
     printf "ell_serial," >> $CSV_FILE
     build/bin/ell_serial data/$1.mtx --iters $iters >> $CSV_FILE
     
+    echo "ell_transpose_serial"
+    printf "ell_transpose_serial," >> $CSV_FILE
+    build/bin/ell_transpose_serial data/$1.mtx --iters $iters >> $CSV_FILE
+    
     for t in "${blocks[@]}"
     do
         echo "ell_omp --threads $t"
         printf "ell_omp -t $t," >> $CSV_FILE
         build/bin/ell_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "ell_transpose_omp --threads $t"
+        printf "ell_transpose_omp -t $1," >> $CSV_FILE
+        build/bin/ell_transpose_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
+        
+        echo "ell_transpose_omp_omp --threads $t"
+        printf "ell_transpose_omp_omp -t $1," >> $CSV_FILE
+        build/bin/ell_transpose_omp_omp data/$1.mtx --iters $iters --threads $t >> $CSV_FILE
     done
     
     echo "ell_omp_gpu"
     printf "ell_omp_gpu," >> $CSV_FILE
     build/bin/ell_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
+    
+    echo "ell_transpose_omp_gpu"
+    printf "ell_transpose_omp_gpu," >> $CSV_FILE
+    build/bin/ell_transpose_omp_gpu data/$1.mtx --iters $iters >> $CSV_FILE
     
     ##
     ## BCSR
@@ -94,6 +142,10 @@ function run() {
         echo "bcsr_serial $b x $b"
         printf "bcsr_serial $b x $b," >> $CSV_FILE
         build/bin/bcsr_serial data/$1.mtx --iters $iters --block $b >> $CSV_FILE
+        
+        echo "bcsr_transpose_serial $b x $b"
+        printf "bcsr_transpose_serial $b x $b," >> $CSV_FILE
+        build/bin/bcsr_transpose_serial data/$1.mtx --iters $iters --block $b >> $CSV_FILE
     done
     
     for b in "${blocks[@]}"
@@ -103,6 +155,14 @@ function run() {
             echo "bcsr_omp $b x $b --threads $t"
             printf "bcsr_omp $b x $b -t $t," >> $CSV_FILE
             build/bin/bcsr_omp data/$1.mtx --iters $iters --threads $t --block $b >> $CSV_FILE
+            
+            echo "bcsr_transpose_omp $b x $b --threads $t"
+            printf "bcsr_transpose_omp $b x $b -t $1," >> $CSV_FILE
+            build/bin/bcsr_transpose_omp data/$1.mtx --iters $iters --threads $t --block $b >> $CSV_FILE
+            
+            echo "bcsr_transpose_omp_omp $b x $b --threads $t"
+            printf "bcsr_transpose_omp_omp $b x $b -t $1," >> $CSV_FILE
+            build/bin/bcsr_transpose_omp_omp data/$1.mtx --iters $iters --threads $t --block $b >> $CSV_FILE
         done
     done
     
@@ -111,6 +171,10 @@ function run() {
         echo "bcsr_omp_gpu $b x $b"
         printf "bcsr_omp_gpu $b x $b," >> $CSV_FILE
         build/bin/bcsr_omp_gpu data/$1.mtx --iters $iters --block $b >> $CSV_FILE
+        
+        echo "bcsr_transpose_omp_gpu $b x $b"
+        printf "bcsr_transpose_omp_gpu $b x $b," >> $CSV_FILE
+        build/bin/bcsr_transpose_omp_gpu data/$1.mtx --iters $iters --block $b >> $CSV_FILE
     done
 }
 

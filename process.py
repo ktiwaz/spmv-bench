@@ -40,12 +40,14 @@ with open(csv_file) as f:
         if key.startswith("csr_omp"):
             ell_omp.append(row)
             bcsr_omp.append(row)
+            
         if key.startswith("ell"):
             ell_all.append(row)
         if key.startswith("ell_serial"):
             ell_serial.append(row)
         if key.startswith("ell_omp"):
             ell_omp.append(row)
+            
         if key.startswith("bcsr"):
             bcsr_all.append(row)
         if key.startswith("bcsr_serial"):

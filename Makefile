@@ -26,10 +26,17 @@ BIN_OUTPUT = build/bin
 
 BENCH_BINS=\
 	$(BIN_OUTPUT)/coo_serial $(BIN_OUTPUT)/coo_omp $(BIN_OUTPUT)/coo_omp_gpu \
-	    $(BIN_OUTPUT)/coo_transpose_serial \
+	    $(BIN_OUTPUT)/coo_transpose_serial $(BIN_OUTPUT)/coo_transpose_omp $(BIN_OUTPUT)/coo_transpose_omp_omp \
+	    $(BIN_OUTPUT)/coo_transpose_omp_gpu \
 	$(BIN_OUTPUT)/csr_serial $(BIN_OUTPUT)/csr_omp $(BIN_OUTPUT)/csr_omp_gpu \
+	    $(BIN_OUTPUT)/csr_transpose_serial $(BIN_OUTPUT)/csr_transpose_omp $(BIN_OUTPUT)/csr_transpose_omp_omp \
+	    $(BIN_OUTPUT)/csr_transpose_omp_gpu \
 	$(BIN_OUTPUT)/ell_serial $(BIN_OUTPUT)/ell_omp $(BIN_OUTPUT)/ell_omp_gpu \
-	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu
+	    $(BIN_OUTPUT)/ell_transpose_serial $(BIN_OUTPUT)/ell_transpose_omp $(BIN_OUTPUT)/ell_transpose_omp_omp \
+	    $(BIN_OUTPUT)/ell_transpose_omp_gpu \
+	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu \
+	    $(BIN_OUTPUT)/bcsr_transpose_serial $(BIN_OUTPUT)/bcsr_transpose_omp $(BIN_OUTPUT)/bcsr_transpose_omp_omp \
+	    $(BIN_OUTPUT)/bcsr_transpose_omp_gpu \
 
 ## The core
 all: check_dir build/libspmm.a $(TEST_BINS) $(GPU_TEST_BINS) $(BENCH_BINS)
@@ -75,8 +82,18 @@ $(BIN_OUTPUT)/coo_omp: src/coo/coo_omp.cpp $(DEPS)
 $(BIN_OUTPUT)/coo_omp_gpu: src/coo/coo_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
+# Tranpose
 $(BIN_OUTPUT)/coo_transpose_serial: src/coo/coo_transpose_serial.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_serial.cpp -o $(BIN_OUTPUT)/coo_transpose_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/coo_transpose_omp: src/coo/coo_transpose_omp.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp.cpp -o $(BIN_OUTPUT)/coo_transpose_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/coo_transpose_omp_omp: src/coo/coo_transpose_omp_omp.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_omp $(CXXFLAGS) $(OMPFLAGS)
+	
+$(BIN_OUTPUT)/coo_transpose_omp_gpu: src/coo/coo_transpose_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
 ##
 ## Builds the CSR executables
@@ -90,6 +107,19 @@ $(BIN_OUTPUT)/csr_omp: src/csr/csr_omp.cpp $(DEPS)
 $(BIN_OUTPUT)/csr_omp_gpu: src/csr/csr_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/csr $(BASE) src/csr/csr_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
+# Tranpose
+$(BIN_OUTPUT)/csr_transpose_serial: src/csr/csr_transpose_serial.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_serial.cpp -o $(BIN_OUTPUT)/csr_transpose_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/csr_transpose_omp: src/csr/csr_transpose_omp.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp.cpp -o $(BIN_OUTPUT)/csr_transpose_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/csr_transpose_omp_omp: src/csr/csr_transpose_omp_omp.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_omp $(CXXFLAGS) $(OMPFLAGS)
+	
+$(BIN_OUTPUT)/csr_transpose_omp_gpu: src/csr/csr_transpose_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+
 ##
 ## Builds the ELL executables
 ##
@@ -101,6 +131,19 @@ $(BIN_OUTPUT)/ell_omp: src/ell/ell_omp.cpp $(DEPS)
 
 $(BIN_OUTPUT)/ell_omp_gpu: src/ell/ell_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/ell $(BASE) src/ell/ell_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+
+# Tranpose
+$(BIN_OUTPUT)/ell_transpose_serial: src/ell/ell_transpose_serial.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_serial.cpp -o $(BIN_OUTPUT)/ell_transpose_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/ell_transpose_omp: src/ell/ell_transpose_omp.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp.cpp -o $(BIN_OUTPUT)/ell_transpose_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/ell_transpose_omp_omp: src/ell/ell_transpose_omp_omp.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_omp $(CXXFLAGS) $(OMPFLAGS)
+	
+$(BIN_OUTPUT)/ell_transpose_omp_gpu: src/ell/ell_transpose_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 	
 ##
 ## Builds the BCSR executables
@@ -113,6 +156,19 @@ $(BIN_OUTPUT)/bcsr_omp: src/bcsr/bcsr_omp.cpp $(DEPS)
 
 $(BIN_OUTPUT)/bcsr_omp_gpu: src/bcsr/bcsr_omp_gpu.cpp $(DEPS)
 	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp_gpu.cpp -o $(BIN_OUTPUT)/bcsr_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+	
+# Tranpose
+$(BIN_OUTPUT)/bcsr_transpose_serial: src/bcsr/bcsr_transpose_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_serial.cpp -o $(BIN_OUTPUT)/bcsr_transpose_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/bcsr_transpose_omp: src/bcsr/bcsr_transpose_omp.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/bcsr_transpose_omp_omp: src/bcsr/bcsr_transpose_omp_omp.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_omp $(CXXFLAGS) $(OMPFLAGS)
+	
+$(BIN_OUTPUT)/bcsr_transpose_omp_gpu: src/bcsr/bcsr_transpose_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 
 ########################################################################
 
