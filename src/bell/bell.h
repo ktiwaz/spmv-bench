@@ -16,8 +16,7 @@ public:
     //
     uint64_t blocks = 0;
     uint64_t rows_per_block = 0;
-    uint64_t *collen;
-    uint64_t *colstart;
+    uint64_t *rowptr;
     uint64_t *colidx;
     double *values;
     uint64_t num_cols = 0;
@@ -68,11 +67,7 @@ public:
         
         std::map<uint64_t, uint64_t> row_blocks;
         rows_per_block = rows / blocks;
-        
-        collen = new uint64_t[blocks];
-        colstart = new uint64_t[blocks];
         uint64_t index = 0;
-        uint64_t c_start = 0;
         
         std::cout << "Rows Per Block: " << rows_per_block << std::endl;
         
@@ -86,15 +81,17 @@ public:
                 //std::cout << i << std::endl;
             }
             row_blocks[bi] = max;
-            collen[index] = max;
-            
-            colstart[index] = c_start;
-            c_start += max * blocks;
             
             ++index;
             
             //std::cout << "--> Max: " << max << std::endl;
             //std::cout << "---" << std::endl;
+        }
+        
+        rowptr = new uint64_t[rows+1];
+        rowptr[0] = 0;
+        for (uint64_t i = 1; i<rows; i += blocks) {
+            rowptr[i] += rowptr[i-1] + (row_map[i].size()); 
         }
         
         // Now, start building the final b-ell structures
@@ -167,18 +164,10 @@ public:
         std::cout << "Rows: " << coo->rows << " | Cols: " << coo->cols << " | NNZ: " << coo->nnz << std::endl;
         std::cout << "----------" << std::endl;
         std::cout << "row: " << rows << std::endl;
-        std::cout << "cols: " << num_cols << std::endl;
         
-        std::cout << "collen: ";
-        for (uint64_t i = 0; i<blocks; i++) {
-            std::cout << collen[i] << ",";
-            if (!all && i > 30) break;
-        }
-        std::cout << std::endl;
-        
-        std::cout << "colstart: ";
-        for (uint64_t i = 0; i<blocks; i++) {
-            std::cout << colstart[i] << ",";
+        std::cout << "rowptr: ";
+        for (uint64_t i = 0; i<rows+1; i++) {
+            std::cout << rowptr[i] << ",";
             if (!all && i > 30) break;
         }
         std::cout << std::endl;
@@ -203,33 +192,6 @@ public:
     //
     double calculate() override {
         double start = getTime();
-        
-        for (uint64_t bi = 0; bi<blocks; bi++) {
-            uint64_t cl = collen[bi];
-            uint64_t cs = colstart[bi];
-            printf("%ld -> %ld, %ld\n", bi, cl, cs);
-            for (uint64_t n1 = 0; n1<blocks; n1++) {
-                uint64_t i = bi * blocks + n1;
-                for (uint64_t n2 = 0; n2<cl; n2++) {
-                    uint64_t p = cs + (n1*cl+n2);
-                    uint64_t j = colidx[p];
-                    for (uint64_t k = 0; k<cols; k++) {
-                        C[i*cols+k] += values[p] * B[j*cols+k];
-                    }
-                }
-            }
-        }
-        
-        //for bi in range(blocks):
-            //cl = collens[bi]
-            //cs = colstart[bi]
-            //print(bi, " -> ", cl, " ", cs)
-            //for n1 in range(blocks):
-                //i = bi * blocks + n1
-                //print("--",i)
-                //for n2 in range(cl):
-                    //idx = cs+(n1*cl+n2)
-                    //print("----", n2, " ", idx)
         
         double end = getTime();
         return (double)(end-start);
