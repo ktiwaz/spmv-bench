@@ -15,7 +15,6 @@ public:
     // Our data structures
     //
     uint64_t blocks = 0;
-    uint64_t rows_per_block = 0;
     uint64_t *rowptr;
     uint64_t *colidx;
     double *values;
@@ -31,7 +30,7 @@ public:
         initCOO();
         num_cols = 0;
         blocks = block_rows;
-        std::cout << "BLOCKS: " << blocks << std::endl;
+        //std::cout << "BLOCKS: " << blocks << std::endl;
         
         std::vector<int> block_num_cols;
         
@@ -56,42 +55,54 @@ public:
         
         
         // debug
-        for (auto it = row_map.begin(); it != row_map.end(); it++)
+        /*for (auto it = row_map.begin(); it != row_map.end(); it++)
         {
             std::cout << it->first    // string (key)
                       << ": [";
             for (auto v : it->second) std::cout << v << " ";
             std::cout << "]" << std::endl;
-        }
+        }*/
         // end debug
         
         std::map<uint64_t, uint64_t> row_blocks;
-        rows_per_block = rows / blocks;
-        uint64_t index = 0;
-        
-        std::cout << "Rows Per Block: " << rows_per_block << std::endl;
+        //uint64_t index = 0;
         
         // Calculate the maximum number of columns per row per block
-        for (uint64_t bi = 0; bi<rows; bi += rows_per_block) {
+        for (uint64_t bi = 0; bi<rows; bi += blocks) {
             uint64_t max = 0;
             
-            for (uint64_t i = bi; i<(bi+rows_per_block); i++) {
+            for (uint64_t i = bi; i<(bi+blocks); i++) {
                 auto current_cols_size = row_map[i].size();
                 if (current_cols_size > max) max = current_cols_size;
                 //std::cout << i << std::endl;
             }
             row_blocks[bi] = max;
             
-            ++index;
+            for (uint64_t i = bi; i<(bi+blocks); i++) row_blocks[i] = max;
+            
+            //++index;
             
             //std::cout << "--> Max: " << max << std::endl;
             //std::cout << "---" << std::endl;
         }
         
+        // debug
+        /*for (auto it = row_blocks.begin(); it != row_blocks.end(); it++)
+        {
+            std::cout << it->first    // string (key)
+                      << ": [";
+            std::cout << it->second;
+            std::cout << "]" << std::endl;
+        }*/
+        // end debug
+        
         rowptr = new uint64_t[rows+1];
+        //for (uint64_t i = 0; i<rows+1; i++) rowptr[i] = 0;
         rowptr[0] = 0;
-        for (uint64_t i = 1; i<rows; i += blocks) {
-            rowptr[i] += rowptr[i-1] + (row_map[i].size()); 
+        for (uint64_t i = 1, bi = 0; i<rows+1; i++, bi++) {
+            //std::cout << "i: " << i << " | bi: " << bi << " -> ";
+            //    std::cout << "rowptr[i]: " << rowptr[i] << " | rowptr[i-1]: " << rowptr[i-1] << " | row_blocks[bi]: " << row_blocks[bi] << std::endl;
+            rowptr[i] = rowptr[i-1] + row_blocks[bi];
         }
         
         // Now, start building the final b-ell structures
@@ -99,11 +110,11 @@ public:
         std::vector<double> values1;
         uint64_t avg_sum = 0;
         
-        for (uint64_t bi = 0; bi<rows; bi += rows_per_block) {
+        for (uint64_t bi = 0; bi<rows; bi += blocks) {
             uint64_t max_cols = row_blocks[bi];
             //std::cout << "Max_cols: " << max_cols << std::endl;
             
-            for (uint64_t i = bi; i<(bi+rows_per_block); i++) {
+            for (uint64_t i = bi; i<(bi+blocks); i++) {
                 uint64_t cols = 0;
                 auto current_cols = row_map[i];
                 auto current_vals = val_map[i];
@@ -192,6 +203,16 @@ public:
     //
     double calculate() override {
         double start = getTime();
+        
+        for (uint64_t i = 0; i<rows; i++) {
+            for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
+                uint64_t j = colidx[p];
+                uint64_t val = values[p];
+                for (uint64_t k = 0; k<rows; k++) {
+                    C[i*cols+j] += val * B[k*cols+j];
+                }
+            }
+        }
         
         double end = getTime();
         return (double)(end-start);

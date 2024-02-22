@@ -33,6 +33,7 @@ exit(0)
 ##
 ## The algorithm
 ##
+# Iterate over rows
 for n1 in range(dim):
     for n2 in range(rowptr[n1], rowptr[n1+1]):
         print(n1, " ", n2, " -> ", vals[n2])
