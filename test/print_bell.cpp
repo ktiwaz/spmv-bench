@@ -12,12 +12,13 @@ int main(int argc, char **argv) {
     mtx.verify();
     mtx.debug();
     
-    /*std::cout << "---------------" << std::endl;
+    std::cout << "---------------" << std::endl;
     
     BELL mtx2(argc, argv);
     mtx2.format();
     mtx2.benchmark();
-    mtx2.debug();*/
+    mtx2.verify();
+    mtx2.debug();
     
     return 0;
 }

@@ -226,23 +226,15 @@ void SpM::verify() {
         }
     }
     
-    /*for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
-        size_t i = coo_rows[arg0];
-        size_t j = coo_cols[arg0];
-        double val = coo_vals[arg0];
-        for (size_t k = 0; k<rows; k++) {
-            //C[i*cols+k] += val * B[j*cols+k];
-            C_check[i*cols+j] += val * B[k*cols+j];
-        }
-    }*/
-    
     // Now, perform the verification
     uint64_t results = 0;
     size_t lens = rows * cols;
     for (size_t i = 0; i<lens; i++) {
-        if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
+        //if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
+        if (fabs(C_check[i] - C[i]) > 0.01 * fabs(C_check[i])) {
             ++results;
             //if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
+            //if (results<30) std::cout << fabs(C_check[i] - C[i]) << " | " << 0.01 * fabs(C_check[i]) << std::endl;
         }
     }
     
