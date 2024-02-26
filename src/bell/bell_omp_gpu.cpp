@@ -9,7 +9,7 @@ double Matrix::calculate() {
     double start = getTime();
     
     uint64_t *_rowptr = rowptr;
-    uint64_t *_rowidx = rowidx;
+    uint64_t *_colidx = colidx;
     double *_B = B;
     double *_C = C;
     double *_values = values;
@@ -18,14 +18,14 @@ double Matrix::calculate() {
     size_t _cols = cols;
     
     #pragma omp target teams distribute parallel for \
-        map(to: _rows, _cols, _rowptr[0:rows+1], _rowidx[0:coo->nnz], _values[0:coo->nnz], _B[0:rows*cols]) \
+        map(to: _rows, _cols, _rowptr[0:rows+1], _colidx[0:num_cols], _values[0:num_cols], _B[0:rows*cols]) \
         map(tofrom: _C[0:rows*cols])
-    for (i = 0; i < rows; i++) {
-        size_t _i = i;
-        for (uint64_t p = _rowptr[_i]; p < _rowptr[_i+1]; p++) {
-            uint64_t j = _rowidx[p];
-            for (uint64_t k = 0; k < _cols; k++) {
-                _C[i * _cols + j] += _values[p] * _B[k * _cols + j];
+    for (i = 0; i<rows; i++) {
+        for (uint64_t p = _rowptr[i]; p<_rowptr[i+1]; p++) {
+            uint64_t j = _colidx[p];
+            uint64_t val = _values[p];
+            for (uint64_t k = 0; k<_cols; k++) {
+                _C[i*_cols+j] += val * _B[k*_cols+j];
             }
         }
     }

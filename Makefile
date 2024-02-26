@@ -37,6 +37,9 @@ BENCH_BINS=\
 	$(BIN_OUTPUT)/bcsr_serial $(BIN_OUTPUT)/bcsr_omp $(BIN_OUTPUT)/bcsr_omp_gpu \
 	    $(BIN_OUTPUT)/bcsr_transpose_serial $(BIN_OUTPUT)/bcsr_transpose_omp $(BIN_OUTPUT)/bcsr_transpose_omp_omp \
 	    $(BIN_OUTPUT)/bcsr_transpose_omp_gpu \
+    $(BIN_OUTPUT)/bell_serial $(BIN_OUTPUT)/bell_omp $(BIN_OUTPUT)/bell_omp_gpu \
+	    $(BIN_OUTPUT)/bell_transpose_serial $(BIN_OUTPUT)/bell_transpose_omp $(BIN_OUTPUT)/bell_transpose_omp_omp \
+	    $(BIN_OUTPUT)/bell_transpose_omp_gpu \
 
 ## The core
 all: check_dir build/libspmm.a $(TEST_BINS) $(GPU_TEST_BINS) $(BENCH_BINS)
@@ -144,6 +147,31 @@ $(BIN_OUTPUT)/ell_transpose_omp_omp: src/ell/ell_transpose_omp_omp.cpp $(DEPS)
 	
 $(BIN_OUTPUT)/ell_transpose_omp_gpu: src/ell/ell_transpose_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+
+##
+## Builds the B-ELL executables
+##
+$(BIN_OUTPUT)/bell_serial: src/bell/bell_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_serial.cpp -o $(BIN_OUTPUT)/bell_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/bell_omp: src/bell/bell_omp.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_omp.cpp -o $(BIN_OUTPUT)/bell_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/bell_omp_gpu: src/bell/bell_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_omp_gpu.cpp -o $(BIN_OUTPUT)/bell_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
+
+# Tranpose
+$(BIN_OUTPUT)/bell_transpose_serial: src/bell/bell_transpose_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_serial.cpp -o $(BIN_OUTPUT)/bell_transpose_serial $(CXXFLAGS)
+
+$(BIN_OUTPUT)/bell_transpose_omp: src/bell/bell_transpose_omp.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp.cpp -o $(BIN_OUTPUT)/bell_transpose_omp $(CXXFLAGS) $(OMPFLAGS)
+
+$(BIN_OUTPUT)/bell_transpose_omp_omp: src/bell/bell_transpose_omp_omp.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_omp $(CXXFLAGS) $(OMPFLAGS)
+	
+$(BIN_OUTPUT)/bell_transpose_omp_gpu: src/bell/bell_transpose_omp_gpu.cpp $(DEPS)
+	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_gpu $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS)
 	
 ##
 ## Builds the BCSR executables
