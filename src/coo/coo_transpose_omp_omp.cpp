@@ -19,7 +19,7 @@ double Matrix::calculate() {
         size_t i = coo_rows[arg0];
         size_t j = coo_cols[arg0];
         double val = coo_vals[arg0];
-        for (size_t k = 0; k<cols; k++) {
+        for (size_t k = 0; k<k_bound; k++) {
             C[i*cols+j] += val * B_trans[j*cols+k];
         }
     }

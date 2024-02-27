@@ -24,7 +24,7 @@ double Matrix::calculate() {
         for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
             uint64_t j = colidx[p];
             uint64_t val = values[p];
-            for (uint64_t k = 0; k<rows; k++) {
+            for (uint64_t k = 0; k<k_bound; k++) {
                 C[i*cols+j] += val * B_trans[j*cols+k];
             }
         }

@@ -29,6 +29,10 @@ SpM::SpM(int argc, char **argv) {
             arg = argv[i+1];
             threads = std::stoi(arg);
             i += 1;
+        } else if (arg == "--k") {
+            arg = argv[i+1];
+            k_bound = std::stoull(arg);
+            i += 1;
         } else if (arg == "--debug") {
             printDebug = true;
         } else if (arg[0] == '-') {
@@ -47,6 +51,7 @@ void SpM::debug() {
     std::cout << "Iters: " << iters << std::endl;
     std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
     std::cout << "Threads: " << threads << std::endl;
+    std::cout << "K-Bound: " << k_bound << std::endl;
     std::cout << "----------------------------" << std::endl;
     
     printSparse(false);
@@ -95,7 +100,6 @@ void SpM::benchmark() {
     double g_avg = 0;
     for (auto g : gflops) g_avg += g;
     benchGflops = g_avg / iters;
-    //fprintf(stdout, "%lf\n", avg);
 }
 
 //
@@ -221,7 +225,7 @@ void SpM::verify() {
         size_t i = item.row;
         size_t j = item.col;
         double val = item.val;
-        for (size_t k = 0; k<cols; k++) {
+        for (size_t k = 0; k<k_bound; k++) {
             C_check[i*cols+j] += val * B[k*cols+j];
         }
     }
@@ -276,7 +280,6 @@ void SpM::generateDense() {
     C_check = new double[len];
     for (size_t i = 0; i<len; i++) {
         B[i] = (double)i;
-        //B[i] = 1.7;
         C[i] = 0.0;
         C_check[i] = 0.0;
     }
@@ -303,9 +306,9 @@ void SpM::initCOO() {
         // If we haven't found a header, we need to process it
         if (foundHeader == false) {
             auto words = split(line);
-            coo->rows = std::stoi(words[0]);
-            coo->cols = std::stoi(words[1]);
-            coo->nnz = std::stoi(words[2]);
+            coo->rows = std::stoull(words[0]);
+            coo->cols = std::stoull(words[1]);
+            coo->nnz = std::stoull(words[2]);
         
             foundHeader = true;
             continue;
@@ -313,8 +316,8 @@ void SpM::initCOO() {
         
         auto words = split(line);
         COOItem item;
-        item.row = std::stoi(words[0]) - 1;
-        item.col = std::stoi(words[1]) - 1;
+        item.row = std::stoull(words[0]) - 1;
+        item.col = std::stoull(words[1]) - 1;
         item.val = std::stod(words[2]);
         coo->items.push_back(item);
     }
@@ -325,6 +328,7 @@ void SpM::initCOO() {
     // Set the row and column counts
     rows = coo->rows;
     cols = coo->cols;
+    if (k_bound == -1) k_bound = cols;
     generateDense();
 }
 

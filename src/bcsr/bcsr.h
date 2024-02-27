@@ -187,15 +187,24 @@ public:
         std::cout << "block_cols: " << block_cols << std::endl;
         
         std::cout << "colptr: ";
-        for (uint64_t i = 0; i<colptr_len; i++) std::cout << colptr[i] << ",";
+        for (uint64_t i = 0; i<colptr_len; i++) {
+            std::cout << colptr[i] << ",";
+            if (i == 50 && !all) break;
+        }
         std::cout << std::endl;
         
         std::cout << "colidx: ";
-        for (uint64_t i = 0; i<colidx_len; i++) std::cout << colidx[i] << ",";
+        for (uint64_t i = 0; i<colidx_len; i++) {
+            std::cout << colidx[i] << ",";
+            if (i == 50 && !all) break;
+        }
         std::cout << std::endl;
         
         std::cout << "values: ";
-        for (uint64_t i = 0; i<value_len; i++) std::cout << values[i] << ",";
+        for (uint64_t i = 0; i<value_len; i++) {
+            std::cout << values[i] << ",";
+            if (i == 50 && !all) break;
+        }
         std::cout << std::endl;
     }
     
@@ -230,7 +239,7 @@ public:
             for (uint64_t bi = 0; bi<block_rows; bi++) {
                 for (uint64_t n2 = colptr[n1]; n2<colptr[n1+1]; n2++) {
                     for (uint64_t bj = 0; bj<block_cols; bj++) {
-                        for (uint64_t k = 0; k<rows; k++) {
+                        for (uint64_t k = 0; k<k_bound; k++) {
                             uint64_t i = n1 * block_rows + bi;
                             uint64_t j = colidx[n2] * block_cols + bj;
                             uint64_t index = n2*(block_rows*block_cols) + bi * block_cols + bj;
