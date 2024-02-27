@@ -1,5 +1,5 @@
 #!/bin/bash
-BENCH_NAME="serial"
+BENCH_NAME="omp_gpu"
 ARCH_ID=$1
 
 source bin/config.sh
@@ -17,26 +17,26 @@ function run() {
     for k in "${k_loop[@]}"
     do
         echo "[Serial] coo --k $k"
-        printf "coo_serial," >> $CSV_FILE
-        $BIN/coo_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
+        printf "coo_omp_gpu," >> $CSV_FILE
+        $BIN/coo_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
         echo "[Serial] csr --k $k"
-        printf "csr_serial," >> $CSV_FILE
-        $BIN/csr_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
+        printf "csr_omp_gpu," >> $CSV_FILE
+        $BIN/csr_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
         echo "[Serial] ell --k $k"
-        printf "ell_serial," >> $CSV_FILE
-        $BIN/ell_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
+        printf "ell_omp_gpu," >> $CSV_FILE
+        $BIN/ell_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
         for b in "${blocks[@]}"
         do
             echo "[Serial] bcsr --k $k ${b}x${b}"
-            printf "bcsr_serial," >> $CSV_FILE
-            $BIN/bcsr_serial data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
+            printf "bcsr_omp_gpu," >> $CSV_FILE
+            $BIN/bcsr_omp_gpu data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
             
             echo "[Serial] bell --k $k ${b}"
-            printf "bell_serial," >> $CSV_FILE
-            $BIN/bell_serial data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
+            printf "bell_omp_gpu," >> $CSV_FILE
+            $BIN/bell_omp_gpu data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
         done
     done
 }

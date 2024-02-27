@@ -201,6 +201,7 @@ void SpM::report() {
     // Print configuration
     fprintf(stdout, ",%d", iters);
     fprintf(stdout, ",%d,%d", block_rows, block_cols);
+    fprintf(stdout, ",%ld", k_bound);
     fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
