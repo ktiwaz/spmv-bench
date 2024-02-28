@@ -18,25 +18,25 @@ function run() {
     do
         for k in "${k_loop[@]}"
         do
-            echo "[Serial] coo --k $k --threads $t"
+            echo "[Transpose OMP] coo --k $k --threads $t"
             printf "coo_transpose_omp," >> $CSV_FILE
             $BIN/coo_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
             
-            echo "[Serial] csr --k $k --threads $t"
+            echo "[Transpose OMP] csr --k $k --threads $t"
             printf "csr_transpose_omp," >> $CSV_FILE
             $BIN/csr_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
             
-            echo "[Serial] ell --k $k --threads $t"
+            echo "[Transpose OMP] ell --k $k --threads $t"
             printf "ell_transpose_omp," >> $CSV_FILE
             $BIN/ell_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
             
             for b in "${blocks[@]}"
             do
-                echo "[Serial] bcsr --k $k ${b}x${b} --threads $t"
+                echo "[Transpose OMP] bcsr --k $k ${b}x${b} --threads $t"
                 printf "bcsr_transpose_omp," >> $CSV_FILE
                 $BIN/bcsr_transpose_omp data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
                 
-                echo "[Serial] bell --k $k ${b} --threads $t"
+                echo "[Transpose OMP] bell --k $k ${b} --threads $t"
                 printf "bell_transpose_omp," >> $CSV_FILE
                 $BIN/bell_transpose_omp data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
             done

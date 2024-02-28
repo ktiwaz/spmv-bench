@@ -16,25 +16,25 @@ function run() {
     
     for k in "${k_loop[@]}"
     do
-        echo "[Serial] coo --k $k"
+        echo "[OMPxGPU] coo --k $k"
         printf "coo_omp_gpu," >> $CSV_FILE
         $BIN/coo_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
-        echo "[Serial] csr --k $k"
+        echo "[OMPxGPU] csr --k $k"
         printf "csr_omp_gpu," >> $CSV_FILE
         $BIN/csr_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
-        echo "[Serial] ell --k $k"
+        echo "[OMPxGPU] ell --k $k"
         printf "ell_omp_gpu," >> $CSV_FILE
         $BIN/ell_omp_gpu data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
         for b in "${blocks[@]}"
         do
-            echo "[Serial] bcsr --k $k ${b}x${b}"
+            echo "[OMPxGPU] bcsr --k $k ${b}x${b}"
             printf "bcsr_omp_gpu," >> $CSV_FILE
             $BIN/bcsr_omp_gpu data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
             
-            echo "[Serial] bell --k $k ${b}"
+            echo "[OMPxGPU] bell --k $k ${b}"
             printf "bell_omp_gpu," >> $CSV_FILE
             $BIN/bell_omp_gpu data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
         done

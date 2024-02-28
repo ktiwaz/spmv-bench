@@ -16,25 +16,25 @@ function run() {
     
     for k in "${k_loop[@]}"
     do
-        echo "[Serial] coo --k $k"
+        echo "[Transpose Serial] coo --k $k"
         printf "coo_transpose_serial," >> $CSV_FILE
         $BIN/coo_transpose_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
-        echo "[Serial] csr --k $k"
+        echo "[Transpose Serial] csr --k $k"
         printf "csr_transpose_serial," >> $CSV_FILE
         $BIN/csr_transpose_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
-        echo "[Serial] ell --k $k"
+        echo "[Transpose Serial] ell --k $k"
         printf "ell_transpose_serial," >> $CSV_FILE
         $BIN/ell_transpose_serial data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         
         for b in "${blocks[@]}"
         do
-            echo "[Serial] bcsr --k $k ${b}x${b}"
+            echo "[Transpose Serial] bcsr --k $k ${b}x${b}"
             printf "bcsr_transpose_serial," >> $CSV_FILE
             $BIN/bcsr_transpose_serial data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
             
-            echo "[Serial] bell --k $k ${b}"
+            echo "[Transpose Serial] bell --k $k ${b}"
             printf "bell_transpose_serial," >> $CSV_FILE
             $BIN/bell_transpose_serial data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
         done
