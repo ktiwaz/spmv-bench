@@ -15,6 +15,27 @@ data=(
     "cop20k_A"
     "af23560"
     "x104"
+    
+    
+    "shallow_water1"
+    "2cubes_sphere"
+    "scircuit"
+    "mac_econ_fwd500"
+    "webbase-1M"
+    "hood"
+    "bmw3_2"
+    "pre2"
+    
+    "pwtk"
+    "crankseg_2"
+    "torso1"
+    "atmosmodd"
+    "msdoor"
+    "F1"
+    "nd24k"
+    "inline_1"
+    "ldoor"
+    "cage14"
 )
 
 cd data
@@ -59,6 +80,26 @@ wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/dw4096.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/cop20k_A.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/af23560.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/DNVS/x104.tar.gz
+
+wget https://suitesparse-collection-website.herokuapp.com/MM/MaxPlanck/shallow_water1.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Um/2cubes_sphere.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Hamm/scircuit.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/mac_econ_fwd500.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/webbase-1M.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/hood.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_indef/bmw3_2.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/ATandT/pre2.tar.gz
+
+wget https://suitesparse-collection-website.herokuapp.com/MM/Boeing/pwtk.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/crankseg_2.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Norris/torso1.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/INPRO/msdoor.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Koutsovasilis/F1.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/ND/nd24k.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/inline_1.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/ldoor.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/vanHeukelum/cage14.tar.gz
 
 for d in "${data[@]}"
 do
