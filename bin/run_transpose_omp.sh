@@ -18,27 +18,30 @@ function run() {
     do
         for k in "${k_loop[@]}"
         do
-            echo "[Transpose OMP] coo --k $k --threads $t"
-            printf "coo_transpose_omp," >> $CSV_FILE
-            $BIN/coo_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-            
-            echo "[Transpose OMP] csr --k $k --threads $t"
-            printf "csr_transpose_omp," >> $CSV_FILE
-            $BIN/csr_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-            
-            echo "[Transpose OMP] ell --k $k --threads $t"
-            printf "ell_transpose_omp," >> $CSV_FILE
-            $BIN/ell_transpose_omp data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-            
-            for b in "${blocks[@]}"
+            for O in "${OLEVELS[@]}"
             do
-                echo "[Transpose OMP] bcsr --k $k ${b}x${b} --threads $t"
-                printf "bcsr_transpose_omp," >> $CSV_FILE
-                $BIN/bcsr_transpose_omp data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
+                echo "[Transpose OMP] coo --k $k --threads $t"
+                printf "coo_transpose_omp_${O}," >> $CSV_FILE
+                $BIN/coo_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
                 
-                echo "[Transpose OMP] bell --k $k ${b} --threads $t"
-                printf "bell_transpose_omp," >> $CSV_FILE
-                $BIN/bell_transpose_omp data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
+                echo "[Transpose OMP] csr --k $k --threads $t"
+                printf "csr_transpose_omp_${O}," >> $CSV_FILE
+                $BIN/csr_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
+                
+                echo "[Transpose OMP] ell --k $k --threads $t"
+                printf "ell_transpose_omp_${O}," >> $CSV_FILE
+                $BIN/ell_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
+                
+                for b in "${blocks[@]}"
+                do
+                    echo "[Transpose OMP] bcsr --k $k ${b}x${b} --threads $t"
+                    printf "bcsr_transpose_omp_${O}," >> $CSV_FILE
+                    $BIN/bcsr_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
+                    
+                    echo "[Transpose OMP] bell --k $k ${b} --threads $t"
+                    printf "bell_transpose_omp_${O}," >> $CSV_FILE
+                    $BIN/bell_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --block $b --threads $t >> $CSV_FILE
+                done
             done
         done
     done
