@@ -16,7 +16,6 @@ data=(
     "af23560"
     "x104"
     
-    
     "shallow_water1"
     "2cubes_sphere"
     "scircuit"
