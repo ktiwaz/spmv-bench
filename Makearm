@@ -1,5 +1,5 @@
-CC=clang-18
-CXX=clang++-18
+CC=clang
+CXX=clang++
 #CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -mcpu=a64fx
 OMPFLAGS=-fopenmp
@@ -119,7 +119,7 @@ build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
 build/spmm.o: src/spmm.cpp src/spmm.h src/csr/csr.h src/ell/ell.h src/bell/bell.h src/bcsr/bcsr.h
-	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native
+	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -mcpu=a64fx
 	
 ##
 ## Build the test binaries
