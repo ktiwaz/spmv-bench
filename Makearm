@@ -1,16 +1,17 @@
-CC=clang
-CXX=clang++
-CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
+CC=clang-18
+CXX=clang++-18
+#CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -mcpu=a64fx
 OMPFLAGS=-fopenmp
+#GPUFLAGS=-fopenmp-targets=nvptx64
 GPUFLAGS=
 
-ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
-    CXX=clang++
-else
-    CXX=$(CXX16)
-    GPUFLAGS=-fopenmp-targets=nvptx64
-endif
+#ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
+#    CXX=clang++
+#else
+#    CXX=$(CXX16)
+#    GPUFLAGS=-fopenmp-targets=nvptx64
+#endif
 
 ## Test binaries
 TEST_SRC := $(wildcard test/*.cpp)
