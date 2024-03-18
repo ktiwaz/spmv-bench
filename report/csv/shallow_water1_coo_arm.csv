@@ -1,0 +1,14 @@
+Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,K-Bound,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols,Variance,Std Deviation
+coo_omp_O1,0.007951,7.482159,7.490110,0.985965,0,100,1,1,16,8,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O1,0.007641,7.574137,7.581778,0.975076,0,100,1,1,16,8,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O1,coo_transpose_omp_collapse_O1,coo_transpose_omp_omp_O1,coo_omp_O1,0.007164,7.523091,7.530255,1.036936,0,100,1,1,16,16,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O1,0.007865,7.733126,7.740991,0.966193,0,100,1,1,16,16,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O1,coo_transpose_omp_collapse_O1,coo_transpose_omp_omp_O1,coo_omp_O1,0.007042,7.641586,7.648628,1.059170,0,100,1,1,16,32,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O1,0.007690,7.723315,7.731005,0.971980,0,100,1,1,16,32,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O1,coo_transpose_omp_collapse_O1,coo_transpose_omp_omp_O1,coo_omp_O1,0.007306,7.486321,7.493627,1.035977,0,100,1,1,16,64,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O1,0.007389,7.715716,7.723105,1.026737,0,100,1,1,16,64,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O1,coo_transpose_omp_collapse_O1,coo_transpose_omp_omp_O1,coo_omp_O2,0.006612,7.661773,7.668385,1.141860,0,100,1,1,16,8,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O2,0.007006,7.834936,7.841942,1.098690,0,100,1,1,16,8,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O2,coo_transpose_omp_collapse_O2,coo_transpose_omp_omp_O2,coo_omp_O2,0.006974,7.625734,7.632708,1.023864,0,100,1,1,16,16,6553600,81920,81920,204800,4,2,0,0
+coo_omp_collapse_O2,0.006979,7.743756,7.750735,1.107802,0,100,1,1,16,16,6553600,81920,81920,204800,4,2,0,0
+coo_transpose_omp_O2,coo_transpose_omp_collapse_O2,
