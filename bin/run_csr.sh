@@ -27,18 +27,6 @@ function run() {
                 echo "[OMP Collapse] csr --k $k --threads $t"
                 printf "csr_omp_collapse_${O}," >> $CSV_FILE
                 $BIN/csr_omp_collapse_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-                
-                echo "[Transpose OMP] csr --k $k --threads $t"
-                printf "csr_transpose_omp_${O}," >> $CSV_FILE
-                $BIN/csr_transpose_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-                
-                echo "[Transpose OMP Collapse] csr --k $k --threads $t"
-                printf "csr_transpose_omp_collapse_${O}," >> $CSV_FILE
-                $BIN/csr_transpose_omp_collapse_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
-                
-                echo "[Transpose OMPxOMP] csr --k $k --threads $t"
-                printf "csr_transpose_omp_omp_${O}," >> $CSV_FILE
-                $BIN/csr_transpose_omp_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
             done
         done
     done
