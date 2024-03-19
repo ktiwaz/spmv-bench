@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Input CSV file
-csv_file="report/$2/$1.csv"
+csv_file="report/bcsstk17_arm.csv"
 
 # Output image file
-output_image="report/images/$1.png"
+output_image="output.png"
 
 # Plotting script for gnuplot
 gnuplot_script=$(cat <<EOF
