@@ -1,3 +1,0 @@
-Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols,Variance,Std Deviation
-csr_serial,0.024122,0.071241,0.095363,7.131855,0,10,1,1,-1,172029658,2003,2003,42943,84,21,197,14
-ell_serial,0.095377,0.099143,0.194520,7.067831,0,10,1,1,-1,674017512,2003,2003,42943,84,21,197,14
