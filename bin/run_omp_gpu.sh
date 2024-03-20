@@ -11,7 +11,7 @@ setup
 ##
 function run() {
     NAME=$1
-    CSV_FILE=report/csv/$1_"$BENCH_NAME"_"$ARCH_ID".csv
+    CSV_FILE=report/csv/$1_"$BENCH_NAME"_"$ARCH_ID"_gpu.csv
     init_csv $CSV_FILE
     
     for k in "${k_loop[@]}"
