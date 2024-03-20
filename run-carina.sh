@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo ""
-echo "--------------------"
-echo "Running BELL"
-echo "--------------------"
-bin/run_bell.sh "carina"
+#echo ""
+#echo "--------------------"
+#echo "Running BELL"
+#echo "--------------------"
+#bin/run_bell.sh "carina"
 
-echo ""
-echo "--------------------"
-echo "Running serial"
-echo "--------------------"
-bin/run_serial.sh "carina"
+#echo ""
+#echo "--------------------"
+#echo "Running serial"
+#echo "--------------------"
+#bin/run_serial.sh "carina"
 
 ## Part 2- transpose
 echo ""
