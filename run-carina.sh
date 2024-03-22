@@ -1,46 +1,38 @@
 #!/bin/bash
 
-#echo ""
-#echo "--------------------"
-#echo "Running BELL"
-#echo "--------------------"
-#bin/run_bell.sh "carina"
-
-#echo ""
-#echo "--------------------"
-#echo "Running serial"
-#echo "--------------------"
-#bin/run_serial.sh "carina"
-
-## Part 2- transpose
-#echo ""
-#echo "--------------------"
-#echo "Running COO transpose"
-#echo "--------------------"
-#bin/run_coo2.sh "carina"
-
-#echo ""
-#echo "--------------------"
-#echo "Running CSR transpose"
-#echo "--------------------"
-#bin/run_csr2.sh "carina"
-
-#echo ""
-#echo "--------------------"
-#echo "Running ELL transpose"
-#echo "--------------------"
-#bin/run_ell2.sh "carina"
-
-#echo ""
-#echo "--------------------"
-#echo "Running BCSR transpose"
-#echo "--------------------"
-#bin/run_bcsr2.sh "carina"
+echo ""
+echo "--------------------"
+echo "Running COO"
+echo "--------------------"
+bin/run_coo.sh "carina_O3"
 
 echo ""
 echo "--------------------"
-echo "Running BELL transpose"
+echo "Running CSR"
 echo "--------------------"
-bin/run_bell2.sh "carina"
+bin/run_csr.sh "carina_O3"
 
+echo ""
+echo "--------------------"
+echo "Running ELL"
+echo "--------------------"
+bin/run_ell.sh "carina_O3"
+
+echo ""
+echo "--------------------"
+echo "Running BCSR"
+echo "--------------------"
+bin/run_bcsr.sh "carina_O3"
+
+echo ""
+echo "--------------------"
+echo "Running BELL"
+echo "--------------------"
+bin/run_bell.sh "carina_O3"
+
+echo ""
+echo "--------------------"
+echo "Running serial"
+echo "--------------------"
+bin/run_serial.sh "carina_O3"
 
