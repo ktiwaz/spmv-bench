@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo ""
-echo "--------------------"
-echo "Running COO"
-echo "--------------------"
-bin/run_coo.sh "carina_O3"
+#echo ""
+#echo "--------------------"
+#echo "Running COO"
+#echo "--------------------"
+#bin/run_coo.sh "carina_O3"
 
 echo ""
 echo "--------------------"
