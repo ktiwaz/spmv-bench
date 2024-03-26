@@ -10,10 +10,10 @@ output_image="$2"
 # Plotting script for gnuplot
 gnuplot_script=$(cat <<EOF
 set datafile separator ","
-set terminal pngcairo enhanced font 'arial,10' size 1600,1200
+set terminal pngcairo enhanced font 'arial,16' size 1600,1200
 set output "${output_image}"
 set title "$3"
-set ylabel "$4"
+set ylabel "Time (s)"
 set xlabel "Executable"
 set style fill solid
 set boxwidth 0.5
@@ -28,9 +28,11 @@ echo "${gnuplot_script}" | gnuplot
 
 echo "Bar figure generated: ${output_image}"
 }
-
-generate "bcsstk17_serial_arm_avg-run.csv" "bcsstk17_serial_arm-avg-run.png" \
-    "BCSSTK17 Serial- Average Runtimes" "Average Runtimes"
-generate "bcsstk17_serial_arm_total.csv" "bcsstk17_serial_arm_total.png" \
-    "BCSSTK17 Serial- Total Runtimes" "Total Runtimes"
+    
+for c in ./*.csv
+do
+    png=`basename $c .csv`
+    png=$png.png
+    generate $c $png
+done
 
