@@ -29,8 +29,8 @@ echo "${gnuplot_script}" | gnuplot
 echo "Bar figure generated: ${output_image}"
 }
 
-generate "bcsstk17_serial_arm_avg-run.csv" "bcsstk17_serial_arm-avg-run.png" \
-    "BCSSTK17 Serial- Average Runtimes" "Average Runtimes"
-generate "bcsstk17_serial_arm_total.csv" "bcsstk17_serial_arm_total.png" \
-    "BCSSTK17 Serial- Total Runtimes" "Total Runtimes"
+generate "cant_serial_arm-avg-run.csv" "cant_serial_arm-avg-run.png" \
+    "Cant Serial- Average Runtimes" "Average Runtimes"
+generate "cant_serial_arm-total-run.csv" "cant_serial_arm-total.png" \
+    "Cant Serial- Total Runtimes" "Total Runtimes"
 

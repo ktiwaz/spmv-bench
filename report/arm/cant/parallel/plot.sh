@@ -29,8 +29,13 @@ echo "${gnuplot_script}" | gnuplot
 echo "Bar figure generated: ${output_image}"
 }
 
-generate "bcsstk17_serial_arm_avg-run.csv" "bcsstk17_serial_arm-avg-run.png" \
-    "BCSSTK17 Serial- Average Runtimes" "Average Runtimes"
-generate "bcsstk17_serial_arm_total.csv" "bcsstk17_serial_arm_total.png" \
-    "BCSSTK17 Serial- Total Runtimes" "Total Runtimes"
+generate "cant_parallel_arm-avg.csv" "cant_parallel_arm-avg.png" \
+    "Cant Parallel- Average Runtimes" "Average Runtimes"
+generate "cant_parallel_arm-total.csv" "cant_parallel_arm-total.png" \
+    "Cant Parallel- Total Runtimes" "Total Runtimes"
+
+generate "cant_parallel_general_arm-avg.csv" "cant_parallel_general_arm-avg.png" \
+    "Cant Parallel (threads: 32)- Average Runtimes" "Average Runtimes"
+generate "cant_parallel_general_arm-total.csv" "cant_parallel_general_arm-total.png" \
+    "Cant Parallel (threads: 32)- Total Runtimes" "Total Runtimes"
 
