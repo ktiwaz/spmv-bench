@@ -1,0 +1,22 @@
+coo,0.021928
+csr,0.02498
+ell,0.025418
+bcsr 1x1,0.027644
+bcsr 2x2,0.026982
+bcsr 4x4,0.03231
+bcsr 16x16,0.044574
+bell 1,0.019493
+bell 2,0.019966
+bell 4,0.022053
+bell 16,0.022722
+coo (serial),0.012032
+csr (serial),0.013108
+ell (serial),0.016803
+bcsr 1x1 (serial),0.022163
+bcsr 2x2 (serial),0.022975
+bcsr 4x4 (serial),0.028991
+bcsr 16x16 (serial),0.057151
+bell 1 (serial),0.012068
+bell 2 (serial),0.013665
+bell 4 (serial),0.013354
+bell 16 (serial),0.013889
