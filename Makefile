@@ -102,7 +102,7 @@ BENCH_BINS=\
     $(BELL_BINS)
 
 ## The core
-all: check_dir build/libspmm.a $(TEST_BINS) $(GPU_TEST_BINS) $(BENCH_BINS)
+all: check_dir build/libspmm.a build/fmtbcsr $(TEST_BINS) $(GPU_TEST_BINS) $(BENCH_BINS)
 
 .PHONY: clean_dir
 check_dir:
@@ -119,6 +119,12 @@ build/libspmm.a: build/spmm.o
 
 build/spmm.o: src/spmm.cpp src/spmm.h src/csr/csr.h src/ell/ell.h src/bell/bell.h src/bcsr/bcsr.h
 	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native
+
+##
+## Build the BCSR formatting utility
+##
+build/fmtbcsr: src/format_bcsr.cpp build/libspmm.a
+	$(CXX) -Isrc/bcsr src/format_bcsr.cpp -o build/fmtbcsr $(CXXFLAGS)
 	
 ##
 ## Build the test binaries

@@ -33,6 +33,9 @@ SpM::SpM(int argc, char **argv) {
             arg = argv[i+1];
             k_bound = std::stoull(arg);
             i += 1;
+        } else if (arg == "--output") {
+            output = argv[i+1];
+            i += 1;
         } else if (arg == "--debug") {
             printDebug = true;
         } else if (arg[0] == '-') {

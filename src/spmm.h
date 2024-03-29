@@ -123,6 +123,7 @@ public:
 protected:
     // Option variables
     std::string input = "";
+    std::string output = "";    // bcsr only
     int iters = 1;
     int block_rows = 1;
     int block_cols = 1;
