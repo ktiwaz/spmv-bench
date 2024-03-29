@@ -18,15 +18,14 @@ public:
         std::cout << "Saving to: " << output << std::endl;
         
         std::ofstream writer(output);
-        writer << coo->rows << std::endl;
-        writer << coo->cols << std::endl;
-        writer << coo->nnz << std::endl;
+        
+        writer << num_blocks << std::endl;
         
         writer << colptr_len << std::endl;
         for (uint64_t i = 0; i<colptr_len; i++) writer << colptr[i] << std::endl;
         
         writer << colidx_len << std::endl;
-        for (uint64_t i = 0; i<colidx_len; i++) writer << colptr[i] << std::endl;
+        for (uint64_t i = 0; i<colidx_len; i++) writer << colidx[i] << std::endl;
         
         writer << value_len << std::endl;
         for (uint64_t i = 0; i<value_len; i++) writer << values[i] << std::endl;

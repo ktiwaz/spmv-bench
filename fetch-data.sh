@@ -37,10 +37,6 @@ data=(
     "cage14"        # 1,505,785
 )
 
-cd data
-
-rm -rf ./*
-
 ##
 ## Generate 1024x1024 matricies
 ##
@@ -66,6 +62,38 @@ if [[ $1 == "--test" ]]
 then
     exit 0
 fi
+
+##
+## For BCSR formatting
+##
+if [[ $1 == "--bcsr" ]]
+then
+    echo "Running BCSR formatting..."
+    
+    source bin/config.sh
+    
+    if [[ ! -d data/bcsr ]]
+    then
+        mkdir data/bcsr
+    fi
+    
+    for mtx in data/*.mtx
+    do
+        input_mtx=`basename $mtx .mtx`
+        
+        for b in "${blocks[@]}"
+        do
+            echo "$input_mtx ${b}x${b}"
+            build/fmtbcsr data/$input_mtx.mtx --output data/bcsr/"$input_mtx"_"$b".mtx --block $b
+        done
+    done
+    
+    exit 0
+fi
+
+cd data
+
+rm -rf ./*
 
 ##
 ## Download real-world sources
