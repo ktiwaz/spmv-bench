@@ -145,7 +145,7 @@ protected:
     // Other data
     double formatTime = 0;
     double benchTime = 0;
-    double benchGflops = 0;
+    double benchFlops = 0;
     uint64_t verifyResults = -1;
     uint64_t max_num_cols = 0;      // Maximum number of columns per row
     uint64_t avg_num_cols = 0;      // Average number of columns per row

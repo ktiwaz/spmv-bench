@@ -82,24 +82,25 @@ void SpM::printElapsedTime(double stime, double etime) {
 //
 void SpM::benchmark() {
     std::vector<double> times;
-    std::vector<double> gflops;
+    std::vector<double> flops;
     
     for (size_t i = 0; i<iters; i++) {
         if (i>0) for (size_t i = 0; i<(rows * cols); i++) C[i] = 0.0;
         double t = calculate();
         times.push_back(t);
         
-        double g = getFlopCount() / (1.0e9 * t);
-        gflops.push_back(g);
+        double f = getFlopCount();
+        double fs = f / t;
+        flops.push_back(fs);
     }
     
     double avg = 0;
     for (auto t : times) avg += t;
     benchTime = avg / iters;
     
-    double g_avg = 0;
-    for (auto g : gflops) g_avg += g;
-    benchGflops = g_avg / iters;
+    double f_avg = 0;
+    for (auto f : flops) f_avg += f;
+    benchFlops = f_avg / iters;
 }
 
 //
@@ -182,15 +183,12 @@ void SpM::report() {
     if (printDebug) {
         debug();
         std::cout << "----------------------" << std::endl;
-        
-        //std::cout << "Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,";
-        //std::cout << "Verification,Iters,Block Row,Block Col,Threads,FOP Count,Rows,Cols,NNZ,";
-        //std::cout << "Max Cols,Avg Cols,Variance,Std Deviation";
-        //std::cout << std::endl;
     }
 
     // Print timing information
-    fprintf(stdout, "%lf", benchGflops);
+    fprintf(stdout, "%lf", benchFlops);
+    fprintf(stdout, ",%lf", benchFlops / 1.0e6);
+    fprintf(stdout, ",%lf", benchFlops / 1.0e9);
     fprintf(stdout, ",%ld", getFlopCount());
     fprintf(stdout, ",%lf", benchTime);
     fprintf(stdout, ",%lf", formatTime);
