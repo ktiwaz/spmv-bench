@@ -52,23 +52,6 @@ public:
     }
     
     //
-    // Return CSR FLOPs
-    //
-    uint64_t getFlopCount() override {
-        uint64_t fops = 0;
-        
-        for (size_t i = 0; i<rows; i++) {
-            for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
-                for (uint64_t k = 0; k<rows; k++) {
-                    fops += 2;
-                }
-            }
-        }
-        
-        return fops;
-    }
-    
-    //
     // The print method for the current sparse matrix
     //
     void printSparse(bool all = true) override {
@@ -108,7 +91,7 @@ public:
             for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
                 uint64_t j = rowidx[p];
                 for (uint64_t k = 0; k<k_bound; k++) {
-                    C[i*cols+j] += values[p] * B[k*cols+j];
+                    C[i*cols+k] += values[p] * B[j*cols+k];
                 }
             }
         }

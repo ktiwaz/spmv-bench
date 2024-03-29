@@ -16,7 +16,7 @@ double Matrix::calculate() {
             uint64_t p = i * num_cols + n1;
             uint64_t j = colidx[p];
             for (uint64_t k = 0; k<k_bound; k++) {
-                C[i*cols+j] += values[p] * B[k*cols+j];
+                C[i*cols+k] += values[p] * B[j*cols+k];
             }
         }
     }

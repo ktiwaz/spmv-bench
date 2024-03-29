@@ -190,10 +190,11 @@ void SpM::report() {
     }
 
     // Print timing information
-    fprintf(stdout, "%lf", benchTime);
+    fprintf(stdout, "%lf", benchGflops);
+    fprintf(stdout, ",%ld", getFlopCount());
+    fprintf(stdout, ",%lf", benchTime);
     fprintf(stdout, ",%lf", formatTime);
     fprintf(stdout, ",%lf", benchTime + formatTime);
-    fprintf(stdout, ",%lf", benchGflops);
     
     // Print verification information
     fprintf(stdout, ",%ld", verifyResults);
@@ -205,8 +206,8 @@ void SpM::report() {
     fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
-    fprintf(stdout, ",%ld", getFlopCount());
     fprintf(stdout, ",%ld,%ld,%ld", coo->rows, coo->cols, coo->nnz);
+    fprintf(stdout, ",%ld", coo->nnz * 2);
     fprintf(stdout, ",%ld", max_num_cols);
     fprintf(stdout, ",%ld", avg_num_cols);
     fprintf(stdout, ",%ld", variance);
@@ -227,7 +228,7 @@ void SpM::verify() {
         size_t j = item.col;
         double val = item.val;
         for (size_t k = 0; k<k_bound; k++) {
-            C_check[i*cols+j] += val * B[k*cols+j];
+            C_check[i*cols+k] += val * B[j*cols+k];
         }
     }
     

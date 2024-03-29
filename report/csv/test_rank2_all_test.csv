@@ -1,0 +1,6 @@
+Name,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Variance,Std Deviation
+COO Serial,inf,18,0.000001,0.000029,0.000030,10,10,1,1,16,-1,5,5,9,18,2,1,0,0
+CSR Serial,inf,18,0.000000,0.000027,0.000027,10,10,1,1,16,-1,5,5,9,18,2,1,0,0
+ELL Serial,inf,20,0.000000,0.000027,0.000027,10,10,1,1,16,-1,5,5,9,18,2,1,0,0
+BCSR Serial,inf,56,0.000001,0.000031,0.000032,10,10,2,2,16,-1,5,5,9,18,2,1,0,0
+BCSR Serial,inf,128,0.000001,0.000029,0.000030,10,10,4,4,16,-1,5,5,9,18,2,1,0,0

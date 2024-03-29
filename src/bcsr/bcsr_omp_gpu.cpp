@@ -34,7 +34,7 @@ double Matrix::calculate() {
                         uint64_t j = _colidx[n2] * _block_cols + bj;
                         uint64_t index = n2*(_block_rows*_block_cols) + bi * _block_cols + bj;
                         
-                        _C[i*_cols+j] += _values[index] * _B[k*_cols+j];
+                        _C[i*_cols+k] += _values[index] * _B[j*_cols+k];
                     }
                 }
             }

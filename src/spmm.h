@@ -66,15 +66,7 @@ public:
     // the given algorithm.
     //
     virtual uint64_t getFlopCount() {
-        uint64_t fops = 0;
-    
-        for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
-            for (size_t k = 0; k<k_bound; k++) {
-                fops += 2;
-            }
-        }
-        
-        return fops;
+        return coo->nnz * 2;
     }
     
     //
@@ -120,7 +112,7 @@ public:
             size_t j = coo_cols[arg0];
             double val = coo_vals[arg0];
             for (size_t k = 0; k<k_bound; k++) {
-                C[i*cols+j] += val * B[k*cols+j];
+                C[i*cols+k] += val * B[j*cols+k];
             }
         }
         

@@ -22,7 +22,7 @@ double Matrix::calculate() {
         uint64_t j = _coo_cols[_arg0];
         double val = _coo_vals[_arg0];
         for (size_t k = 0; k<_k_bound; k++) {
-            _C[i*_cols+k] += val * _B[k*_cols+j];
+            _C[i*_cols+k] += val * _B[j*_cols+k];
         }
     }
     

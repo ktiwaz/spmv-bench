@@ -12,7 +12,7 @@ BIN=build/bin
 OLEVELS=("O2")
 iters=10
 threads=(8 16 32)
-blocks=(1 2 4 16)
+blocks=(2 4)
 k_loop=(16)
 
 # For testing

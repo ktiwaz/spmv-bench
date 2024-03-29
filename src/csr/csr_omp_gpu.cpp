@@ -26,7 +26,7 @@ double Matrix::calculate() {
         for (uint64_t p = _rowptr[_i]; p < _rowptr[_i+1]; p++) {
             uint64_t j = _rowidx[p];
             for (uint64_t k = 0; k < _k_bound; k++) {
-                _C[i * _cols + j] += _values[p] * _B[k * _cols + j];
+                _C[i * _cols + k] += _values[p] * _B[j * _cols + k];
             }
         }
     }
