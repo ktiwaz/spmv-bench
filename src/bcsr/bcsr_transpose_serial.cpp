@@ -1,19 +1,22 @@
 #include "matrix.h"
 
+inline void transpose(double *B, size_t cols) {
+    for (size_t i = 0; i < cols; i++) {
+        for (size_t j = i+1; j < cols; j++) {
+            double temp = B[i*cols+j];
+            B[i*cols+j] = B[j*cols+i];
+            B[j*cols+i] = temp;
+        }
+    }
+}
+
 //
 // The calculation algorithm for the current format
 //
 double Matrix::calculate() {
     double start = getTime();
     
-    // Transpose
-    double* B_trans = new double[rows * cols];
-
-    for (size_t i = 0; i < rows; ++i) {
-      for (size_t j = 0; j < cols; ++j) {
-        B_trans[j * rows + i] = B[i*cols+j];
-      }
-    }
+    transpose(B, cols);
     
     for (uint64_t n1 = 0; n1<num_blocks; n1++) {
         for (uint64_t bi = 0; bi<block_rows; bi++) {
@@ -24,7 +27,7 @@ double Matrix::calculate() {
                         uint64_t j = colidx[n2] * block_cols + bj;
                         uint64_t index = n2*(block_rows*block_cols) + bi * block_cols + bj;
                         
-                        C[i*cols+j] += values[index] * B_trans[j*cols+k];
+                        C[i*cols+k] += values[index] * B[k*cols+j];
                     }
                 }
             }
@@ -32,6 +35,7 @@ double Matrix::calculate() {
     }
     
     double end = getTime();
+    transpose(B, cols);
     return (double)(end-start);
 }
 
