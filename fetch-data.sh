@@ -6,35 +6,20 @@ then
 fi
 
 data=(
+    "2cubes_sphere"
+    "af23560"
     "bcsstk13"
     "bcsstk17"
     "cant"
+    "cop20k_A"
+    "crankseg_2"
+    "dw4096"
+    "nd24k"
     "pdb1HYS"
     "rma10"
-    "dw4096"
-    "cop20k_A"
-    "af23560"
+    "shallow_water1"
+    "torso1"
     "x104"
-    
-    "shallow_water1" #81,920
-    "2cubes_sphere"
-    "scircuit"
-    "mac_econ_fwd500"
-    "webbase-1M"
-    "hood"      # 220,542
-    "bmw3_2"    # 227,362
-    "pre2"      # 659,033
-    
-    "pwtk"          # 217,918
-    "crankseg_2"    # 63,838
-    "torso1"        # 116,158
-    "atmosmodd"     # 1,270,432
-    "msdoor"        # 415,863
-    "F1"            # 343,791
-    "nd24k"         # 72,000
-    "inline_1"      # 503,712
-    "ldoor"         # 952,203
-    "cage14"        # 1,505,785
 )
 
 ##
@@ -98,35 +83,36 @@ rm -rf ./*
 ##
 ## Download real-world sources
 ##
+wget https://suitesparse-collection-website.herokuapp.com/MM/Um/2cubes_sphere.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/af23560.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/HB/bcsstk13.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/HB/bcsstk17.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/cant.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/cop20k_A.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/crankseg_2.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/dw4096.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/ND/nd24k.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/pdb1HYS.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/Bova/rma10.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/dw4096.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/cop20k_A.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Bai/af23560.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/MaxPlanck/shallow_water1.tar.gz
+wget https://suitesparse-collection-website.herokuapp.com/MM/Norris/torso1.tar.gz
 wget https://suitesparse-collection-website.herokuapp.com/MM/DNVS/x104.tar.gz
 
-wget https://suitesparse-collection-website.herokuapp.com/MM/MaxPlanck/shallow_water1.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Um/2cubes_sphere.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Hamm/scircuit.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/mac_econ_fwd500.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/webbase-1M.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/hood.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_indef/bmw3_2.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/ATandT/pre2.tar.gz
 
-wget https://suitesparse-collection-website.herokuapp.com/MM/Boeing/pwtk.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/crankseg_2.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Norris/torso1.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/INPRO/msdoor.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/Koutsovasilis/F1.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/ND/nd24k.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/inline_1.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/ldoor.tar.gz
-wget https://suitesparse-collection-website.herokuapp.com/MM/vanHeukelum/cage14.tar.gz
+
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Hamm/scircuit.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/mac_econ_fwd500.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Williams/webbase-1M.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/hood.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_indef/bmw3_2.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/ATandT/pre2.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Boeing/pwtk.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Bourchtein/atmosmodd.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/INPRO/msdoor.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/Koutsovasilis/F1.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/inline_1.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/GHS_psdef/ldoor.tar.gz
+#wget https://suitesparse-collection-website.herokuapp.com/MM/vanHeukelum/cage14.tar.gz
 
 for d in "${data[@]}"
 do
