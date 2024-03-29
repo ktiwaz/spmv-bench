@@ -208,6 +208,7 @@ void SpM::report() {
     fprintf(stdout, ",%ld", coo->nnz * 2);
     fprintf(stdout, ",%ld", max_num_cols);
     fprintf(stdout, ",%ld", avg_num_cols);
+    fprintf(stdout, ",%lf", (double)(max_num_cols / avg_num_cols));
     fprintf(stdout, ",%ld", variance);
     fprintf(stdout, ",%ld", std_deviation);
     
