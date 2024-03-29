@@ -14,11 +14,11 @@ function run() {
     CSV_FILE=report/csv/$1_"$BENCH_NAME"_"$ARCH_ID".csv
     init_csv $CSV_FILE
     
-    for t in "${threads[@]}"
+    for O in "${OLEVELS[@]}"
     do
-        for k in "${k_loop[@]}"
+        for t in "${threads[@]}"
         do
-            for O in "${OLEVELS[@]}"
+            for k in "${k_loop[@]}"
             do
                 # COO
                 echo "[OMP] coo --k $k --threads $t"

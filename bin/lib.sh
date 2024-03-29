@@ -29,7 +29,7 @@ function setup() {
 function init_csv() {
     CSV_FILE=$1
     printf "" > $CSV_FILE
-    printf "Name,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s)," >> $CSV_FILE
+    printf "Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s)," >> $CSV_FILE
     printf "Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2," >> $CSV_FILE
     printf "Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation" >> $CSV_FILE
     echo "" >> $CSV_FILE

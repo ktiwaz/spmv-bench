@@ -14,9 +14,9 @@ function run() {
     CSV_FILE=report/csv/$1_"$BENCH_NAME"_"$ARCH_ID".csv
     init_csv $CSV_FILE
     
-    for k in "${k_loop[@]}"
+    for O in "${OLEVELS[@]}"
     do
-        for O in "${OLEVELS[@]}"
+        for k in "${k_loop[@]}"
         do
             echo "[Serial] coo --k $k"
             printf "coo_serial_${O}," >> $CSV_FILE
