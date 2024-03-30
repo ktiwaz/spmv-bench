@@ -1,12 +1,12 @@
 CC=clang
-CXX=clang++
+CXX=clang++-17
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
 OMPFLAGS=-fopenmp
-GPUFLAGS=
+GPUFLAGS=-fopenmp-targets=nvptx64
 
 ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
-    CXX=clang++
+    CXX=clang++-17
 else
     CXX=$(CXX16)
     GPUFLAGS=-fopenmp-targets=nvptx64
