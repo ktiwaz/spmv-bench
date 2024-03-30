@@ -24,7 +24,7 @@ function run() {
                 do
                     echo "[OMP] bcsr --k $k --threads $t ${b}x${b}"
                     printf "BCSR OMP,${O}," >> $CSV_FILE
-                    $BIN/bcsr_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t --block $b >> $CSV_FILE
+                    $BIN/bcsr_omp_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --threads $t --block $b >> $CSV_FILE
                 done
             done
         done
