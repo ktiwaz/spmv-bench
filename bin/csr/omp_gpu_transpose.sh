@@ -1,5 +1,5 @@
 #!/bin/bash
-BENCH_NAME="bcsr_gpu"
+BENCH_NAME="csr_gpu_transpose"
 ARCH_ID=$1
 
 source bin/config.sh
@@ -18,12 +18,9 @@ function run() {
     do
         for k in "${k_loop[@]}"
         do
-            for b in "${blocks[@]}"
-            do
-                echo "[GPU] bcsr --k $k ${b}x${b}"
-                printf "BCSR GPU,${O}," >> $CSV_FILE
-                $BIN/bcsr_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
-            done
+            echo "[GPU Transpose] csr --k $k"
+            printf "CSR GPU Transpose,${O}," >> $CSV_FILE
+            $BIN/csr_transpose_omp_gpu_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
         done
     done
 }

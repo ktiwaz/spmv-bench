@@ -2,20 +2,23 @@
 
 #include "matrix.h"
 
+inline void transpose(double *B, size_t cols) {
+    for (size_t i = 0; i < cols; i++) {
+        for (size_t j = i+1; j < cols; j++) {
+            double temp = B[i*cols+j];
+            B[i*cols+j] = B[j*cols+i];
+            B[j*cols+i] = temp;
+        }
+    }
+}
+
 //
 // The calculation algorithm for the current format
 //
 double Matrix::calculate() {
     double start = getTime();
     
-    // Transpose
-    double* B_trans = new double[rows * cols];
-
-    for (size_t i = 0; i < rows; ++i) {
-      for (size_t j = 0; j < cols; ++j) {
-        B_trans[j * rows + i] = B[i*cols+j];
-      }
-    }
+    transpose(B, cols);
     
     size_t _rows = rows;
     size_t _cols = cols;
@@ -30,7 +33,7 @@ double Matrix::calculate() {
     
     #pragma omp target teams distribute parallel for \
         map(to: _rows, _cols, _block_rows, _block_cols, _k_bound, _colptr[0:colptr_len], _colidx[0:colidx_len]) \
-        map(to: _values[0:value_len], B_trans[0:rows*cols]) \
+        map(to: _values[0:value_len], B[0:rows*cols]) \
         map(tofrom: _C[0:rows*cols])
     for (n1 = 0; n1<num_blocks; n1++) {
         uint64_t _n1 = n1;
@@ -42,7 +45,7 @@ double Matrix::calculate() {
                         uint64_t j = _colidx[n2] * _block_cols + bj;
                         uint64_t index = n2*(_block_rows*_block_cols) + bi * _block_cols + bj;
                         
-                        _C[i*_cols+j] += _values[index] * B_trans[j*_cols+k];
+                        _C[i*_cols+k] += _values[index] * B[k*_cols+j];
                     }
                 }
             }
@@ -52,6 +55,7 @@ double Matrix::calculate() {
     C = _C;
     
     double end = getTime();
+    transpose(B, cols);
     return (double)(end-start);
 }
 

@@ -22,7 +22,7 @@ function run() {
             do
                 echo "[Serial] bcsr --k $k ${b}x${b}"
                 printf "BCSR Serial,${O}," >> $CSV_FILE
-                $BIN/bcsr_serial_${O} data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
+                $BIN/bcsr_serial_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
             done
         done
     done

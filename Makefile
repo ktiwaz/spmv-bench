@@ -1,7 +1,7 @@
 CC=clang
 CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native -g
 OMPFLAGS=-fopenmp
 GPUFLAGS=
 
@@ -26,71 +26,71 @@ BIN_OUTPUT = build/bin
 
 COO_BINS=\
     $(BIN_OUTPUT)/coo_serial_O1 $(BIN_OUTPUT)/coo_omp_O1 $(BIN_OUTPUT)/coo_omp_gpu_O1 \
-	    $(BIN_OUTPUT)/coo_transpose_serial_O1 $(BIN_OUTPUT)/coo_transpose_omp_O1 $(BIN_OUTPUT)/coo_transpose_omp_omp_O1 \
+	    $(BIN_OUTPUT)/coo_transpose_serial_O1 $(BIN_OUTPUT)/coo_transpose_omp_O1 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O1 \
 	    $(BIN_OUTPUT)/coo_omp_collapse_O1 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O1 \
     $(BIN_OUTPUT)/coo_serial_O2 $(BIN_OUTPUT)/coo_omp_O2 $(BIN_OUTPUT)/coo_omp_gpu_O2 \
-	    $(BIN_OUTPUT)/coo_transpose_serial_O2 $(BIN_OUTPUT)/coo_transpose_omp_O2 $(BIN_OUTPUT)/coo_transpose_omp_omp_O2 \
+	    $(BIN_OUTPUT)/coo_transpose_serial_O2 $(BIN_OUTPUT)/coo_transpose_omp_O2 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O2 \
 	    $(BIN_OUTPUT)/coo_omp_collapse_O2 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O2 \
     $(BIN_OUTPUT)/coo_serial_O3 $(BIN_OUTPUT)/coo_omp_O3 $(BIN_OUTPUT)/coo_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/coo_transpose_serial_O3 $(BIN_OUTPUT)/coo_transpose_omp_O3 $(BIN_OUTPUT)/coo_transpose_omp_omp_O3 \
+	    $(BIN_OUTPUT)/coo_transpose_serial_O3 $(BIN_OUTPUT)/coo_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3
 
 CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O1 $(BIN_OUTPUT)/csr_omp_O1 $(BIN_OUTPUT)/csr_omp_gpu_O1 \
-	    $(BIN_OUTPUT)/csr_transpose_serial_O1 $(BIN_OUTPUT)/csr_transpose_omp_O1 $(BIN_OUTPUT)/csr_transpose_omp_omp_O1 \
+	    $(BIN_OUTPUT)/csr_transpose_serial_O1 $(BIN_OUTPUT)/csr_transpose_omp_O1 \
 	    $(BIN_OUTPUT)/csr_transpose_omp_gpu_O1 \
 	    $(BIN_OUTPUT)/csr_omp_collapse_O1 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O1 \
     $(BIN_OUTPUT)/csr_serial_O2 $(BIN_OUTPUT)/csr_omp_O2 $(BIN_OUTPUT)/csr_omp_gpu_O2 \
-	    $(BIN_OUTPUT)/csr_transpose_serial_O2 $(BIN_OUTPUT)/csr_transpose_omp_O2 $(BIN_OUTPUT)/csr_transpose_omp_omp_O2 \
+	    $(BIN_OUTPUT)/csr_transpose_serial_O2 $(BIN_OUTPUT)/csr_transpose_omp_O2 \
 	    $(BIN_OUTPUT)/csr_transpose_omp_gpu_O2 \
 	    $(BIN_OUTPUT)/csr_omp_collapse_O2 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O2 \
     $(BIN_OUTPUT)/csr_serial_O3 $(BIN_OUTPUT)/csr_omp_O3 $(BIN_OUTPUT)/csr_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/csr_transpose_serial_O3 $(BIN_OUTPUT)/csr_transpose_omp_O3 $(BIN_OUTPUT)/csr_transpose_omp_omp_O3 \
+	    $(BIN_OUTPUT)/csr_transpose_serial_O3 $(BIN_OUTPUT)/csr_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/csr_transpose_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/csr_omp_collapse_O3 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3
 
 ELL_BINS=\
     $(BIN_OUTPUT)/ell_serial_O1 $(BIN_OUTPUT)/ell_omp_O1 $(BIN_OUTPUT)/ell_omp_gpu_O1 \
-	    $(BIN_OUTPUT)/ell_transpose_serial_O1 $(BIN_OUTPUT)/ell_transpose_omp_O1 $(BIN_OUTPUT)/ell_transpose_omp_omp_O1 \
+	    $(BIN_OUTPUT)/ell_transpose_serial_O1 $(BIN_OUTPUT)/ell_transpose_omp_O1 \
 	    $(BIN_OUTPUT)/ell_transpose_omp_gpu_O1 \
 	    $(BIN_OUTPUT)/ell_omp_collapse_O1 $(BIN_OUTPUT)/ell_transpose_omp_collapse_O1 \
     $(BIN_OUTPUT)/ell_serial_O2 $(BIN_OUTPUT)/ell_omp_O2 $(BIN_OUTPUT)/ell_omp_gpu_O2 \
-	    $(BIN_OUTPUT)/ell_transpose_serial_O2 $(BIN_OUTPUT)/ell_transpose_omp_O2 $(BIN_OUTPUT)/ell_transpose_omp_omp_O2 \
+	    $(BIN_OUTPUT)/ell_transpose_serial_O2 $(BIN_OUTPUT)/ell_transpose_omp_O2 \
 	    $(BIN_OUTPUT)/ell_transpose_omp_gpu_O2 \
 	    $(BIN_OUTPUT)/ell_omp_collapse_O2 $(BIN_OUTPUT)/ell_transpose_omp_collapse_O2 \
     $(BIN_OUTPUT)/ell_serial_O3 $(BIN_OUTPUT)/ell_omp_O3 $(BIN_OUTPUT)/ell_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/ell_transpose_serial_O3 $(BIN_OUTPUT)/ell_transpose_omp_O3 $(BIN_OUTPUT)/ell_transpose_omp_omp_O3 \
+	    $(BIN_OUTPUT)/ell_transpose_serial_O3 $(BIN_OUTPUT)/ell_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/ell_transpose_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/ell_omp_collapse_O3 $(BIN_OUTPUT)/ell_transpose_omp_collapse_O3
 
 BCSR_BINS=\
     $(BIN_OUTPUT)/bcsr_serial_O1 $(BIN_OUTPUT)/bcsr_omp_O1 $(BIN_OUTPUT)/bcsr_omp_gpu_O1 \
-	    $(BIN_OUTPUT)/bcsr_transpose_serial_O1 $(BIN_OUTPUT)/bcsr_transpose_omp_O1 $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O1 \
+	    $(BIN_OUTPUT)/bcsr_transpose_serial_O1 $(BIN_OUTPUT)/bcsr_transpose_omp_O1 \
 	    $(BIN_OUTPUT)/bcsr_transpose_omp_gpu_O1 \
 	    $(BIN_OUTPUT)/bcsr_omp_collapse_O1 $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O1 \
     $(BIN_OUTPUT)/bcsr_serial_O2 $(BIN_OUTPUT)/bcsr_omp_O2 $(BIN_OUTPUT)/bcsr_omp_gpu_O2 \
-	    $(BIN_OUTPUT)/bcsr_transpose_serial_O2 $(BIN_OUTPUT)/bcsr_transpose_omp_O2 $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O2 \
+	    $(BIN_OUTPUT)/bcsr_transpose_serial_O2 $(BIN_OUTPUT)/bcsr_transpose_omp_O2 \
 	    $(BIN_OUTPUT)/bcsr_transpose_omp_gpu_O2 \
 	    $(BIN_OUTPUT)/bcsr_omp_collapse_O2 $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O2 \
     $(BIN_OUTPUT)/bcsr_serial_O3 $(BIN_OUTPUT)/bcsr_omp_O3 $(BIN_OUTPUT)/bcsr_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/bcsr_transpose_serial_O3 $(BIN_OUTPUT)/bcsr_transpose_omp_O3 $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O3 \
+	    $(BIN_OUTPUT)/bcsr_transpose_serial_O3 $(BIN_OUTPUT)/bcsr_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/bcsr_transpose_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/bcsr_omp_collapse_O3 $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O3
 
 BELL_BINS=\
     $(BIN_OUTPUT)/bell_serial_O1 $(BIN_OUTPUT)/bell_omp_O1 $(BIN_OUTPUT)/bell_omp_gpu_O1 \
-	    $(BIN_OUTPUT)/bell_transpose_serial_O1 $(BIN_OUTPUT)/bell_transpose_omp_O1 $(BIN_OUTPUT)/bell_transpose_omp_omp_O1 \
+	    $(BIN_OUTPUT)/bell_transpose_serial_O1 $(BIN_OUTPUT)/bell_transpose_omp_O1 \
 	    $(BIN_OUTPUT)/bell_transpose_omp_gpu_O1 \
 	    $(BIN_OUTPUT)/bell_omp_collapse_O1 $(BIN_OUTPUT)/bell_transpose_omp_collapse_O1 \
     $(BIN_OUTPUT)/bell_serial_O2 $(BIN_OUTPUT)/bell_omp_O2 $(BIN_OUTPUT)/bell_omp_gpu_O2 \
-	    $(BIN_OUTPUT)/bell_transpose_serial_O2 $(BIN_OUTPUT)/bell_transpose_omp_O2 $(BIN_OUTPUT)/bell_transpose_omp_omp_O2 \
+	    $(BIN_OUTPUT)/bell_transpose_serial_O2 $(BIN_OUTPUT)/bell_transpose_omp_O2 \
 	    $(BIN_OUTPUT)/bell_transpose_omp_gpu_O2 \
 	    $(BIN_OUTPUT)/bell_omp_collapse_O2 $(BIN_OUTPUT)/bell_transpose_omp_collapse_O2 \
     $(BIN_OUTPUT)/bell_serial_O3 $(BIN_OUTPUT)/bell_omp_O3 $(BIN_OUTPUT)/bell_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/bell_transpose_serial_O3 $(BIN_OUTPUT)/bell_transpose_omp_O3 $(BIN_OUTPUT)/bell_transpose_omp_omp_O3 \
+	    $(BIN_OUTPUT)/bell_transpose_serial_O3 $(BIN_OUTPUT)/bell_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/bell_transpose_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/bell_omp_collapse_O3 $(BIN_OUTPUT)/bell_transpose_omp_collapse_O3
 
@@ -213,16 +213,6 @@ $(BIN_OUTPUT)/coo_transpose_omp_collapse_O2: src/coo/coo_transpose_omp_collapse.
 
 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3: src/coo/coo_transpose_omp_collapse.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_collapse.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
-
-# Transpose OMP with transpose OMP
-$(BIN_OUTPUT)/coo_transpose_omp_omp_O1: src/coo/coo_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
-
-$(BIN_OUTPUT)/coo_transpose_omp_omp_O2: src/coo/coo_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
-
-$(BIN_OUTPUT)/coo_transpose_omp_omp_O3: src/coo/coo_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/coo $(BASE) src/coo/coo_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/coo_transpose_omp_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 	
 # Transpose GPU
 $(BIN_OUTPUT)/coo_transpose_omp_gpu_O1: src/coo/coo_transpose_omp_gpu.cpp $(DEPS)
@@ -312,16 +302,6 @@ $(BIN_OUTPUT)/csr_transpose_omp_collapse_O2: src/csr/csr_transpose_omp_collapse.
 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3: src/csr/csr_transpose_omp_collapse.cpp $(DEPS)
 	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_collapse.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 
-# Transpose OMP with OMP transpose
-$(BIN_OUTPUT)/csr_transpose_omp_omp_O1: src/csr/csr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
-
-$(BIN_OUTPUT)/csr_transpose_omp_omp_O2: src/csr/csr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
-
-$(BIN_OUTPUT)/csr_transpose_omp_omp_O3: src/csr/csr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
-
 # Transpose OMP GPU
 $(BIN_OUTPUT)/csr_transpose_omp_gpu_O1: src/csr/csr_transpose_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/csr $(BASE) src/csr/csr_transpose_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_transpose_omp_gpu_O1 $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS) -O1
@@ -409,16 +389,6 @@ $(BIN_OUTPUT)/ell_transpose_omp_collapse_O2: src/ell/ell_transpose_omp_collapse.
 
 $(BIN_OUTPUT)/ell_transpose_omp_collapse_O3: src/ell/ell_transpose_omp_collapse.cpp $(DEPS)
 	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_collapse.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_collapse_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
-
-# Transpose OMP Parallel with parallel transpose
-$(BIN_OUTPUT)/ell_transpose_omp_omp_O1: src/ell/ell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
-
-$(BIN_OUTPUT)/ell_transpose_omp_omp_O2: src/ell/ell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
-
-$(BIN_OUTPUT)/ell_transpose_omp_omp_O3: src/ell/ell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/ell $(BASE) src/ell/ell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/ell_transpose_omp_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 	
 # Transpose OMP GPU
 $(BIN_OUTPUT)/ell_transpose_omp_gpu_O1: src/ell/ell_transpose_omp_gpu.cpp $(DEPS)
@@ -507,16 +477,6 @@ $(BIN_OUTPUT)/bell_transpose_omp_collapse_O2: src/bell/bell_transpose_omp_collap
 
 $(BIN_OUTPUT)/bell_transpose_omp_collapse_O3: src/bell/bell_transpose_omp_collapse.cpp $(DEPS)
 	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_collapse.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_collapse_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
-
-# Transpose OMP with transpose OMP
-$(BIN_OUTPUT)/bell_transpose_omp_omp_O1: src/bell/bell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
-
-$(BIN_OUTPUT)/bell_transpose_omp_omp_O2: src/bell/bell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
-
-$(BIN_OUTPUT)/bell_transpose_omp_omp_O3: src/bell/bell_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bell $(BASE) src/bell/bell_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bell_transpose_omp_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 	
 # Transpose OMP GPU
 $(BIN_OUTPUT)/bell_transpose_omp_gpu_O1: src/bell/bell_transpose_omp_gpu.cpp $(DEPS)
@@ -605,16 +565,6 @@ $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O2: src/bcsr/bcsr_transpose_omp_collap
 
 $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O3: src/bcsr/bcsr_transpose_omp_collapse.cpp $(DEPS)
 	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_collapse.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_collapse_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
-
-# Transpose OMP with OMP transpose
-$(BIN_OUTPUT)/bcsr_transpose_omp_omp_O1: src/bcsr/bcsr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
-
-$(BIN_OUTPUT)/bcsr_transpose_omp_omp_O2: src/bcsr/bcsr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
-
-$(BIN_OUTPUT)/bcsr_transpose_omp_omp_O3: src/bcsr/bcsr_transpose_omp_omp.cpp $(DEPS)
-	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_transpose_omp_omp.cpp -o $(BIN_OUTPUT)/bcsr_transpose_omp_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 	
 # Transpose OMP GPU
 $(BIN_OUTPUT)/bcsr_transpose_omp_gpu_O1: src/bcsr/bcsr_transpose_omp_gpu.cpp $(DEPS)
