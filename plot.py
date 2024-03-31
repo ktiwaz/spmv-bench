@@ -23,7 +23,7 @@ def load_raw_data(bench_item):
     print(df)
     return df
 
-def create_data(matrix, fmt, kernel, arch, filter_eq):
+def create_data(matrix, fmt, kernel, arch, filter_eq=[]):
     # Create a list of all files that we need to read
     benchmarks = []
     for m in matrix:
@@ -44,6 +44,12 @@ def create_data(matrix, fmt, kernel, arch, filter_eq):
         df = df[(df[f[0]] == f[1]) | (df[f[0]] == -1)]
     #print(df)
     #df.to_csv("filter.csv")
+    return df
+
+def change_names(df, key, prefix, rename_keys = False):
+    if rename_keys:
+        df["Name"] = df.apply(lambda row: row["Name"].split()[0], axis=1)
+    df["Name"] = df.apply(lambda row: row["Name"] + str(prefix) + str(row[key]), axis=1)
     return df
     
 def plot_grouped_bar(df, title, values, index, columns, output=None):
@@ -100,19 +106,54 @@ plot_grouped_bar(frame, "Serial Formats (Arm)", "MFLOPS", "Matrix", "Name", outp
 ##
 kernel = [ "omp" ]
 frame = create_data(matrix, fmt, kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 8)])
-plot_grouped_bar(frame, "Serial Formats (Arm)", "MFLOPS", "Matrix", "Name", output= "all_format_omp_arm")
+plot_grouped_bar(frame, "Parallel Formats (Arm)", "MFLOPS", "Matrix", "Name", output= "all_format_omp_arm")
 
 ##
 ## Plot 3: show the parallel output of all formats across all matrices on Arm
 ##
 kernel = [ "gpu" ]
 frame = create_data(matrix, fmt, kernel, ["arm"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "Serial Formats (Arm)", "MFLOPS", "Matrix", "Name", output= "all_format_gpu_arm")
+plot_grouped_bar(frame, "GPU Formats (Arm)", "MFLOPS", "Matrix", "Name", output= "all_format_gpu_arm")
 
 ##
 ## Plot 4: show the COO output for all kernels across all matrices on Arm
 ##
 kernel = [ "serial", "omp", "gpu" ]
-frame = create_data(matrix, ["coo"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 8)])
-plot_grouped_bar(frame, "Serial Formats (Arm)", "MFLOPS", "Matrix", "Name", output= "all_coo_arm")
+frame = create_data(matrix, ["coo"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
+plot_grouped_bar(frame, "COO- All Types", "MFLOPS", "Matrix", "Name", output= "all_coo_arm")
+
+##
+## Plot 5: show the COO output for all parallel kernels across all matrices on Arm
+##
+frame = create_data(matrix, ["coo"], ["omp"], ["arm"], filter_eq=[("K-Bound", 128)])
+frame = change_names(frame, "Threads", "-t")
+plot_grouped_bar(frame, "COO- Parallel (Arm)", "MFLOPS", "Matrix", "Name", output= "all_coo_parallel_arm")
+
+##
+## Plot 6: show the CSR output for all kernels across all matrices on Arm
+##
+kernel = [ "serial", "omp", "gpu" ]
+frame = create_data(matrix, ["csr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
+plot_grouped_bar(frame, "CSR- All Types (Arm)", "MFLOPS", "Matrix", "Name", output= "all_csr_arm")
+
+##
+## Plot 7: show the CSR output for all parallel kernels across all matrices on Arm
+##
+frame = create_data(matrix, ["csr"], ["omp"], ["arm"], filter_eq=[("K-Bound", 128)])
+frame = change_names(frame, "Threads", " -t ", True)
+plot_grouped_bar(frame, "CSR- Parallel (Arm)", "MFLOPS", "Matrix", "Name", output= "all_csr_parallel_arm")
+
+##
+## Plot 8: show the COO output for the k-study across all matrices on Arm
+##
+frame = create_data(matrix, ["coo"], ["serial", "omp"], ["arm"])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "COO- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name", output= "all_coo_k_arm")
+
+##
+## Plot 9: show the CSR output for the k-study across all matrices on Arm
+##
+frame = create_data(matrix, ["csr"], ["serial", "omp"], ["arm"])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "CSR- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name", output= "all_csr_k_arm")
 
