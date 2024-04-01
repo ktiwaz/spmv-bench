@@ -1,12 +1,17 @@
 CC=clang
-CXX=clang++-17
+#CXX=clang++-17
+CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native -g
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
 OMPFLAGS=-fopenmp
-GPUFLAGS=-fopenmp-targets=nvptx64
+#GPUFLAGS=-fopenmp-targets=nvptx64
+
+CUDA_TOOLKIT := $(shell dirname $$(command -v nvcc))/..
+CUDA_INC     := -I$(CUDA_TOOLKIT)/include
 
 ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
-    CXX=clang++-17
+    #CXX=clang++-17
+    CXX=clang++
 else
     CXX=$(CXX16)
     GPUFLAGS=-fopenmp-targets=nvptx64
@@ -36,7 +41,8 @@ COO_BINS=\
     $(BIN_OUTPUT)/coo_serial_O3 $(BIN_OUTPUT)/coo_omp_O3 $(BIN_OUTPUT)/coo_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_serial_O3 $(BIN_OUTPUT)/coo_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3
+	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3 \
+    $(BIN_OUTPUT)/coo_cusparse
 
 CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O1 $(BIN_OUTPUT)/csr_omp_O1 $(BIN_OUTPUT)/csr_omp_gpu_O1 \
@@ -181,6 +187,11 @@ $(BIN_OUTPUT)/coo_omp_gpu_O2: src/coo/coo_omp_gpu.cpp $(DEPS)
 
 $(BIN_OUTPUT)/coo_omp_gpu_O3: src/coo/coo_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu_O3 $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS) -O3
+
+# CuSparse COO
+$(BIN_OUTPUT)/coo_cusparse: src/coo/coo_cusparse.cpp $(DEPS)
+	nvc++ -Isrc/coo $(BASE) src/coo/coo_cusparse.cpp -o $(BIN_OUTPUT)/coo_cusparse -Isrc build/libspmm.a -lcusparse
+
 #
 # Tranpose
 #
