@@ -32,16 +32,16 @@
 double Matrix::calculate() {
     double start = getTime();
     
-    size_t *d_rowptr, *d_rowidx;
+    uint64_t *d_rowptr, *d_rowidx;
     double *d_values, *dB, *dC;
-    CHECK_CUDA( cudaMalloc((void**)&d_rowptr, rowptr, (rows+1) * sizeof(size_t)) )
-    CHECK_CUDA( cudaMalloc((void**)&d_rowidx, rowidx, coo->nnz * sizeof(size_t)) )
+    CHECK_CUDA( cudaMalloc((void**)&d_rowptr, rowptr, (rows+1) * sizeof(uint64_t)) )
+    CHECK_CUDA( cudaMalloc((void**)&d_rowidx, rowidx, coo->nnz * sizeof(uint64_t)) )
     CHECK_CUDA( cudaMalloc((void**)&d_values, values, coo->nnz * sizeof(double)) )
     CHECK_CUDA( cudaMalloc((void**)&dB, (rows * cols) * sizeof(double)) )
     CHECK_CUDA( cudaMalloc((void**)&dC, (rows * cols) * sizeof(double)) )
     
-    CHECK_CUDA( cudaMemcpy(d_rowptr, rowptr, (rows+1) * sizeof(size_t), cudaMemcpyHostToDevice) )
-    CHECK_CUDA( cudaMemcpy(d_rowidx, rowidx, coo->nnz * sizeof(size_t), cudaMemcpyHostToDevice) )
+    CHECK_CUDA( cudaMemcpy(d_rowptr, rowptr, (rows+1) * sizeof(uint64_t), cudaMemcpyHostToDevice) )
+    CHECK_CUDA( cudaMemcpy(d_rowidx, rowidx, coo->nnz * sizeof(uint64_t), cudaMemcpyHostToDevice) )
     CHECK_CUDA( cudaMemcpy(d_values, values, coo->nnz * sizeof(double), cudaMemcpyHostToDevice) )
     CHECK_CUDA( cudaMemcpy(dB, B, (rows * cols) * sizeof(double), cudaMemcpyHostToDevice) )
     CHECK_CUDA( cudaMemcpy(dC, C, (rows * cols) * sizeof(double), cudaMemcpyHostToDevice) )
@@ -95,9 +95,9 @@ double Matrix::calculate() {
     
     // Free all the memory
     cudaFree(dBuffer);
-    cudaFree(d_coo_rows);
-    cudaFree(d_coo_cols);
-    cudaFree(d_coo_vals);
+    cudaFree(d_colptr);
+    cudaFree(d_colidx);
+    cudaFree(d_values);
     cudaFree(dB);
     cudaFree(dC);
     
