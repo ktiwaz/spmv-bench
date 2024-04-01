@@ -34,9 +34,9 @@ double Matrix::calculate() {
     
     uint64_t *d_rowptr, *d_rowidx;
     double *d_values, *dB, *dC;
-    CHECK_CUDA( cudaMalloc((void**)&d_rowptr, rowptr, (rows+1) * sizeof(uint64_t)) )
-    CHECK_CUDA( cudaMalloc((void**)&d_rowidx, rowidx, coo->nnz * sizeof(uint64_t)) )
-    CHECK_CUDA( cudaMalloc((void**)&d_values, values, coo->nnz * sizeof(double)) )
+    CHECK_CUDA( cudaMalloc((void**)&d_rowptr, (rows+1) * sizeof(uint64_t)) )
+    CHECK_CUDA( cudaMalloc((void**)&d_rowidx, coo->nnz * sizeof(uint64_t)) )
+    CHECK_CUDA( cudaMalloc((void**)&d_values, coo->nnz * sizeof(double)) )
     CHECK_CUDA( cudaMalloc((void**)&dB, (rows * cols) * sizeof(double)) )
     CHECK_CUDA( cudaMalloc((void**)&dC, (rows * cols) * sizeof(double)) )
     
@@ -58,7 +58,7 @@ double Matrix::calculate() {
     CHECK_CUSPARSE( cusparseCreate(&handle) )
     CHECK_CUSPARSE( cusparseCreateCsr(&matA, rows, cols, coo->nnz,
                           d_rowptr, d_rowidx, d_values,
-                          CUSPARSE_INDEX_64I,
+                          CUSPARSE_INDEX_64I, CUSPARSE_INDEX_64I,
                           CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F))
     
     // Create dense matrix B
@@ -95,8 +95,8 @@ double Matrix::calculate() {
     
     // Free all the memory
     cudaFree(dBuffer);
-    cudaFree(d_colptr);
-    cudaFree(d_colidx);
+    cudaFree(d_rowptr);
+    cudaFree(d_rowidx);
     cudaFree(d_values);
     cudaFree(dB);
     cudaFree(dC);
