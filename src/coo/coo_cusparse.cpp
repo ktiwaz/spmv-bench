@@ -79,7 +79,7 @@ double Matrix::calculate() {
                              CUSPARSE_OPERATION_NON_TRANSPOSE,
                              CUSPARSE_OPERATION_NON_TRANSPOSE,
                              &alpha, matA, matB, &beta, matC, CUDA_R_64F,
-                             CUSPARSE_MM_ALG_DEFAULT, &bufferSize) )
+                             CUSPARSE_SPMM_ALG_DEFAULT, &bufferSize) )
     CHECK_CUDA( cudaMalloc(&dBuffer, bufferSize) )
     
     // Execute SpMM
@@ -87,7 +87,7 @@ double Matrix::calculate() {
                  CUSPARSE_OPERATION_NON_TRANSPOSE,
                  CUSPARSE_OPERATION_NON_TRANSPOSE,
                  &alpha, matA, matB, &beta, matC, CUDA_R_64F,
-                 CUSPARSE_MM_ALG_DEFAULT, dBuffer))
+                 CUSPARSE_SPMM_ALG_DEFAULT, dBuffer))
     
     // Destroy matrix descriptors
     cusparseDestroySpMat(matA);
