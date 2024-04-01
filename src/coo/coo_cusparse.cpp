@@ -56,38 +56,38 @@ double Matrix::calculate() {
     cusparseDnMatDescr_t matB, matC;
     void*                dBuffer    = NULL;
     size_t               bufferSize = 0;
-    float  alpha       = 1.0f;
-    float  beta        = 0.0f;
+    double  alpha       = 1.0f;
+    double  beta        = 0.0f;
     
     // Create sparse matrix A in COO format
     CHECK_CUSPARSE( cusparseCreate(&handle) )
-    cusparseCreateCoo(&matA, rows, cols, coo->nnz,
+    CHECK_CUSPARSE( cusparseCreateCoo(&matA, rows, cols, coo->nnz,
                           d_coo_rows, d_coo_cols, d_coo_vals,
                           CUSPARSE_INDEX_64I,
-                          CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
+                          CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F))
     
     // Create dense matrix B
     CHECK_CUSPARSE(cusparseCreateDnMat(&matB, rows, cols, rows, dB,
-                            CUDA_R_64F, CUSPARSE_ORDER_COL))
+                            CUDA_R_64F, CUSPARSE_ORDER_ROW))
     
     // Create dense matrix C
     CHECK_CUSPARSE(cusparseCreateDnMat(&matC, cols, rows, cols, dC,
-                            CUDA_R_64F, CUSPARSE_ORDER_COL))
+                            CUDA_R_64F, CUSPARSE_ORDER_ROW))
     
     // Allocate external buffer if needed
-    cusparseSpMM_bufferSize(handle,
+    CHECK_CUSPARSE( cusparseSpMM_bufferSize(handle,
                              CUSPARSE_OPERATION_NON_TRANSPOSE,
                              CUSPARSE_OPERATION_NON_TRANSPOSE,
                              &alpha, matA, matB, &beta, matC, CUDA_R_64F,
-                             CUSPARSE_SPMM_ALG_DEFAULT, &bufferSize);
-    cudaMalloc(&dBuffer, bufferSize);
+                             CUSPARSE_MM_ALG_DEFAULT, &bufferSize) )
+    CHECK_CUDA( cudaMalloc(&dBuffer, bufferSize) )
     
     // Execute SpMM
-    cusparseSpMM(handle,
+    CHECK_CUSPARSE( cusparseSpMM(handle,
                  CUSPARSE_OPERATION_NON_TRANSPOSE,
                  CUSPARSE_OPERATION_NON_TRANSPOSE,
                  &alpha, matA, matB, &beta, matC, CUDA_R_64F,
-                 CUSPARSE_SPMM_ALG_DEFAULT, dBuffer);
+                 CUSPARSE_MM_ALG_DEFAULT, dBuffer))
     
     // Destroy matrix descriptors
     cusparseDestroySpMat(matA);

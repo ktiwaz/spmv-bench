@@ -190,7 +190,7 @@ $(BIN_OUTPUT)/coo_omp_gpu_O3: src/coo/coo_omp_gpu.cpp $(DEPS)
 
 # CuSparse COO
 $(BIN_OUTPUT)/coo_cusparse: src/coo/coo_cusparse.cpp $(DEPS)
-	nvc++ -Isrc/coo $(BASE) src/coo/coo_cusparse.cpp -o $(BIN_OUTPUT)/coo_cusparse -Isrc build/libspmm.a -lcusparse
+	nvcc -Isrc/coo $(BASE) src/coo/coo_cusparse.cpp -o $(BIN_OUTPUT)/coo_cusparse -Isrc build/libspmm.a -lcusparse
 
 #
 # Tranpose

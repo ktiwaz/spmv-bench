@@ -37,7 +37,8 @@ COO_BINS=\
     $(BIN_OUTPUT)/coo_serial_O3 $(BIN_OUTPUT)/coo_omp_O3 $(BIN_OUTPUT)/coo_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_serial_O3 $(BIN_OUTPUT)/coo_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3
+	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3 \
+	$(BIN_OUTPUT)/coo_cusparse
 
 CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O1 $(BIN_OUTPUT)/csr_omp_O1 $(BIN_OUTPUT)/csr_omp_gpu_O1 \
@@ -182,6 +183,11 @@ $(BIN_OUTPUT)/coo_omp_gpu_O2: src/coo/coo_omp_gpu.cpp $(DEPS)
 
 $(BIN_OUTPUT)/coo_omp_gpu_O3: src/coo/coo_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/coo $(BASE) src/coo/coo_omp_gpu.cpp -o $(BIN_OUTPUT)/coo_omp_gpu_O3 $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS) -O3
+
+# CuSparse COO
+$(BIN_OUTPUT)/coo_cusparse: src/coo/coo_cusparse.cpp $(DEPS)
+	nvcc -Isrc/coo $(BASE) src/coo/coo_cusparse.cpp -o $(BIN_OUTPUT)/coo_cusparse -Isrc build/libspmm.a -lcusparse
+	
 #
 # Tranpose
 #
