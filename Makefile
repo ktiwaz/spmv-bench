@@ -56,7 +56,8 @@ CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O3 $(BIN_OUTPUT)/csr_omp_O3 $(BIN_OUTPUT)/csr_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/csr_transpose_serial_O3 $(BIN_OUTPUT)/csr_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/csr_transpose_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/csr_omp_collapse_O3 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3
+	    $(BIN_OUTPUT)/csr_omp_collapse_O3 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3 \
+    $(BIN_OUTPUT)/csr_cusparse
 
 ELL_BINS=\
     $(BIN_OUTPUT)/ell_serial_O1 $(BIN_OUTPUT)/ell_omp_O1 $(BIN_OUTPUT)/ell_omp_gpu_O1 \
@@ -279,6 +280,10 @@ $(BIN_OUTPUT)/csr_omp_gpu_O2: src/csr/csr_omp_gpu.cpp $(DEPS)
 
 $(BIN_OUTPUT)/csr_omp_gpu_O3: src/csr/csr_omp_gpu.cpp $(DEPS)
 	$(CXX) -Isrc/csr $(BASE) src/csr/csr_omp_gpu.cpp -o $(BIN_OUTPUT)/csr_omp_gpu_O3 $(CXXFLAGS) $(OMPFLAGS) $(GPUFLAGS) -O3
+
+# CuSparse CSR
+$(BIN_OUTPUT)/csr_cusparse: src/csr/csr_cusparse.cpp $(DEPS)
+	nvcc -Isrc/csr $(BASE) src/csr/csr_cusparse.cpp -o $(BIN_OUTPUT)/csr_cusparse -Isrc build/libspmm.a -lcusparse
 
 #
 # Tranpose

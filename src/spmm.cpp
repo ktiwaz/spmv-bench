@@ -241,7 +241,7 @@ void SpM::verify() {
         //if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
         if (fabs(C_check[i] - C[i]) > 0.01 * fabs(C_check[i])) {
             ++results;
-            if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
+            //if (results<30) std::cout << C[i] << " | " << C_check[i] << std::endl;
             //if (results<30) std::cout << fabs(C_check[i] - C[i]) << " | " << 0.01 * fabs(C_check[i]) << std::endl;
         }
     }
