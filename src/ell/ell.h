@@ -129,9 +129,9 @@ public:
     //
     // Return ELL FLOPs
     //
-    uint64_t getFlopCount() override {
+    /*uint64_t getFlopCount() override {
         return rows*num_cols*2;
-    }
+    }*/
     
     //
     // The print method for the current sparse matrix

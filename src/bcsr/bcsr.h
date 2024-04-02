@@ -211,9 +211,9 @@ public:
     //
     // Return BCSR FLOPs
     //
-    uint64_t getFlopCount() override {
+    /*uint64_t getFlopCount() override {
         return value_len * 2;
-    }
+    }*/
     
     //
     // The calculation algorithm for the current format

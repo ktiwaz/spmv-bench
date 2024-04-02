@@ -41,8 +41,7 @@ COO_BINS=\
     $(BIN_OUTPUT)/coo_serial_O3 $(BIN_OUTPUT)/coo_omp_O3 $(BIN_OUTPUT)/coo_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_serial_O3 $(BIN_OUTPUT)/coo_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/coo_transpose_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3 \
-    $(BIN_OUTPUT)/coo_cusparse
+	    $(BIN_OUTPUT)/coo_omp_collapse_O3 $(BIN_OUTPUT)/coo_transpose_omp_collapse_O3
 
 CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O1 $(BIN_OUTPUT)/csr_omp_O1 $(BIN_OUTPUT)/csr_omp_gpu_O1 \
@@ -56,8 +55,7 @@ CSR_BINS=\
     $(BIN_OUTPUT)/csr_serial_O3 $(BIN_OUTPUT)/csr_omp_O3 $(BIN_OUTPUT)/csr_omp_gpu_O3 \
 	    $(BIN_OUTPUT)/csr_transpose_serial_O3 $(BIN_OUTPUT)/csr_transpose_omp_O3 \
 	    $(BIN_OUTPUT)/csr_transpose_omp_gpu_O3 \
-	    $(BIN_OUTPUT)/csr_omp_collapse_O3 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3 \
-    $(BIN_OUTPUT)/csr_cusparse
+	    $(BIN_OUTPUT)/csr_omp_collapse_O3 $(BIN_OUTPUT)/csr_transpose_omp_collapse_O3
 
 ELL_BINS=\
     $(BIN_OUTPUT)/ell_serial_O1 $(BIN_OUTPUT)/ell_omp_O1 $(BIN_OUTPUT)/ell_omp_gpu_O1 \
@@ -107,9 +105,14 @@ BENCH_BINS=\
 	$(ELL_BINS) \
 	$(BCSR_BINS) \
     $(BELL_BINS)
+    
+CUSPARSE_BINS=\
+	$(BIN_OUTPUT)/coo_cusparse \
+	$(BIN_OUTPUT)/csr_cusparse
 
 ## The core
 all: check_dir build/libspmm.a build/fmtbcsr $(TEST_BINS) $(GPU_TEST_BINS) $(BENCH_BINS)
+cusparse: $(CUSPARSE_BINS)
 
 .PHONY: clean_dir
 check_dir:
