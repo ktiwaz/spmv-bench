@@ -41,7 +41,7 @@ def create_data(matrix, fmt, kernel, arch, filter_eq=[]):
     #print(df)
     for f in filter_eq:
         print(df[f[0]])
-        df = df[(df[f[0]] == f[1]) | (df[f[0]] == -1)]
+        df = df[(df[f[0]] == f[1]) | (df[f[0]] == -1) | (df[f[0]] == 1)]
     #print(df)
     #df.to_csv("filter.csv")
     return df

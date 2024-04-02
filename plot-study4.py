@@ -32,3 +32,8 @@ frame = create_data(matrix, ["ell"], ["serial", "omp"], ["arm"])
 frame = change_names(frame, "K-Bound", " -k ")
 plot_grouped_bar(frame, "ELL- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name", output= "study4_ell_arm")
 
+# BCSR
+frame = create_data(matrix, ["bcsr"], ["serial", "omp"], ["arm"], filter_eq=[("Block Row", 4), ("Block Col", 4)])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "BCSR- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name", output= "study4_bcsr_arm")
+

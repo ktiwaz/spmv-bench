@@ -32,3 +32,8 @@ kernel = [ "serial", "omp", "gpu" ]
 frame = create_data(matrix, ["ell"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "ELL- All Types", "MFLOPS", "Matrix", "Name", output= "study2_ell_arm")
 
+## BCSR- All types
+kernel = [ "serial", "omp", "gpu" ]
+frame = create_data(matrix, ["bcsr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32), ("Block Row", 4), ("Block Col", 4)])
+plot_grouped_bar(frame, "BCSR- All Types", "MFLOPS", "Matrix", "Name", output= "study2_bcsr_arm")
+
