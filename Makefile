@@ -1,21 +1,21 @@
 CC=clang
-#CXX=clang++-17
-CXX=clang++
+CXX=clang++-17
+#CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
 OMPFLAGS=-fopenmp
-#GPUFLAGS=-fopenmp-targets=nvptx64
+GPUFLAGS=-fopenmp-targets=nvptx64
 
 CUDA_TOOLKIT := $(shell dirname $$(command -v nvcc))/..
 CUDA_INC     := -I$(CUDA_TOOLKIT)/include
 
-ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
-    #CXX=clang++-17
-    CXX=clang++
-else
-    CXX=$(CXX16)
-    GPUFLAGS=-fopenmp-targets=nvptx64
-endif
+#ifeq ($(wildcard /opt/llvm/llvm-16.x-install/bin/clang++),)
+#    #CXX=clang++-17
+#    CXX=clang++
+#else
+#    CXX=$(CXX16)
+#    GPUFLAGS=-fopenmp-targets=nvptx64
+#endif
 
 ## Test binaries
 TEST_SRC := $(wildcard test/*.cpp)

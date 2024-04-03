@@ -1,0 +1,11 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+CSR cuSparse,O2,CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+CUDA API failed at line 37 with error: the launch timed out and was terminated (702)
+443509.854542,0.443510,0.000444,439624,0.991879,0.638394,1.630273,120428675,10,1,1,10974,-1,10974,10974,219812,439624,108,20,5.000000,79,8
