@@ -1,5 +1,5 @@
 CC=clang
-CXX=clang++-17
+CXX=clang++-16
 #CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
 CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native

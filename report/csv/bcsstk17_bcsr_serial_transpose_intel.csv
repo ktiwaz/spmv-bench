@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,BCSR Serial Transpose,O2,
