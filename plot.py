@@ -16,10 +16,14 @@ def test_plot():
     plt.show()
 
 def load_raw_data(bench_item):
-    df = pd.read_csv(bench_item[1])
+    df = pd.read_csv(bench_item[2])
     m_col = []
-    for i in range(df.shape[0]): m_col.append(bench_item[0])
+    a_col = []
+    for i in range(df.shape[0]):
+        m_col.append(bench_item[0])
+        a_col.append(bench_item[1])
     df["Matrix"] = m_col
+    df["Archs"] = a_col
     print(df)
     return df
 
@@ -31,7 +35,7 @@ def create_data(matrix, fmt, kernel, arch, filter_eq=[]):
             for k in kernel:
                 for a in arch:
                     name = m + "_" + f + "_" + k + "_" + a + ".csv"
-                    benchmarks.append((m, csv_path + name))
+                    benchmarks.append((m, a, csv_path + name))
     
     # Create a CSV plot
     df = pd.concat(map(load_raw_data, benchmarks))
@@ -72,4 +76,31 @@ def plot_grouped_bar(df, title, values, index, columns, output=None):
         fig = plot.get_figure()
         fig.savefig(img_path + output + ".pdf", bbox_inches="tight")
 
+
+##
+## Test data
+##
+matrix = [
+    "2cubes_sphere",
+    "af23560",
+    "bcsstk13",
+    "bcsstk17",
+    "cant",
+    "cop20k_A",
+    "crankseg_2",
+    "dw4096",
+    "nd24k",
+    "pdb1HYS",
+    "rma10",
+    "shallow_water1",
+    "torso1",
+    "x104",
+]
+
+fmt = [ "coo", "csr", "ell", "bcsr" ]
+
+## Study 1- serial- all formats
+frame = create_data(matrix, ["coo"], ["serial"], ["arm", "intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+frame = change_names(frame, "Archs", " ", True)
+plot_grouped_bar(frame, "Serial- All Types", "MFLOPS", "Matrix", "Name", output= "test_output")
 
