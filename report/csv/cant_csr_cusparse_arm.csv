@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+CSR cuSparse,O2,5586006.197947,5.586006,0.005586,4069834,0.847542,5.443303,6.290845,0,10,1,1,62451,-1,62451,62451,2034917,4069834,40,32,1.000000,54,7

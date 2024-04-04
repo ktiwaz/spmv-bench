@@ -1,0 +1,12 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+CSR cuSparse,O2,CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+CUDA API failed at line 40 with error: out of memory (2)
+2724174.000000,2.724174,0.002724,2724174,1.000000,17.612226,18.612226,12100172855,10,1,1,121192,-1,121192,121192,1362087,2724174,24,11,2.000000,45,6
