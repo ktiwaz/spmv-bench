@@ -17,6 +17,10 @@ matrix = [
     "x104",
 ]
 
+###############################################################
+## Arm
+###############################################################
+
 # COO
 frame = create_data(matrix, ["coo"], ["serial", "omp"], ["arm"])
 frame = change_names(frame, "K-Bound", " -k ")
@@ -36,4 +40,29 @@ plot_grouped_bar(frame, "ELL- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name"
 frame = create_data(matrix, ["bcsr"], ["serial", "omp"], ["arm"], filter_eq=[("Block Row", 4), ("Block Col", 4)])
 frame = change_names(frame, "K-Bound", " -k ")
 plot_grouped_bar(frame, "BCSR- Serial- K Study (Arm)", "MFLOPS", "Matrix", "Name", output= "study4_bcsr_arm")
+
+
+###############################################################
+## Intel
+###############################################################
+
+# COO
+frame = create_data(matrix, ["coo"], ["serial", "omp"], ["intel"])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "COO- Serial- K Study (Intel)", "MFLOPS", "Matrix", "Name", output= "study4_coo_intel")
+
+# CSR
+frame = create_data(matrix, ["csr"], ["serial", "omp"], ["intel"])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "CSR- Serial- K Study (Intel)", "MFLOPS", "Matrix", "Name", output= "study4_csr_intel")
+
+# ELL
+frame = create_data(matrix, ["ell"], ["serial", "omp"], ["intel"])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "ELL- Serial- K Study (Intel)", "MFLOPS", "Matrix", "Name", output= "study4_ell_intel")
+
+# BCSR
+frame = create_data(matrix, ["bcsr"], ["serial", "omp"], ["intel"], filter_eq=[("Block Row", 4), ("Block Col", 4)])
+frame = change_names(frame, "K-Bound", " -k ")
+plot_grouped_bar(frame, "BCSR- Serial- K Study (Intel)", "MFLOPS", "Matrix", "Name", output= "study4_bcsr_intel")
 
