@@ -1210,3 +1210,29 @@ nohup: ignoring input
 [OMP] bcsr --k 64 --threads 8 2x2
 [OMP] bcsr --k 64 --threads 8 4x4
 [OMP] bcsr --k 64 --threads 8 16x16
+[OMP] bcsr --k 128 --threads 8 2x2
+[OMP] bcsr --k 128 --threads 8 4x4
+[OMP] bcsr --k 128 --threads 8 16x16
+[OMP] bcsr --k 16 --threads 16 2x2
+[OMP] bcsr --k 16 --threads 16 4x4
+[OMP] bcsr --k 16 --threads 16 16x16
+[OMP] bcsr --k 64 --threads 16 2x2
+[OMP] bcsr --k 64 --threads 16 4x4
+[OMP] bcsr --k 64 --threads 16 16x16
+[OMP] bcsr --k 128 --threads 16 2x2
+[OMP] bcsr --k 128 --threads 16 4x4
+[OMP] bcsr --k 128 --threads 16 16x16
+[OMP] bcsr --k 16 --threads 32 2x2
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 16x16
+[OMP] bcsr --k 64 --threads 32 2x2
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 16x16
+[OMP] bcsr --k 128 --threads 32 2x2
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 16x16
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
