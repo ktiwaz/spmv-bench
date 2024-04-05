@@ -373,3 +373,227 @@ nohup: ignoring input
 -----------torso1--------------------
 [OMP Transpose] csr --k 16 --threads 8
 [OMP Transpose] csr --k 64 --threads 8
+[OMP Transpose] csr --k 128 --threads 8
+[OMP Transpose] csr --k 16 --threads 16
+[OMP Transpose] csr --k 64 --threads 16
+[OMP Transpose] csr --k 128 --threads 16
+[OMP Transpose] csr --k 16 --threads 32
+[OMP Transpose] csr --k 64 --threads 32
+[OMP Transpose] csr --k 128 --threads 32
+
+-----------x104--------------------
+[OMP Transpose] csr --k 16 --threads 8
+[OMP Transpose] csr --k 64 --threads 8
+[OMP Transpose] csr --k 128 --threads 8
+[OMP Transpose] csr --k 16 --threads 16
+[OMP Transpose] csr --k 64 --threads 16
+[OMP Transpose] csr --k 128 --threads 16
+[OMP Transpose] csr --k 16 --threads 32
+[OMP Transpose] csr --k 64 --threads 32
+[OMP Transpose] csr --k 128 --threads 32
+
+-----------2cubes_sphere--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------af23560--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------bcsstk13--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------bcsstk17--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------cant--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------cop20k_A--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------crankseg_2--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------dw4096--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------nd24k--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------pdb1HYS--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------rma10--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------shallow_water1--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------torso1--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------x104--------------------
+[GPU Transpose] csr --k 16
+[GPU Transpose] csr --k 64
+[GPU Transpose] csr --k 128
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------af23560--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------bcsstk13--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------bcsstk17--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------cant--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------cop20k_A--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------crankseg_2--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------dw4096--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------nd24k--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------pdb1HYS--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------rma10--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------shallow_water1--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------torso1--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------x104--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------2cubes_sphere--------------------
+[OMP Transpose] ell --k 16 --threads 8
+[OMP Transpose] ell --k 64 --threads 8
+[OMP Transpose] ell --k 128 --threads 8
+[OMP Transpose] ell --k 16 --threads 16
+[OMP Transpose] ell --k 64 --threads 16
+[OMP Transpose] ell --k 128 --threads 16
+[OMP Transpose] ell --k 16 --threads 32
+[OMP Transpose] ell --k 64 --threads 32
+[OMP Transpose] ell --k 128 --threads 32
+
+-----------af23560--------------------
+[OMP Transpose] ell --k 16 --threads 8
+[OMP Transpose] ell --k 64 --threads 8
+[OMP Transpose] ell --k 128 --threads 8
+[OMP Transpose] ell --k 16 --threads 16
+[OMP Transpose] ell --k 64 --threads 16
+[OMP Transpose] ell --k 128 --threads 16
+[OMP Transpose] ell --k 16 --threads 32
+[OMP Transpose] ell --k 64 --threads 32
+[OMP Transpose] ell --k 128 --threads 32
+
+-----------bcsstk13--------------------
+[OMP Transpose] ell --k 16 --threads 8
+[OMP Transpose] ell --k 64 --threads 8
+[OMP Transpose] ell --k 128 --threads 8
+[OMP Transpose] ell --k 16 --threads 16
+[OMP Transpose] ell --k 64 --threads 16
+[OMP Transpose] ell --k 128 --threads 16
+[OMP Transpose] ell --k 16 --threads 32
+[OMP Transpose] ell --k 64 --threads 32
+[OMP Transpose] ell --k 128 --threads 32
+
+-----------bcsstk17--------------------
+[OMP Transpose] ell --k 16 --threads 8
+[OMP Transpose] ell --k 64 --threads 8
+[OMP Transpose] ell --k 128 --threads 8
+[OMP Transpose] ell --k 16 --threads 16
+[OMP Transpose] ell --k 64 --threads 16
+[OMP Transpose] ell --k 128 --threads 16
+[OMP Transpose] ell --k 16 --threads 32
+[OMP Transpose] ell --k 64 --threads 32
+[OMP Transpose] ell --k 128 --threads 32
+
+-----------cant--------------------
+[OMP Transpose] ell --k 16 --threads 8
+[OMP Transpose] ell --k 64 --threads 8
+[OMP Transpose] ell --k 128 --threads 8
+[OMP Transpose] ell --k 16 --threads 16
+[OMP Transpose] ell --k 64 --threads 16
+[OMP Transpose] ell --k 128 --threads 16
+[OMP Transpose] ell --k 16 --threads 32
+[OMP Transpose] ell --k 64 --threads 32
+[OMP Transpose] ell --k 128 --threads 32
+
+-----------cop20k_A--------------------
+[OMP Transpose] ell --k 16 --threads 8
+Terminated
+[OMP Transpose] ell --k 64 --threads 8
+Terminated
+[OMP Transpose] ell --k 128 --threads 8
+Terminated
+[OMP Transpose] ell --k 16 --threads 16
+Terminated
+[OMP Transpose] ell --k 64 --threads 16
