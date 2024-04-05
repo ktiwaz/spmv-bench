@@ -1,13 +1,9 @@
-#include <omp.h>
-
 #include "matrix.h"
 
 //
 // The calculation algorithm for the current format
 //
 double Matrix::calculate() {
-    if (threads != -1) omp_set_num_threads(threads);
-    
     double start = getTime();
     
     #pragma omp parallel for collapse(4)

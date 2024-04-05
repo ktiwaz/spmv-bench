@@ -6,6 +6,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <cmath>
+#include <omp.h>
 
 #include "spmm.h"
 
@@ -38,7 +39,7 @@ SpM::SpM(int argc, char **argv) {
             i += 1;
             std::vector<std::string> thread_str = split(arg, ',');
             for (auto ts : thread_str)
-                {thread_list.push_back(std::stoi(ts)); printf("TS: %s\n", ts.c_str());}
+                thread_list.push_back(std::stoi(ts));
             benchmark_threads = true;
         } else if (arg == "--output") {
             output = argv[i+1];
@@ -91,7 +92,9 @@ void SpM::printElapsedTime(double stime, double etime) {
 //
 // Calls and collections benchmarking info
 //
-void SpM::benchmark() {
+void SpM::_benchmark(double *t, double *f) {
+    // If we have threading, we need to set the thread count
+    if (threads != -1) omp_set_num_threads(threads);
     std::vector<double> times;
     std::vector<double> flops;
     
@@ -107,11 +110,52 @@ void SpM::benchmark() {
     
     double avg = 0;
     for (auto t : times) avg += t;
-    benchTime = avg / iters;
+    *t = avg / iters;
     
     double f_avg = 0;
     for (auto f : flops) f_avg += f;
-    benchFlops = f_avg / iters;
+    *f = f_avg / iters;
+}
+
+void SpM::benchmark() {
+    // Thread-by-thread evaluation to find the best thread count
+    if (benchmark_threads) {
+        double bestTime = 0;
+        double bestFlops = 0;
+        int bestThreads = 0;
+        
+        if (printDebug) std::cout << "Running Thread Benchmark..." << std::endl;
+        
+        for (int t : thread_list) {
+            threads = t;
+            double time = 0;
+            double flops = 0;
+            _benchmark(&time, &flops);
+            
+            if (printDebug)
+                std::cout << "Thread: " << t << " | Time: " << time << " | FLOPS: " << flops << std::endl;
+            
+            if (flops > bestFlops) {
+                bestTime = time;
+                bestFlops = flops;
+                bestThreads = t;
+            }
+        }
+        
+        benchTime = bestTime;
+        benchFlops = bestFlops;
+        threads = bestThreads;
+        
+        if (printDebug) std::cout << "Best thread: " << threads << std::endl;
+    
+    // Normal benchmarking
+    } else {
+        double time = 0;
+        double flops = 0;
+        _benchmark(&time, &flops);
+        benchTime = time;
+        benchFlops = flops;
+    }
 }
 
 //

@@ -3,6 +3,7 @@
 #include "matrix.h"
 
 inline void transpose(double *B, size_t cols) {
+    #pragma omp parallel for
     for (size_t i = 0; i < cols; i++) {
         for (size_t j = i+1; j < cols; j++) {
             double temp = B[i*cols+j];
@@ -16,8 +17,6 @@ inline void transpose(double *B, size_t cols) {
 // The calculation algorithm for the current format
 //
 double Matrix::calculate() {
-    if (threads != -1) omp_set_num_threads(threads);
-    
     double start = getTime();
     
     transpose(B, cols);

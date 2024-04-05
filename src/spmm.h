@@ -162,6 +162,7 @@ protected:
     double getTime();
     void printElapsedTime(double stime, double etime);
 private:
+    void _benchmark(double *time, double *flops);
     std::vector<std::string> split(std::string line, char sp = ' ');
 };
 

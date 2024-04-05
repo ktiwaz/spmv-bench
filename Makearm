@@ -1,8 +1,8 @@
 CC=clang
 CXX=clang++
 #CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -mcpu=a64fx
-OMPFLAGS=-fopenmp
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -mcpu=a64fx -fopenmp
+#OMPFLAGS=-fopenmp
 #GPUFLAGS=-fopenmp-targets=nvptx64
 GPUFLAGS=
 

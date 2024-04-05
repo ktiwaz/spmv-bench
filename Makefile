@@ -2,8 +2,8 @@ CC=clang
 #CXX=clang++-16
 CXX=clang++
 CXX16=/opt/llvm/llvm-16.x-install/bin/clang++
-CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native
-OMPFLAGS=-fopenmp
+CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native -fopenmp
+#OMPFLAGS=-fopenmp
 #GPUFLAGS=-fopenmp-targets=nvptx64
 
 CUDA_TOOLKIT := $(shell dirname $$(command -v nvcc))/..
@@ -128,7 +128,7 @@ build/libspmm.a: build/spmm.o
 	ar rvs build/libspmm.a build/spmm.o
 
 build/spmm.o: src/spmm.cpp src/spmm.h src/csr/csr.h src/ell/ell.h src/bell/bell.h src/bcsr/bcsr.h
-	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native
+	$(CXX) src/spmm.cpp -c -o build/spmm.o -O2 -fPIE -march=native -fopenmp
 
 ##
 ## Build the BCSR formatting utility
