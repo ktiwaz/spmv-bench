@@ -15,6 +15,9 @@ threads=(8 16 32)
 blocks=(2 4 16)
 k_loop=(16 64 128)
 
+iters_tlist=5
+tlist=2,4,8,16,32,48,64,72
+
 # For testing
 #OLEVELS=("O1" "O2" "O3")
 #iters=1
