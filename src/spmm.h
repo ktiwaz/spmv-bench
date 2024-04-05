@@ -131,6 +131,9 @@ protected:
     uint64_t k_bound = -1;
     bool printDebug = false;
     
+    std::vector<int> thread_list;
+    bool benchmark_threads = false;
+    
     // Matrix data
     uint64_t rows, cols;
     COO *coo;
@@ -159,7 +162,7 @@ protected:
     double getTime();
     void printElapsedTime(double stime, double etime);
 private:
-    std::vector<std::string> split(std::string line);
+    std::vector<std::string> split(std::string line, char sp = ' ');
 };
 
 

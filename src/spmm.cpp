@@ -33,6 +33,13 @@ SpM::SpM(int argc, char **argv) {
             arg = argv[i+1];
             k_bound = std::stoull(arg);
             i += 1;
+        } else if (arg == "--thread-list") {
+            arg = argv[i+1];
+            i += 1;
+            std::vector<std::string> thread_str = split(arg, ',');
+            for (auto ts : thread_str)
+                {thread_list.push_back(std::stoi(ts)); printf("TS: %s\n", ts.c_str());}
+            benchmark_threads = true;
         } else if (arg == "--output") {
             output = argv[i+1];
             i += 1;
@@ -65,6 +72,7 @@ void SpM::debug() {
     std::cout << "-----------------" << std::endl;
     
     std::cout << "Verification: " << verifyResults << std::endl;
+    std::cout << "MFLOPS: " << benchFlops / 1.0e6 << std::endl;
 }
 
 //
@@ -339,11 +347,11 @@ void SpM::initCOO() {
 //
 // Splits a string into words
 //
-std::vector<std::string> SpM::split(std::string line) {
+std::vector<std::string> SpM::split(std::string line, char sp) {
     std::vector<std::string> words;
     std::string buffer = "";
     for (char c : line) {
-        if (c == ' ') {
+        if (c == sp) {
             if (buffer.length() > 0) {
                 words.push_back(buffer);
                 buffer = "";
