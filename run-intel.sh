@@ -20,8 +20,8 @@ bin/csr/omp_threads.sh "intel"
 bin/ell/omp_threads.sh "intel"
 bin/bcsr/omp_threads.sh "intel"
 
-bin/coo/omp_transpose.sh "intel"
-bin/csr/omp_transpose.sh "intel"
-bin/ell/omp_transpose.sh "intel"
-bin/bcsr/omp_transpose.sh "intel"
+#bin/coo/omp_transpose.sh "intel"
+#bin/csr/omp_transpose.sh "intel"
+#bin/ell/omp_transpose.sh "intel"
+#bin/bcsr/omp_transpose.sh "intel"
 
