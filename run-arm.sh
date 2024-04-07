@@ -22,8 +22,8 @@ bin/csr/omp_threads.sh "arm"
 bin/ell/omp_threads.sh "arm"
 bin/bcsr/omp_threads.sh "arm"
 
-bin/coo/omp_transpose.sh "arm"
-bin/csr/omp_transpose.sh "arm"
-bin/ell/omp_transpose.sh "arm"
-bin/bcsr/omp_transpose.sh "arm"
+#bin/coo/omp_transpose.sh "arm"
+#bin/csr/omp_transpose.sh "arm"
+#bin/ell/omp_transpose.sh "arm"
+#bin/bcsr/omp_transpose.sh "arm"
 
