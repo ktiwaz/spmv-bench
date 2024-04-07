@@ -50,18 +50,22 @@ def create_data(matrix, fmt, kernel, arch, filter_eq=[]):
     #df.to_csv("filter.csv")
     return df
 
-def change_names(df, key, prefix, rename_keys = False):
+def change_names(df, key, prefix, rename_keys = False, only = False):
     if rename_keys:
         df["Name"] = df.apply(lambda row: row["Name"].split()[0], axis=1)
+        if only: return df
     df["Name"] = df.apply(lambda row: row["Name"] + str(prefix) + str(row[key]), axis=1)
     return df
     
 def plot_grouped_bar(df, title, values, index, columns, output=None):
     df_pivot = pd.pivot_table(
 	    df,
-	    values="MFLOPS",
-	    index="Matrix",
-	    columns="Name",
+	    #values="MFLOPS",
+	    #index="Matrix",
+	    #columns="Name",
+	    values=values,
+	    index=index,
+	    columns=columns,
 	    #aggfunc=np.mean
     )
     
