@@ -1236,3 +1236,270 @@ nohup: ignoring input
 [Serial Transpose] coo --k 16
 [Serial Transpose] coo --k 64
 [Serial Transpose] coo --k 128
+
+-----------af23560--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------bcsstk13--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------bcsstk17--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------cant--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------cop20k_A--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------crankseg_2--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------dw4096--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------nd24k--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------pdb1HYS--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------rma10--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------shallow_water1--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------torso1--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------x104--------------------
+[Serial Transpose] coo --k 16
+[Serial Transpose] coo --k 64
+[Serial Transpose] coo --k 128
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------af23560--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------bcsstk13--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------bcsstk17--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------cant--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------cop20k_A--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------crankseg_2--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------dw4096--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------nd24k--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------pdb1HYS--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------rma10--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------shallow_water1--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------torso1--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------x104--------------------
+[Serial Transpose] csr --k 16
+[Serial Transpose] csr --k 64
+[Serial Transpose] csr --k 128
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------af23560--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------bcsstk13--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------bcsstk17--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------cant--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------cop20k_A--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------crankseg_2--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------dw4096--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------nd24k--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------pdb1HYS--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------rma10--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------shallow_water1--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------torso1--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------x104--------------------
+[Serial Transpose] ell --k 16
+[Serial Transpose] ell --k 64
+[Serial Transpose] ell --k 128
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------af23560--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------bcsstk13--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------bcsstk17--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------cant--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------cop20k_A--------------------
+[Serial Transpose] bcsr --k 16 2x2
+Terminated
+
+-----------2cubes_sphere--------------------
+[OMP Transpose] coo --k 16 --threads 8
