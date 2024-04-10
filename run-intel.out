@@ -1,0 +1,2221 @@
+
+-----------2cubes_sphere--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------af23560--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------bcsstk13--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------bcsstk17--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------cant--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------cop20k_A--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------crankseg_2--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------dw4096--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------nd24k--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------pdb1HYS--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------rma10--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------shallow_water1--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------torso1--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------x104--------------------
+[Serial Transpose] bcsr --k 16 2x2
+[Serial Transpose] bcsr --k 16 4x4
+[Serial Transpose] bcsr --k 16 16x16
+[Serial Transpose] bcsr --k 64 2x2
+[Serial Transpose] bcsr --k 64 4x4
+[Serial Transpose] bcsr --k 64 16x16
+[Serial Transpose] bcsr --k 128 2x2
+[Serial Transpose] bcsr --k 128 4x4
+[Serial Transpose] bcsr --k 128 16x16
+
+-----------2cubes_sphere--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------af23560--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------bcsstk13--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------bcsstk17--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------cant--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------cop20k_A--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------crankseg_2--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------dw4096--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------nd24k--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------pdb1HYS--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------rma10--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------shallow_water1--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------torso1--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------x104--------------------
+[OMP Transpose] bcsr --k 16 --threads 8 2x2
+[OMP Transpose] bcsr --k 16 --threads 8 4x4
+[OMP Transpose] bcsr --k 16 --threads 8 16x16
+[OMP Transpose] bcsr --k 64 --threads 8 2x2
+[OMP Transpose] bcsr --k 64 --threads 8 4x4
+[OMP Transpose] bcsr --k 64 --threads 8 16x16
+[OMP Transpose] bcsr --k 128 --threads 8 2x2
+[OMP Transpose] bcsr --k 128 --threads 8 4x4
+[OMP Transpose] bcsr --k 128 --threads 8 16x16
+[OMP Transpose] bcsr --k 16 --threads 16 2x2
+[OMP Transpose] bcsr --k 16 --threads 16 4x4
+[OMP Transpose] bcsr --k 16 --threads 16 16x16
+[OMP Transpose] bcsr --k 64 --threads 16 2x2
+[OMP Transpose] bcsr --k 64 --threads 16 4x4
+[OMP Transpose] bcsr --k 64 --threads 16 16x16
+[OMP Transpose] bcsr --k 128 --threads 16 2x2
+[OMP Transpose] bcsr --k 128 --threads 16 4x4
+[OMP Transpose] bcsr --k 128 --threads 16 16x16
+[OMP Transpose] bcsr --k 16 --threads 32 2x2
+[OMP Transpose] bcsr --k 16 --threads 32 4x4
+[OMP Transpose] bcsr --k 16 --threads 32 16x16
+[OMP Transpose] bcsr --k 64 --threads 32 2x2
+[OMP Transpose] bcsr --k 64 --threads 32 4x4
+[OMP Transpose] bcsr --k 64 --threads 32 16x16
+[OMP Transpose] bcsr --k 128 --threads 32 2x2
+[OMP Transpose] bcsr --k 128 --threads 32 4x4
+[OMP Transpose] bcsr --k 128 --threads 32 16x16
+
+-----------2cubes_sphere--------------------
+[GPU Transpose] bcsr --k 16 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2960377 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2960568 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961007 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961103 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961173 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961224 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961294 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961360 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961453 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------af23560--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f9fbea3e010, device = 0x00007f9c82000000, size = 4440588800: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961540 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fa616a3e010, device = 0x00007fa2d8000000, size = 4440588800: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961607 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f4a6ea3e010, device = 0x00007f4732000000, size = 4440588800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961657 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fecbf51f010, device = 0x00007fe986000000, size = 4440588800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961728 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fdb76a3e010, device = 0x00007fd83e000000, size = 4440588800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961787 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007ff106a3e010, device = 0x00007fedc8000000, size = 4440588800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961868 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f1e86a3e010, device = 0x00007f1b48000000, size = 4440588800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2961922 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fd1a6a3e010, device = 0x00007fce6e000000, size = 4440588800: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962017 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f016ea3e010, device = 0x00007efe30000000, size = 4440588800: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962061 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------bcsstk13--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f06d6164010, device = 0x00007f06b0000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962129 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f8e2e164010, device = 0x00007f8e00000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962222 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fcb942c8010, device = 0x00007fcb5a000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962302 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f394e164010, device = 0x00007f3924000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962413 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f60b013f010, device = 0x00007f6074000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962498 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f8e942c8010, device = 0x00007f8e5a000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962588 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f3e621e5010, device = 0x00007f3e24000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962667 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f89c2164010, device = 0x00007f8988000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962785 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fd58c2c8010, device = 0x00007fd560000000, size = 32096072: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962854 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------bcsstk17--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f953d266010, device = 0x00007f946e000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2962967 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fced5266010, device = 0x00007fce0c000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963026 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f1655266010, device = 0x00007f158a000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963103 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fcd55266010, device = 0x00007fcc8a000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963189 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f45c5266010, device = 0x00007f44fa000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963300 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f944d266010, device = 0x00007f937c000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963394 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f554d266010, device = 0x00007f547c000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963469 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fabe5266010, device = 0x00007fab1a000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963583 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007ffa95266010, device = 0x00007ff9cc000000, size = 963429408: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963654 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------cant--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f1119462010, device = 0x00007efb2c000000, size = 31201019208: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963775 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f8ddc463010, device = 0x00007f77f0000000, size = 31201019208: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963825 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f4e69462010, device = 0x00007f387a000000, size = 31201019208: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963901 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x000055eac810f540, device = 0x00007f8ff9a00000, size = 5482456: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2963972 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f121c463010, device = 0x00007efc30000000, size = 31201019208: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964021 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964079 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f4561462010, device = 0x00007f2f74000000, size = 31201019208: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964133 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964191 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964264 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------cop20k_A--------------------
+[GPU Transpose] bcsr --k 16 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964327 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964392 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964458 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964554 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964653 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964716 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964795 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2964841 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965015 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------crankseg_2--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f573bbfd010, device = 0x00007f405a000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965088 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fa50ebfe010, device = 0x00007f8e2a000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965179 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f7a66bfe010, device = 0x00007f6376000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965266 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f1423bfd010, device = 0x00007efd3e000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965325 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965407 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f62eebfe010, device = 0x00007f4bfa000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965470 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f7df6bfe010, device = 0x00007f6712000000, size = 32602321952: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965525 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965595 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965652 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------dw4096--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f5e2fffe010, device = 0x00007f5da0000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965718 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f593fffe010, device = 0x00007f58a0000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965779 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f51b7ffe010, device = 0x00007f5120000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2965903 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f5537ffe010, device = 0x00007f54a0000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966008 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fae17ffe010, device = 0x00007fad80000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966119 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f5b77ffe010, device = 0x00007f5ae0000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966168 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fe217ffe010, device = 0x00007fe180000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966313 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f669fffe010, device = 0x00007f6600000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966440 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007efee7ffe010, device = 0x00007efe60000000, size = 536870912: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966589 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------nd24k--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f5bc6134010, device = 0x00007f3eb8000000, size = 41472000000: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966681 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x000055b6319a47f0, device = 0x00007f1ddd600000, size = 9840272: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966746 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f14ce134010, device = 0x00007ef7bc000000, size = 41472000000: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966812 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966876 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2966938 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f7fbb133010, device = 0x00007f62a2000000, size = 41472000000: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967016 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967080 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967163 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007eff83133010, device = 0x00007ee26e000000, size = 41472000000: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967216 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------pdb1HYS--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f96f93d1010, device = 0x00007f8f72000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967277 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fb0d13d1010, device = 0x00007fa948000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967315 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007f9a993d1010, device = 0x00007f930e000000, size = 10609583112: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967395 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fcc713d1010, device = 0x00007fc4ea000000, size = 10609583112: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967448 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f43193d1010, device = 0x00007f3b8e000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967517 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f50e63d0010, device = 0x00007f4958000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967591 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Faliure to copy data from device to host. Pointers: host = 0x00007fca263d0010, device = 0x00007fc29a000000, size = 10609583112: Error in cuMemcpyDtoHAsync: an illegal memory access was encountered
+Libomptarget error: Copying data from device failed.
+Libomptarget error: Call to targetDataEnd failed, abort target.
+Libomptarget error: Failed to process data after launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967738 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f92f13d1010, device = 0x00007f8b68000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967810 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f57613d1010, device = 0x00007f4fd8000000, size = 10609583112: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967883 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------rma10--------------------
+[GPU Transpose] bcsr --k 16 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f19bb192010, device = 0x00007f0d58000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2967961 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007ff10c0c9010, device = 0x00007fe4b0000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968012 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f71540c9010, device = 0x00007f64ec000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968089 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fca5e193010, device = 0x00007fbdfe000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968147 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f8d56193010, device = 0x00007f80f8000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968197 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f4236193010, device = 0x00007f35d6000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968245 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f1443192010, device = 0x00007f07e0000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968305 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007fba33192010, device = 0x00007fadd0000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968369 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+"PluginInterface" error: Failure to copy data from host to device. Pointers: host = 0x00007f252e193010, device = 0x00007f18cc000000, size = 17548137800: Error in cuMemcpyHtoDAsync: the launch timed out and was terminated
+Libomptarget error: Copying data to device failed.
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968425 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------shallow_water1--------------------
+[GPU Transpose] bcsr --k 16 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968478 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968539 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968599 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968671 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968758 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968823 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968885 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2968947 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969024 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------torso1--------------------
+[GPU Transpose] bcsr --k 16 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969134 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969189 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969248 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969327 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969392 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969479 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969543 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969713 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969775 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------x104--------------------
+[GPU Transpose] bcsr --k 16 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969876 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2969973 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 16 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970107 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970182 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970275 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 64 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970321 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 2x2
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970438 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 4x4
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970479 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+[GPU Transpose] bcsr --k 128 16x16
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+CUDA error: Failure to alloc memory: Error in cuMemAlloc[Host|Managed]: out of memory
+"PluginInterface" error: Failure to allocate device memory: Failed to allocate from memory manager
+Libomptarget error: Call to getTargetPointer returned null pointer (device failure or illegal mapping).
+Libomptarget error: Call to targetDataBegin failed, abort target.
+Libomptarget error: Failed to process data before launching the kernel.
+Libomptarget error: Consult https://openmp.llvm.org/design/Runtimes.html for debugging options.
+Libomptarget error: Source location information not present. Compile with -g or -gline-tables-only.
+Libomptarget fatal error 1: failure of target construct while offloading is mandatory
+bin/bcsr/omp_gpu_transpose.sh: line 21: 2970555 Aborted                 (core dumped) $BIN/bcsr_transpose_omp_gpu_${O} data/$NAME.mtx --output data/bcsr/"$NAME"_"$b".mtx --iters $iters --k $k --block $b >> $CSV_FILE
+
+-----------2cubes_sphere--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------af23560--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk13--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk17--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cant--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cop20k_A--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------crankseg_2--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------dw4096--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------nd24k--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------pdb1HYS--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------rma10--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------shallow_water1--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------torso1--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------x104--------------------
+[THREADS] coo --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] coo --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------2cubes_sphere--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------af23560--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk13--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk17--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cant--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cop20k_A--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------crankseg_2--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------dw4096--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------nd24k--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------pdb1HYS--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------rma10--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------shallow_water1--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------torso1--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------x104--------------------
+[THREADS] csr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] csr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------2cubes_sphere--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------af23560--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk13--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk17--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cant--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cop20k_A--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------crankseg_2--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------dw4096--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------nd24k--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------pdb1HYS--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------rma10--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------shallow_water1--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------torso1--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------x104--------------------
+[THREADS] ell --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] ell --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------2cubes_sphere--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------af23560--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk13--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------bcsstk17--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cant--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------cop20k_A--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------crankseg_2--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------dw4096--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------nd24k--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------pdb1HYS--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------rma10--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------shallow_water1--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+
+-----------torso1--------------------
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 16 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 64 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
+[THREADS] bcsr --k 128 --thread-list 2,4,8,16,32,48,64,72
