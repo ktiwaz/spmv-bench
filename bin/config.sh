@@ -11,9 +11,12 @@ BIN=build/bin
 # For benchmarking (Shorter- hopefully)
 OLEVELS=("O2")
 iters=10
-threads=(8 16 32)
-blocks=(2 4 16)
-k_loop=(16 64 128)
+#threads=(8 16 32)
+#blocks=(2 4 16)
+#k_loop=(16 64 128)
+threads=(32)
+blocks=(4)
+k_loop=(128)
 
 iters_tlist=5
 tlist=2,4,8,16,32,48,64,72

@@ -20,7 +20,15 @@ function run() {
         do
             echo "[GPU] coo --k $k"
             printf "COO GPU,${O}," >> $CSV_FILE
-            $BIN/coo_omp_gpu_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
+            TEXT=""
+            #TEXT=`$BIN/coo_omp_gpu_${O} data/$NAME.mtx --iters $iters --k $k`
+            while true; do
+                TEXT=$($BIN/coo_omp_gpu_${O} data/$NAME.mtx --iters $iters --k $k)
+                if [ $? -eq 0 ]; then
+                    break
+                fi
+            done
+            echo $TEXT >> $CSV_FILE
         done
     done
 }
