@@ -12,9 +12,11 @@ inline void transpose(double *B, size_t cols) {
 }
 
 double Matrix::calculate() {
-    double start = getTime();
+    //double start = getTime();
     
     transpose(B, cols);
+    
+    double start = getTime();
     
     #pragma omp parallel for
     for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {

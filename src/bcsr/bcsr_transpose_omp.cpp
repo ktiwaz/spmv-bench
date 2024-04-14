@@ -15,9 +15,11 @@ inline void transpose(double *B, size_t cols) {
 // The calculation algorithm for the current format
 //
 double Matrix::calculate() {
-    double start = getTime();
+    //double start = getTime();
     
     transpose(B, cols);
+    
+    double start = getTime();
     
     #pragma omp parallel for
     for (uint64_t n1 = 0; n1<num_blocks; n1++) {
