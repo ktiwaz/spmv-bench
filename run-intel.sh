@@ -1,8 +1,8 @@
 #!/bin/bash
 
-bin/coo/omp_gpu.sh "intel"
-bin/csr/omp_gpu.sh "intel"
-bin/ell/omp_gpu.sh "intel"
+#bin/coo/omp_gpu.sh "intel"
+#bin/csr/omp_gpu.sh "intel"
+#bin/ell/omp_gpu.sh "intel"
 bin/bcsr/omp_gpu.sh "intel"
 
 #bin/run_coo.sh "intel"
