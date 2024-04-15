@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+ELL OMP Transpose,O2,5078053.477599,5.078053,0.005078,439624,0.086858,0.709120,0.795978,0,10,1,1,128,32,10974,10974,219812,439624,108,20,5.000000,79,8
