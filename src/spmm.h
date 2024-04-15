@@ -66,7 +66,7 @@ public:
     // the given algorithm.
     //
     virtual uint64_t getFlopCount() {
-        return coo->nnz * 2;
+        return coo->nnz * 2 * k_bound;
     }
     
     //
@@ -120,6 +120,7 @@ public:
         return (double)(end-start);
     }
     
+    static double getTime2();
 protected:
     // Option variables
     std::string input = "";
@@ -159,7 +160,7 @@ protected:
     // Functions
     void initCOO();
     void generateDense();
-    double getTime();
+    double getTime();  // TODO: Remove this
     void printElapsedTime(double stime, double etime);
 private:
     void _benchmark(double *time, double *flops);

@@ -85,6 +85,12 @@ double SpM::getTime() {
     return (tp.tv_sec + tp.tv_usec * 1.0e-6);
 }
 
+double SpM::getTime2() {
+    struct timeval tp;
+    int stat = gettimeofday(&tp, NULL);
+    return (tp.tv_sec + tp.tv_usec * 1.0e-6);
+}
+
 void SpM::printElapsedTime(double stime, double etime) {
     fprintf(stdout, "%lf\n", etime-stime);
 }

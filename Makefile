@@ -1,9 +1,9 @@
 CC=clang
-#CXX=clang++
-CXX=~/llvm/bin/clang++
+CXX=clang++
+#CXX=~/llvm/bin/clang++
 CXXFLAGS=-Isrc build/libspmm.a -std=c++17 -march=native -fopenmp
 #OMPFLAGS=-fopenmp
-GPUFLAGS=-fopenmp-targets=nvptx64
+#GPUFLAGS=-fopenmp-targets=nvptx64
 
 #CUDA_TOOLKIT := $(shell dirname $$(command -v nvcc))/..
 #CUDA_INC     := -I$(CUDA_TOOLKIT)/include
