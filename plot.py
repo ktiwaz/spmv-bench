@@ -82,6 +82,7 @@ def plot_grouped_bar(df, title, values, index, columns, output=None):
     else:
         fig = plot.get_figure()
         fig.savefig(img_path + output + ".pdf", bbox_inches="tight")
+        fig.savefig(img_path + output + ".png", bbox_inches="tight")
 
 
 ##
