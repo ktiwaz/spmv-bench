@@ -41,6 +41,9 @@ def create_data(matrix, fmt, kernel, arch, filter_eq=[]):
     df = pd.concat(map(load_raw_data, benchmarks))
     print(df)
     
+    df["MFLOPS"] = ((df["NNZ"] * 2 * df["K-Bound"]) / df["Avg Run Time (s)"]) / 1.0e6
+    df["GFLOPS"] = ((df["NNZ"] * 2 * df["K-Bound"]) / df["Avg Run Time (s)"]) / 1.0e9
+    
     #df = df[["Name", "Matrix", "MFLOPS", "K-Bound"]]
     #print(df)
     for f in filter_eq:
@@ -86,25 +89,24 @@ def plot_grouped_bar(df, title, values, index, columns, output=None):
 ##
 matrix = [
     "2cubes_sphere",
-    "af23560",
-    "bcsstk13",
-    "bcsstk17",
-    "cant",
-    "cop20k_A",
-    "crankseg_2",
-    "dw4096",
-    "nd24k",
-    "pdb1HYS",
-    "rma10",
-    "shallow_water1",
-    "torso1",
-    "x104",
+    #"af23560",
+    #"bcsstk13",
+    #"bcsstk17",
+    #"cant",
+    #"cop20k_A",
+    #"crankseg_2",
+    #"dw4096",
+    #"nd24k",
+    #"pdb1HYS",
+    #"rma10",
+    #"shallow_water1",
+    #"torso1",
+    #"x104",
 ]
 
-fmt = [ "coo", "csr", "ell", "bcsr" ]
+#fmt = [ "coo", "csr", "ell", "bcsr" ]
 
 ## Study 1- serial- all formats
-frame = create_data(matrix, ["coo"], ["serial"], ["arm", "intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
-frame = change_names(frame, "Archs", " ", True)
+frame = create_data(matrix, ["bcsr"], ["gpu"], ["arm"], filter_eq=[])
 plot_grouped_bar(frame, "Serial- All Types", "MFLOPS", "Matrix", "Name", output= "test_output")
 
