@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+BCSR THREADS,O2,163922389.385546,163.922389,0.163922,85886,0.001494,0.054887,0.056381,0,5,4,4,128,32,2003,2003,42943,85886,84,21,4.000000,197,14

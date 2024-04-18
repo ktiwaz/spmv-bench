@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+COO GPU_FULL,O2,824823.472767,0.824823,0.000825,4381182,5.312593,6.950027,12.262620,1325223791,10,1,1,36417,-1,36417,36417,2190591,4381182,184,60,3.000000,753,27

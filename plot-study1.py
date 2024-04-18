@@ -36,6 +36,20 @@ frame = create_data(matrix, fmt, ["gpu"], ["arm"], filter_eq=[("K-Bound", 128)])
 plot_grouped_bar(frame, "GPU- All Types (Arm)", "MFLOPS", "Matrix", "Name", output= "study1_gpu_arm")
 
 
+# New study
+## Study 1- serial- all formats
+frame = create_data(matrix, fmt, ["serial"], ["arm2"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+plot_grouped_bar(frame, "Serial- All Types (Arm)", "MFLOPS", "Matrix", "Name", output= "study1_1_serial_arm")
+
+frame = create_data(matrix, fmt, ["serial"], ["arm", "arm2"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+frame = change_names(frame, "Archs", " ", True)
+plot_grouped_bar(frame, "Serial- All Types (Arm)", "MFLOPS", "Matrix", "Name", output= "study1_2_serial_arm")
+
+## Study 1- parallel- all formats
+frame = create_data(matrix, fmt, ["omp"], ["arm2"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
+plot_grouped_bar(frame, "Parallel- All Types (Arm)", "MFLOPS", "Matrix", "Name", output= "study1_1_omp_arm")
+
+
 ########################################################
 ## Intel
 ########################################################
@@ -47,6 +61,20 @@ plot_grouped_bar(frame, "Serial- All Types (Intel)", "MFLOPS", "Matrix", "Name",
 ## Study 1- parallel- all formats
 frame = create_data(matrix, fmt, ["omp"], ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "Parallel- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study1_omp_intel")
+
+
+# New study
+## Study 1- serial- all formats
+frame = create_data(matrix, fmt, ["serial"], ["intel2"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+plot_grouped_bar(frame, "Serial- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study1_1_serial_intel")
+
+frame = create_data(matrix, fmt, ["serial"], ["intel", "intel2"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+frame = change_names(frame, "Archs", " ", True)
+plot_grouped_bar(frame, "Serial- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study1_2_serial_intel")
+
+## Study 1- parallel- all formats
+frame = create_data(matrix, fmt, ["omp"], ["intel2"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
+plot_grouped_bar(frame, "Parallel- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study1_1_omp_intel")
 
 
 ## Study 1- GPU- all formats

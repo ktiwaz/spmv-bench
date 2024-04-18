@@ -1,0 +1,2 @@
+Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
+BCSR OMP Transpose,O2,2182528.281461,2.182528,0.002183,4069834,3.368366,19.194683,22.563049,0,10,4,4,128,32,62451,62451,2034917,4069834,40,32,1.000000,54,7
