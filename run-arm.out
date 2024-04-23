@@ -1,560 +1,504 @@
 
 -----------2cubes_sphere--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------af23560--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------bcsstk13--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------bcsstk17--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------cant--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------cop20k_A--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------crankseg_2--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------dw4096--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------nd24k--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------pdb1HYS--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------rma10--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------shallow_water1--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------torso1--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------x104--------------------
-[Serial Transpose] coo --k 128
+[OMP] coo --k 8 --threads 32
+[OMP] coo --k 16 --threads 32
+[OMP] coo --k 64 --threads 32
+[OMP] coo --k 128 --threads 32
+[OMP] coo --k 256 --threads 32
+[OMP] coo --k 512 --threads 32
+[OMP] coo --k 1028 --threads 32
 
 -----------2cubes_sphere--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------af23560--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------bcsstk13--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------bcsstk17--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------cant--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------cop20k_A--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------crankseg_2--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------dw4096--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------nd24k--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------pdb1HYS--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------rma10--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------shallow_water1--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------torso1--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------x104--------------------
-[OMP Transpose] coo --k 128 --threads 8
-[OMP Transpose] coo --k 128 --threads 16
-[OMP Transpose] coo --k 128 --threads 32
+[OMP] csr --k 8 --threads 32
+[OMP] csr --k 16 --threads 32
+[OMP] csr --k 64 --threads 32
+[OMP] csr --k 128 --threads 32
+[OMP] csr --k 256 --threads 32
+[OMP] csr --k 512 --threads 32
+[OMP] csr --k 1028 --threads 32
 
 -----------2cubes_sphere--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------af23560--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------bcsstk13--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------bcsstk17--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------cant--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------cop20k_A--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------crankseg_2--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------dw4096--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------nd24k--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------pdb1HYS--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------rma10--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------shallow_water1--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------torso1--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------x104--------------------
-[Serial Transpose] csr --k 128
+[OMP] ell --k 8 --threads 32
+[OMP] ell --k 16 --threads 32
+[OMP] ell --k 64 --threads 32
+[OMP] ell --k 128 --threads 32
+[OMP] ell --k 256 --threads 32
+[OMP] ell --k 512 --threads 32
+[OMP] ell --k 1028 --threads 32
 
 -----------2cubes_sphere--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------af23560--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------bcsstk13--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------bcsstk17--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------cant--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------cop20k_A--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------crankseg_2--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------dw4096--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------nd24k--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------pdb1HYS--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------rma10--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------shallow_water1--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------torso1--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4
 
 -----------x104--------------------
-[OMP Transpose] csr --k 128 --threads 8
-[OMP Transpose] csr --k 128 --threads 16
-[OMP Transpose] csr --k 128 --threads 32
-
------------2cubes_sphere--------------------
-[Serial Transpose] ell --k 128
-
------------af23560--------------------
-[Serial Transpose] ell --k 128
-
------------bcsstk13--------------------
-[Serial Transpose] ell --k 128
-
------------bcsstk17--------------------
-[Serial Transpose] ell --k 128
-
------------cant--------------------
-[Serial Transpose] ell --k 128
-
------------cop20k_A--------------------
-[Serial Transpose] ell --k 128
-
------------crankseg_2--------------------
-[Serial Transpose] ell --k 128
-
------------dw4096--------------------
-[Serial Transpose] ell --k 128
-
------------nd24k--------------------
-[Serial Transpose] ell --k 128
-
------------pdb1HYS--------------------
-[Serial Transpose] ell --k 128
-
------------rma10--------------------
-[Serial Transpose] ell --k 128
-
------------shallow_water1--------------------
-[Serial Transpose] ell --k 128
-
------------torso1--------------------
-[Serial Transpose] ell --k 128
-
------------x104--------------------
-[Serial Transpose] ell --k 128
-
------------2cubes_sphere--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------af23560--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------bcsstk13--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------bcsstk17--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------cant--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------cop20k_A--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------crankseg_2--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------dw4096--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------nd24k--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------pdb1HYS--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------rma10--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------shallow_water1--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------torso1--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------x104--------------------
-[OMP Transpose] ell --k 128 --threads 8
-[OMP Transpose] ell --k 128 --threads 16
-[OMP Transpose] ell --k 128 --threads 32
-
------------2cubes_sphere--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------af23560--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------bcsstk13--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------bcsstk17--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------cant--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------cop20k_A--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------crankseg_2--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------dw4096--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------nd24k--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------pdb1HYS--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------rma10--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------shallow_water1--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------torso1--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------x104--------------------
-[Serial Transpose] bcsr --k 128 2x2
-[Serial Transpose] bcsr --k 128 4x4
-[Serial Transpose] bcsr --k 128 16x16
-
------------2cubes_sphere--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------af23560--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------bcsstk13--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------bcsstk17--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------cant--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------cop20k_A--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------crankseg_2--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------dw4096--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------nd24k--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------pdb1HYS--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------rma10--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------shallow_water1--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------torso1--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
-
------------x104--------------------
-[OMP Transpose] bcsr --k 128 --threads 8 2x2
-[OMP Transpose] bcsr --k 128 --threads 8 4x4
-[OMP Transpose] bcsr --k 128 --threads 8 16x16
-[OMP Transpose] bcsr --k 128 --threads 16 2x2
-[OMP Transpose] bcsr --k 128 --threads 16 4x4
-[OMP Transpose] bcsr --k 128 --threads 16 16x16
-[OMP Transpose] bcsr --k 128 --threads 32 2x2
-[OMP Transpose] bcsr --k 128 --threads 32 4x4
-[OMP Transpose] bcsr --k 128 --threads 32 16x16
+[OMP] bcsr --k 8 --threads 32 4x4
+[OMP] bcsr --k 16 --threads 32 4x4
+[OMP] bcsr --k 64 --threads 32 4x4
+[OMP] bcsr --k 128 --threads 32 4x4
+[OMP] bcsr --k 256 --threads 32 4x4
+[OMP] bcsr --k 512 --threads 32 4x4
+[OMP] bcsr --k 1028 --threads 32 4x4

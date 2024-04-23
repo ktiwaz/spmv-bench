@@ -1,8 +1,7 @@
 #!/bin/bash
 
-bin/run_coo_transpose.sh "arm"
-bin/run_csr_transpose.sh "arm"
-bin/run_ell_transpose.sh "arm"
-bin/run_bcsr_transpose.sh "arm"
-
+bin/coo/omp.sh "arm_k"
+bin/csr/omp.sh "arm_k"
+bin/ell/omp.sh "arm_k"
+bin/bcsr/omp.sh "arm_k"
 
