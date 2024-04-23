@@ -32,9 +32,13 @@ double _calculate(uint64_t num_blocks, uint64_t block_rows, uint64_t block_cols,
 //
 double Matrix::calculate() {
     switch (k_bound) {
+        case 8: return _calculate<8>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
         case 16: return _calculate<16>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
         case 64: return _calculate<64>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
         case 128: return _calculate<128>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
+        case 256: return _calculate<256>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
+        case 512: return _calculate<512>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
+        case 1028: return _calculate<1028>(num_blocks, block_rows, block_cols, colptr, colidx, values, B, C, cols);
         default: return 0;
     }
 }

@@ -33,7 +33,7 @@ plot_grouped_bar(frame, "CSR- cuSparse vs GPU (Arm)", "MFLOPS", "Matrix", "Name"
 
 
 ########################################################
-## Intel
+## x86
 ########################################################
 
 matrix = [
@@ -56,10 +56,10 @@ matrix = [
 ## COO- All types
 kernel = [ "cusparse", "gpu_full" ]
 frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[])
-plot_grouped_bar(frame, "COO- cuSparse vs GPU (Intel)", "MFLOPS", "Matrix", "Name", output= "study7_coo_intel")
+plot_grouped_bar(frame, "COO- cuSparse vs GPU (x86)", "MFLOPS", "Matrix", "Name", output= "study7_coo_intel")
 
 ## CSR- All types
 kernel = [ "cusparse", "gpu_full" ]
 frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[])
-plot_grouped_bar(frame, "CSR- cuSparse vs GPU (Intel)", "MFLOPS", "Matrix", "Name", output= "study7_csr_intel")
+plot_grouped_bar(frame, "CSR- cuSparse vs GPU (x86)", "MFLOPS", "Matrix", "Name", output= "study7_csr_intel")
 

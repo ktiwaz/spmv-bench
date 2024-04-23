@@ -43,32 +43,32 @@ plot_grouped_bar(frame, "BCSR- All Types (Arm)", "MFLOPS", "Matrix", "Name", out
 
 
 ########################################################
-## Intel (with GPU)
+## x86 (with GPU)
 ########################################################
 
 ## COO- All types
 kernel = [ "serial", "omp"]
 frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "COO- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_coo_intel")
+plot_grouped_bar(frame, "COO- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_coo_intel")
 
 ## CSR- All types
 kernel = [ "serial", "omp"]
 frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "CSR- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_csr_intel")
+plot_grouped_bar(frame, "CSR- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_csr_intel")
 
 ## ELL- All types
 kernel = [ "serial", "omp"]
 frame = create_data(matrix, ["ell"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "ELL- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_ell_intel")
+plot_grouped_bar(frame, "ELL- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_ell_intel")
 
 ## BCSR- All types
 kernel = [ "serial", "omp"]
 frame = create_data(matrix, ["bcsr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "BCSR- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_bcsr_intel")
+plot_grouped_bar(frame, "BCSR- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_bcsr_intel")
 
 
 ########################################################
-## Intel (with GPU)
+## x86 (with GPU)
 ########################################################
 
 matrix = [
@@ -91,20 +91,20 @@ matrix = [
 ## COO- All types
 kernel = [ "serial", "omp", "gpu" ]
 frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "COO- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_coo_intel_gpu")
+plot_grouped_bar(frame, "COO- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_coo_intel_gpu")
 
 ## CSR- All types
 kernel = [ "serial", "omp", "gpu" ]
 frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "CSR- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_csr_intel_gpu")
+plot_grouped_bar(frame, "CSR- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_csr_intel_gpu")
 
 ## ELL- All types
 kernel = [ "serial", "omp", "gpu" ]
 frame = create_data(matrix, ["ell"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "ELL- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_ell_intel_gpu")
+plot_grouped_bar(frame, "ELL- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_ell_intel_gpu")
 
 ## BCSR- All types
 kernel = [ "serial", "omp", "gpu" ]
 frame = create_data(matrix, ["bcsr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
-plot_grouped_bar(frame, "BCSR- All Types (Intel)", "MFLOPS", "Matrix", "Name", output= "study2_bcsr_intel_gpu")
+plot_grouped_bar(frame, "BCSR- All Types (x86)", "MFLOPS", "Matrix", "Name", output= "study2_bcsr_intel_gpu")
 

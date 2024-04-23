@@ -28,10 +28,10 @@ frame = change_names(frame, "", "", True, True)
 plot_grouped_bar(frame, "Parallel- Best Thread (Arm)", "Threads", "Matrix", "Name", output= "study3_1_omp_threads_arm")
 
 ########################################################
-## Intel
+## x86
 ########################################################
 frame = create_data(matrix, fmt, ["omp_threads"], ["intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
 frame = change_names(frame, "", "", True, True)
-plot_grouped_bar(frame, "Parallel- Best Thread (Intel)", "Threads", "Matrix", "Name", output= "study3_1_omp_threads_intel")
+plot_grouped_bar(frame, "Parallel- Best Thread (x86)", "Threads", "Matrix", "Name", output= "study3_1_omp_threads_intel")
 
 

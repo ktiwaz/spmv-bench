@@ -20,9 +20,13 @@ double _calculate(size_t nnz, uint64_t *coo_rows, uint64_t *coo_cols, double *co
 
 double Matrix::calculate() {
     switch (k_bound) {
+        case 8: return _calculate<8>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
         case 16: return _calculate<16>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
         case 64: return _calculate<64>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
         case 128: return _calculate<128>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
+        case 256: return _calculate<256>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
+        case 512: return _calculate<512>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
+        case 1028: return _calculate<1028>(coo->nnz, coo_rows, coo_cols, coo_vals, C, B, cols);
         default: return 0;
     }
 }

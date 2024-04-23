@@ -43,26 +43,26 @@ plot_grouped_bar(frame, "BCSR- Parallel (Arm)", "MFLOPS", "Matrix", "Name", outp
 
 
 ########################################################
-## Intel
+## x86
 ########################################################
 
 ## Study 3- COO
 frame = create_data(matrix, ["coo"], ["omp"], ["intel"], filter_eq=[("K-Bound", 128)])
 frame = change_names(frame, "Threads", " -t ", True)
-plot_grouped_bar(frame, "COO- Parallel (Intel)", "MFLOPS", "Matrix", "Name", output= "study3_coo_intel")
+plot_grouped_bar(frame, "COO- Parallel (x86)", "MFLOPS", "Matrix", "Name", output= "study3_coo_intel")
 
 ## Study 3- CSR
 frame = create_data(matrix, ["csr"], ["omp"], ["intel"], filter_eq=[("K-Bound", 128)])
 frame = change_names(frame, "Threads", " -t ", True)
-plot_grouped_bar(frame, "CSR- Parallel (Intel)", "MFLOPS", "Matrix", "Name", output= "study3_csr_intel")
+plot_grouped_bar(frame, "CSR- Parallel (x86)", "MFLOPS", "Matrix", "Name", output= "study3_csr_intel")
 
 ## Study 3- ELL
 frame = create_data(matrix, ["ell"], ["omp"], ["intel"], filter_eq=[("K-Bound", 128)])
 frame = change_names(frame, "Threads", " -t ", True)
-plot_grouped_bar(frame, "ELL- Parallel (Intel)", "MFLOPS", "Matrix", "Name", output= "study3_ell_intel")
+plot_grouped_bar(frame, "ELL- Parallel (x86)", "MFLOPS", "Matrix", "Name", output= "study3_ell_intel")
 
 ## Study 3- BCSR
 frame = create_data(matrix, ["bcsr"], ["omp"], ["intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
 frame = change_names(frame, "Threads", " -t ", True)
-plot_grouped_bar(frame, "BCSR- Parallel (Intel)", "MFLOPS", "Matrix", "Name", output= "study3_bcsr_intel")
+plot_grouped_bar(frame, "BCSR- Parallel (x86)", "MFLOPS", "Matrix", "Name", output= "study3_bcsr_intel")
 

@@ -38,18 +38,18 @@ plot_grouped_bar(frame, "BCSR- GPU (Arm)", "MFLOPS", "Matrix", "Name", output= "
 
 
 ###############################################################
-## Intel
+## x86
 ###############################################################
 
 ## Study 5- Serial
 frame = create_data(matrix, ["bcsr"], ["serial"], ["intel"], filter_eq=[("K-Bound", 128)])
 frame = change_names(frame, "Block Row", " -b ", True)
-plot_grouped_bar(frame, "BCSR- Serial (Intel)", "MFLOPS", "Matrix", "Name", output= "study5_serial_intel")
+plot_grouped_bar(frame, "BCSR- Serial (x86)", "MFLOPS", "Matrix", "Name", output= "study5_serial_intel")
 
 ## Study 5- Parallel
 frame = create_data(matrix, ["bcsr"], ["omp"], ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 frame = change_names(frame, "Block Row", " -b ", True)
-plot_grouped_bar(frame, "BCSR- Parallel (Intel)", "MFLOPS", "Matrix", "Name", output= "study5_parallel_intel")
+plot_grouped_bar(frame, "BCSR- Parallel (x86)", "MFLOPS", "Matrix", "Name", output= "study5_parallel_intel")
 
 matrix = [
     #"2cubes_sphere",
@@ -71,5 +71,5 @@ matrix = [
 ## Study 5- GPU
 frame = create_data(matrix, ["bcsr"], ["gpu"], ["intel"], filter_eq=[("K-Bound", 128)])
 frame = change_names(frame, "Block Row", " -b ", True)
-plot_grouped_bar(frame, "BCSR- GPU (Intel)", "MFLOPS", "Matrix", "Name", output= "study5_gpu_intel")
+plot_grouped_bar(frame, "BCSR- GPU (x86)", "MFLOPS", "Matrix", "Name", output= "study5_gpu_intel")
 

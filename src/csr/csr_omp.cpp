@@ -24,9 +24,13 @@ double _calculate(size_t rows, uint64_t *rowptr, uint64_t *rowidx, double *value
 //
 double Matrix::calculate() {
     switch (k_bound) {
+        case 8: return _calculate<8>(rows, rowptr, rowidx, values, C, B, cols);
         case 16: return _calculate<16>(rows, rowptr, rowidx, values, C, B, cols);
         case 64: return _calculate<64>(rows, rowptr, rowidx, values, C, B, cols);
         case 128: return _calculate<128>(rows, rowptr, rowidx, values, C, B, cols);
+        case 256: return _calculate<256>(rows, rowptr, rowidx, values, C, B, cols);
+        case 512: return _calculate<512>(rows, rowptr, rowidx, values, C, B, cols);
+        case 1028: return _calculate<1028>(rows, rowptr, rowidx, values, C, B, cols);
         default: return 0;
     }
 }

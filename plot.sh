@@ -9,4 +9,5 @@ python3 plot-study5.py
 python3 plot-study6.py
 python3 plot-study7.py
 python3 plot-study8.py
+python3 plot-study9.py
 

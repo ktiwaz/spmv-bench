@@ -72,7 +72,7 @@ def plot_grouped_bar(df, title, values, index, columns, output=None):
 	    #aggfunc=np.mean
     )
     
-    plot = df_pivot.plot(kind="bar")
+    plot = df_pivot.plot(kind="bar", colors=['red', 'blue', 'green', 'orange', 'purple', 'tan'])
     plot.tick_params(axis='x', labelrotation=70)
     plot.set_title(title)
     plot.set_xlabel(index)
