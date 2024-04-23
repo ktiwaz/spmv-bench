@@ -14,7 +14,7 @@ iters=10
 #threads=(8 16 32)
 #blocks=(2 4 16)
 #k_loop=(16 64 128)
-#blocks=(2 16)
+#blocks=(2 4 16)
 
 #iters=1
 threads=(32)
