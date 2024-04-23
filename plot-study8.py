@@ -21,47 +21,24 @@ matrix = [
 ## Arm
 ###############################################################
 
-## COO- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["coo"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "COO- Serial vs Serial Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_coo_serial_arm")
-
-## CSR- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["csr"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "CSR- Serial vs Serial Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_csr_serial_arm")
-
-## ELL- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["ell"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "ELL- Serial vs Serial Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_ell_serial_arm")
-
-## BCSR- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["bcsr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
-plot_grouped_bar(frame, "BCSR- Serial vs Serial Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_bcsr_serial_arm")
-
-###############################################################
-# OMP
-
-## COO- Serial
+## COO- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["coo"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["coo"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "COO- OMP vs OMP Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_coo_omp_arm")
 
-## CSR- Serial
+## CSR- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["csr"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["csr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "CSR- OMP vs OMP Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_csr_omp_arm")
 
-## ELL- Serial
+## ELL- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["ell"], kernel, ["arm"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["ell"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "ELL- OMP vs OMP Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_ell_omp_arm")
 
-## BCSR- Serial
+## BCSR- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["bcsr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+frame = create_data(matrix, ["bcsr"], kernel, ["arm"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4), ("Threads", 32)])
 plot_grouped_bar(frame, "BCSR- OMP vs OMP Transpose (Arm)", "MFLOPS", "Matrix", "Name", output= "study8_bcsr_omp_arm")
 
 
@@ -69,46 +46,23 @@ plot_grouped_bar(frame, "BCSR- OMP vs OMP Transpose (Arm)", "MFLOPS", "Matrix", 
 ## Intel
 ###############################################################
 
-## COO- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "COO- Serial vs Serial Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_coo_serial_intel")
-
-## CSR- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "CSR- Serial vs Serial Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_csr_serial_intel")
-
-## ELL- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["ell"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
-plot_grouped_bar(frame, "ELL- Serial vs Serial Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_ell_serial_intel")
-
-## BCSR- Serial
-kernel = [ "serial", "serial_transpose" ]
-frame = create_data(matrix, ["bcsr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
-plot_grouped_bar(frame, "BCSR- Serial vs Serial Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_bcsr_serial_intel")
-
-###############################################################
-# OMP
-
-## COO- Serial
+## COO- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["coo"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "COO- OMP vs OMP Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_coo_omp_intel")
 
-## CSR- Serial
+## CSR- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["csr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "CSR- OMP vs OMP Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_csr_omp_intel")
 
-## ELL- Serial
+## ELL- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["ell"], kernel, ["intel"], filter_eq=[("K-Bound", 128)])
+frame = create_data(matrix, ["ell"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Threads", 32)])
 plot_grouped_bar(frame, "ELL- OMP vs OMP Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_ell_omp_intel")
 
-## BCSR- Serial
+## BCSR- OMP
 kernel = [ "omp", "omp_transpose" ]
-frame = create_data(matrix, ["bcsr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4)])
+frame = create_data(matrix, ["bcsr"], kernel, ["intel"], filter_eq=[("K-Bound", 128), ("Block Row", 4), ("Block Col", 4), ("Threads", 32)])
 plot_grouped_bar(frame, "BCSR- OMP vs OMP Transpose (Intel)", "MFLOPS", "Matrix", "Name", output= "study8_bcsr_omp_intel")
 
