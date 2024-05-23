@@ -1,2 +1,0 @@
-Name,-O,FLOPS,MFLOPS,GFLOPS,FOP Count,Avg Run Time (s),Format Time (s),Total Time (s),Verification,Iters,Block Row,Block Col,K-Bound,Threads,Rows,Cols,NNZ,NNZ*2,Max Cols,Avg Cols,Col Ratio,Variance,Std Deviation
-ELL Serial Transpose,O2,1270627336.543737,1270.627337,1.270627,3684817152,2.900008,12.488265,15.388273,0,10,1,1,128,-1,72000,72000,14393817,28787634,481,199,2.000000,6652,81

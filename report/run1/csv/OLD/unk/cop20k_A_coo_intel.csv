@@ -1,4 +1,0 @@
-Name,Avg Run Time (s),Format Time (s),Total Time (s),GFLOPS,Verification,Iters,Block Row,Block Col,K-Bound,Threads,FOP Count,Rows,Cols,NNZ,Max Cols,Avg Cols,Variance,Std Deviation
-coo_omp_O1,0.027179,163.162701,163.189880,1.903837,0,100,1,1,16,8,43586784,121192,121192,1362087,24,11,45,6
-coo_omp_collapse_O1,0.028465,162.518177,162.546642,2.219294,0,100,1,1,16,8,43586784,121192,121192,1362087,24,11,45,6
-coo_transpose_omp_O1,coo_transpose_omp_collapse_O1,
