@@ -16,40 +16,58 @@ function run() {
     
     for O in "${OLEVELS[@]}"
     do
-        for k in "${k_loop[@]}"
+        ##
+        ## COO
+        ##
+        echo "[Serial] coo"
+        printf "COO Serial,${O}," >> $CSV_FILE
+        $BIN/coo_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
+
+        for t in "${threads[@]}"
         do
-            ##
-            ## COO
-            ##
-            echo "[Serial] coo --k $k"
-            printf "COO Serial," >> $CSV_FILE
-            $BIN/coo_serial_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
+            echo "[OMP] coo --threads $t"
+            printf "COO OMP,${O}," >> $CSV_FILE
+            $BIN/coo_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
+        done
             
-            ##
-            ## CSR
-            ##
-            echo "[Serial] csr --k $k"
-            printf "CSR Serial," >> $CSV_FILE
-            $BIN/csr_serial_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
-            
-            ##
-            ## ELL
-            ##
-            echo "[Serial] ell --k $k"
-            printf "ELL Serial," >> $CSV_FILE
-            $BIN/ell_serial_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
-            
-            ##
-            ## BCSR
-            ##
-            for b in "${blocks[@]}"
-            do
-                echo "[Serial] bcsr --k $k ${b}x${b}"
-                printf "BCSR Serial," >> $CSV_FILE
-                $BIN/bcsr_serial_${O} data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
-            done
-            
-        done #end K
+        ##
+        ## CSR
+        ##
+        echo "[Serial] csr"
+        printf "CSR Serial,${O}," >> $CSV_FILE
+        $BIN/csr_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
+
+        for t in "${threads[@]}"
+        do
+                echo "[OMP] csr --threads $t"
+                printf "CSR OMP,${O}," >> $CSV_FILE
+                $BIN/csr_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
+        done
+        
+        ##
+        ## ELL
+        ##
+        echo "[Serial] ell"
+        printf "ELL Serial,${O}," >> $CSV_FILE
+        $BIN/ell_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
+
+        for t in "${threads[@]}"
+        do
+                echo "[OMP] ell --threads $t"
+                printf "ELL OMP,${O}," >> $CSV_FILE
+                $BIN/ell_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
+        done
+        
+        ##
+        ## BCSR
+        ##
+        # for b in "${blocks[@]}"
+        # do
+        #     echo "[Serial] bcsr --k $k ${b}x${b}"
+        #     printf "BCSR Serial," >> $CSV_FILE
+        #     $BIN/bcsr_serial_${O} data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
+        # done
+    
     done # end O2
 }
 
