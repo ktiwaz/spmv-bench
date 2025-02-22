@@ -87,17 +87,17 @@ public:
     double calculate() override {
         double start = getTime();
         
-        for (size_t i = 0; i<rows; i++) {
-            for (uint64_t p = rowptr[i]; p<rowptr[i+1]; p++) {
+        // Perform SpMV by iterating over the non-zero elements
+        for (size_t i = 0; i < rows; i++) {
+            for (uint64_t p = rowptr[i]; p < rowptr[i + 1]; p++) {
                 uint64_t j = rowidx[p];
-                for (uint64_t k = 0; k<k_bound; k++) {
-                    C[i*cols+k] += values[p] * B[j*cols+k];
-                }
+                // Perform the SpMV operation: C[i] += values[p] * B[j]
+                C[i] += values[p] * B[j];
             }
         }
         
         double end = getTime();
-        return (double)(end-start);
+        return (double)(end - start);
     }
 };
 

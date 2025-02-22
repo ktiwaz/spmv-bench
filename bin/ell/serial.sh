@@ -16,12 +16,9 @@ function run() {
     
     for O in "${OLEVELS[@]}"
     do
-        for k in "${k_loop[@]}"
-        do
-            echo "[Serial] ell --k $k"
+            echo "[Serial] ell"
             printf "ELL Serial,${O}," >> $CSV_FILE
-            $BIN/ell_serial_${O} data/$NAME.mtx --iters $iters --k $k >> $CSV_FILE
-        done
+            $BIN/ell_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
     done
 }
 

@@ -9,7 +9,7 @@ BIN=build/bin
 #k_loop=(16)
 
 # For benchmarking (Shorter- hopefully)
-OLEVELS=("O2")
+OLEVELS=("O3")
 iters=10
 #threads=(8 16 32)
 #blocks=(2 4 16)
@@ -17,9 +17,9 @@ iters=10
 #blocks=(2 4 16)
 
 #iters=1
-threads=(32)
+threads=(8)
 blocks=(4)
-k_loop=(8 16 64 128 256 512 1028)
+# k_loop=(8 16 64 128 256 512 1028)
 
 iters_tlist=5
 tlist=2,4,8,16,32,48,64,72

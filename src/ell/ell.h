@@ -160,21 +160,23 @@ public:
     //
     // The calculation algorithm for the current format
     //
-    double calculate() override {
-        double start = getTime();
-        
-        for (uint64_t i = 0; i<rows; i++) {
-            for (uint64_t n1 = 0; n1<num_cols; n1++) {
-                uint64_t p = i * num_cols + n1;
-                uint64_t j = colidx[p];
-                for (uint64_t k = 0; k<k_bound; k++) {
-                    C[i*cols+k] += values[p] * B[j*cols+k];
-                }
-            }
-        }
-        
-        double end = getTime();
-        return (double)(end-start);
-    }
+  double calculate() override {
+      double start = getTime();
+      
+      for (uint64_t i = 0; i < rows; i++) {
+          double sum = 0.0;  // Initialize the result for the row
+          for (uint64_t n1 = 0; n1 < num_cols; n1++) {
+              uint64_t p = i * num_cols + n1;
+              uint64_t j = colidx[p];
+              // In SpMV, we only need to multiply values[p] with the corresponding element in the vector B[j]
+              sum += values[p] * B[j];  
+          }
+          C[i] = sum;  // Store the result in the output vector C
+      }
+      
+      double end = getTime();
+      return (double)(end - start);
+  }
+
 };
 

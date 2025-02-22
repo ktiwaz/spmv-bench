@@ -66,7 +66,7 @@ public:
     // the given algorithm.
     //
     virtual uint64_t getFlopCount() {
-        return coo->nnz * 2 * k_bound;
+        return coo->nnz * 2;
     }
     
     //
@@ -107,17 +107,17 @@ public:
     virtual double calculate() {
         double start = getTime();
         
-        for (size_t arg0 = 0; arg0<coo->nnz; arg0++) {
-            size_t i = coo_rows[arg0];
-            size_t j = coo_cols[arg0];
-            double val = coo_vals[arg0];
-            for (size_t k = 0; k<k_bound; k++) {
-                C[i*cols+k] += val * B[j*cols+k];
-            }
+        // y = A * x
+        for (size_t arg0 = 0; arg0 < coo->nnz; arg0++) {
+            size_t i = coo_rows[arg0]; // Row index
+            size_t j = coo_cols[arg0]; // Column index
+            double val = coo_vals[arg0]; // Non-zero value
+            
+            C[i] += val * B[j]; // Multiply and accumulate
         }
-        
+
         double end = getTime();
-        return (double)(end-start);
+        return (double)(end - start);
     }
     
     static double getTime2();
@@ -129,7 +129,6 @@ protected:
     int block_rows = 1;
     int block_cols = 1;
     int threads = -1;
-    uint64_t k_bound = -1;
     bool printDebug = false;
     
     std::vector<int> thread_list;

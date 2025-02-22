@@ -18,13 +18,10 @@ function run() {
     do
         for t in "${threads[@]}"
         do
-            for k in "${k_loop[@]}"
-            do
-                echo "[OMP] coo --k $k --threads $t"
-                printf "COO OMP,${O}," >> $CSV_FILE
-                $BIN/coo_omp_${O} data/$NAME.mtx --iters $iters --k $k --threads $t >> $CSV_FILE
+            echo "[OMP] coo --threads $t"
+            printf "COO OMP,${O}," >> $CSV_FILE
+            $BIN/coo_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
                 
-            done
         done
     done
 }

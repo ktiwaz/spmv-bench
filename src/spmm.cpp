@@ -19,6 +19,7 @@ SpM::SpM(int argc, char **argv) {
         if (arg == "--iters") {
             arg = argv[i+1];
             iters = std::stoi(arg);
+
             i += 1;
         } else if (arg == "--block") {
             arg = argv[i+1];
@@ -29,10 +30,6 @@ SpM::SpM(int argc, char **argv) {
         } else if (arg == "--threads") {
             arg = argv[i+1];
             threads = std::stoi(arg);
-            i += 1;
-        } else if (arg == "--k") {
-            arg = argv[i+1];
-            k_bound = std::stoull(arg);
             i += 1;
         } else if (arg == "--thread-list") {
             arg = argv[i+1];
@@ -62,7 +59,6 @@ void SpM::debug() {
     std::cout << "Iters: " << iters << std::endl;
     std::cout << "Blocks: <Rows: " << block_rows << ", Cols: " << block_cols << ">" << std::endl;
     std::cout << "Threads: " << threads << std::endl;
-    std::cout << "K-Bound: " << k_bound << std::endl;
     std::cout << "----------------------------" << std::endl;
     
     printSparse(false);
@@ -103,9 +99,9 @@ void SpM::_benchmark(double *t, double *f) {
     if (threads != -1) omp_set_num_threads(threads);
     std::vector<double> times;
     std::vector<double> flops;
-    
+
     for (size_t i = 0; i<iters; i++) {
-        if (i>0) for (size_t i = 0; i<(rows * cols); i++) C[i] = 0.0;
+        if (i>0) for (size_t i = 0; i<(cols); i++) C[i] = 0.0;
         double t = calculate();
         times.push_back(t);
         
@@ -261,7 +257,6 @@ void SpM::report() {
     // Print configuration
     fprintf(stdout, ",%d", iters);
     fprintf(stdout, ",%d,%d", block_rows, block_cols);
-    fprintf(stdout, ",%ld", k_bound);
     fprintf(stdout, ",%d", threads);
     
     // Print matrix stats
@@ -287,14 +282,12 @@ void SpM::verify() {
         size_t i = item.row;
         size_t j = item.col;
         double val = item.val;
-        for (size_t k = 0; k<k_bound; k++) {
-            C_check[i*cols+k] += val * B[j*cols+k];
-        }
+        C_check[i] += val * B[j];
     }
     
     // Now, perform the verification
     uint64_t results = 0;
-    size_t lens = rows * cols;
+    size_t lens = rows;
     for (size_t i = 0; i<lens; i++) {
         //if ((uint64_t)C[i] != (uint64_t)C_check[i]) {
         if (fabs(C_check[i] - C[i]) > 0.01 * fabs(C_check[i])) {
@@ -312,7 +305,7 @@ void SpM::verify() {
 //
 void SpM::printDense(bool all) {
     std::cout << "B: ";
-    for (size_t i = 0; i<(rows*cols); i++) {
+    for (size_t i = 0; i < cols; i++) {
         std::cout << B[i] << ",";
         if (i == 20 && !all) break;
     }
@@ -324,27 +317,31 @@ void SpM::printDense(bool all) {
 //
 void SpM::printResult(bool all) {
     std::cout << "C: ";
-    for (size_t i = 0; i<(rows*cols); i++) {
+    for (size_t i = 0; i < rows; i++) {
         std::cout << C[i] << ",";
         if (i == 50 && !all) break;
     }
     std::cout << std::endl;
 }
-
 //
 // Generates a dense matrix from a sparse format
 // This also generates the result matrix and fills it with zeros
 //
 void SpM::generateDense() {
-    size_t len = rows * cols;
-    B = new double[len];
-    C = new double[len];
-    C_check = new double[len];
-    for (size_t i = 0; i<len; i++) {
+    size_t len_B = cols;
+    size_t len_C = rows;
+    B = new double[len_B];
+    C = new double[len_C];
+    C_check = new double[len_C];
+    for (size_t i = 0; i<len_B; i++) {
         B[i] = (double)i;
+    }
+
+    for (size_t i = 0; i<len_C; i++) {
         C[i] = 0.0;
         C_check[i] = 0.0;
     }
+
 }
 
 //
@@ -390,7 +387,6 @@ void SpM::initCOO() {
     // Set the row and column counts
     rows = coo->rows;
     cols = coo->cols;
-    if (k_bound == -1) k_bound = cols;
     generateDense();
 }
 
