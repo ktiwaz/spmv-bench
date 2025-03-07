@@ -35,8 +35,8 @@ BCSR_BINS=\
 BENCH_BINS=\
 	$(COO_BINS) \
 	$(CSR_BINS) \
-	$(ELL_BINS)
-#$(BCSR_BINS)
+	$(ELL_BINS) \
+	$(BCSR_BINS)
     
 # CUSPARSE_BINS=\
 # 	$(BIN_OUTPUT)/coo_cusparse \
@@ -64,8 +64,8 @@ build/spmm.o: src/spmm.cpp src/spmm.h src/csr/csr.h src/ell/ell.h src/bcsr/bcsr.
 ##
 ## Build the BCSR formatting utility
 ##
-# build/fmtbcsr: src/format_bcsr.cpp build/libspmm.a
-# 	$(CXX) -Isrc/bcsr src/format_bcsr.cpp -o build/fmtbcsr $(CXXFLAGS)
+build/fmtbcsr: src/format_bcsr.cpp build/libspmm.a
+	$(CXX) -Isrc/bcsr src/format_bcsr.cpp -o build/fmtbcsr $(CXXFLAGS)
 	
 ##
 ## Build the test binaries
@@ -197,24 +197,24 @@ $(BIN_OUTPUT)/ell_omp_O3: src/ell/ell_omp.cpp $(DEPS)
 ## Builds the BCSR executables
 ##
 # Serial
-# $(BIN_OUTPUT)/bcsr_serial_O1: src/bcsr/bcsr_serial.cpp $(DEPS)
-# 	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O1 $(CXXFLAGS) -O1
+$(BIN_OUTPUT)/bcsr_serial_O1: src/bcsr/bcsr_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O1 $(CXXFLAGS) -O1
 
-# $(BIN_OUTPUT)/bcsr_serial_O2: src/bcsr/bcsr_serial.cpp $(DEPS)
-# 	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O2 $(CXXFLAGS) -O2
+$(BIN_OUTPUT)/bcsr_serial_O2: src/bcsr/bcsr_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O2 $(CXXFLAGS) -O2
 
-# $(BIN_OUTPUT)/bcsr_serial_O3: src/bcsr/bcsr_serial.cpp $(DEPS)
-# 	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O3 $(CXXFLAGS) -O3
+$(BIN_OUTPUT)/bcsr_serial_O3: src/bcsr/bcsr_serial.cpp $(DEPS)
+	$(CXX) -Isrc/bcsr $(BASE) src/bcsr/bcsr_serial.cpp -o $(BIN_OUTPUT)/bcsr_serial_O3 $(CXXFLAGS) -O3
 
 # # OMP
-# $(BIN_OUTPUT)/bcsr_omp_O1: src/bcsr/bcsr_omp.cpp $(DEPS)
-# 	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
+$(BIN_OUTPUT)/bcsr_omp_O1: src/bcsr/bcsr_omp.cpp $(DEPS)
+	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O1 $(CXXFLAGS) $(OMPFLAGS) -O1
 
-# $(BIN_OUTPUT)/bcsr_omp_O2: src/bcsr/bcsr_omp.cpp $(DEPS)
-# 	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
+$(BIN_OUTPUT)/bcsr_omp_O2: src/bcsr/bcsr_omp.cpp $(DEPS)
+	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O2 $(CXXFLAGS) $(OMPFLAGS) -O2
 
-# $(BIN_OUTPUT)/bcsr_omp_O3: src/bcsr/bcsr_omp.cpp $(DEPS)
-# 	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
+$(BIN_OUTPUT)/bcsr_omp_O3: src/bcsr/bcsr_omp.cpp $(DEPS)
+	$(CXX)  -Isrc/bcsr $(BASE) src/bcsr/bcsr_omp.cpp -o $(BIN_OUTPUT)/bcsr_omp_O3 $(CXXFLAGS) $(OMPFLAGS) -O3
 
 # OMP GPU
 # $(BIN_OUTPUT)/bcsr_omp_gpu_O1: src/bcsr/bcsr_omp_gpu.cpp $(DEPS)

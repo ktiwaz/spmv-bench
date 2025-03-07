@@ -58,15 +58,22 @@ function run() {
                 $BIN/ell_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
         done
         
-        ##
-        ## BCSR
-        ##
-        # for b in "${blocks[@]}"
-        # do
-        #     echo "[Serial] bcsr --k $k ${b}x${b}"
-        #     printf "BCSR Serial," >> $CSV_FILE
-        #     $BIN/bcsr_serial_${O} data/$NAME.mtx --iters $iters --k $k --block $b >> $CSV_FILE
-        # done
+        #
+        # BCSR
+        #
+        for b in "${blocks[@]}"
+        do
+            echo "[Serial] bcsr ${b}x${b}"
+            printf "BCSR Serial," >> $CSV_FILE
+            $BIN/bcsr_serial_${O} data/$NAME.mtx --iters $iters --block $b >> $CSV_FILE
+
+            for t in "${threads[@]}"
+            do
+                echo "[OMP] bcsr ${b}x${b} --threads $t"
+                printf "BCSR OMP,${O}," >> $CSV_FILE
+                $BIN/bcsr_omp_${O} data/$NAME.mtx --iters $iters --block $b --threads $t >> $CSV_FILE
+            done
+        done
     
     done # end O2
 }
