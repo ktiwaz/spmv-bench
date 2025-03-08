@@ -9,24 +9,24 @@ setup
 ##
 ## Our run function
 ##
+CSV_FILE=report/csv/"$BENCH_NAME"_"$ARCH_ID".csv
+init_csv $CSV_FILE
+
 function run() {
     NAME=$1
-    CSV_FILE=report/csv/$1_"$BENCH_NAME"_"$ARCH_ID".csv
-    init_csv $CSV_FILE
-    
     for O in "${OLEVELS[@]}"
     do
         ##
         ## COO
         ##
         echo "[Serial] coo"
-        printf "COO Serial,${O}," >> $CSV_FILE
+        printf "COO Serial,${O},$1," >> $CSV_FILE
         $BIN/coo_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
 
         for t in "${threads[@]}"
         do
             echo "[OMP] coo --threads $t"
-            printf "COO OMP,${O}," >> $CSV_FILE
+            printf "COO OMP,${O},$1," >> $CSV_FILE
             $BIN/coo_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
         done
             
@@ -34,13 +34,13 @@ function run() {
         ## CSR
         ##
         echo "[Serial] csr"
-        printf "CSR Serial,${O}," >> $CSV_FILE
+        printf "CSR Serial,${O},$1," >> $CSV_FILE
         $BIN/csr_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
 
         for t in "${threads[@]}"
         do
                 echo "[OMP] csr --threads $t"
-                printf "CSR OMP,${O}," >> $CSV_FILE
+                printf "CSR OMP,${O},$1," >> $CSV_FILE
                 $BIN/csr_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
         done
         
@@ -48,13 +48,13 @@ function run() {
         ## ELL
         ##
         echo "[Serial] ell"
-        printf "ELL Serial,${O}," >> $CSV_FILE
+        printf "ELL Serial,${O},$1," >> $CSV_FILE
         $BIN/ell_serial_${O} data/$NAME.mtx --iters $iters >> $CSV_FILE
 
         for t in "${threads[@]}"
         do
                 echo "[OMP] ell --threads $t"
-                printf "ELL OMP,${O}," >> $CSV_FILE
+                printf "ELL OMP,${O},$1," >> $CSV_FILE
                 $BIN/ell_omp_${O} data/$NAME.mtx --iters $iters --threads $t >> $CSV_FILE
         done
         
