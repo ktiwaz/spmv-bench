@@ -268,7 +268,7 @@ void SpM::report() {
     fprintf(stdout, ",%ld", variance);
     fprintf(stdout, ",%ld", std_deviation);
     
-    fprintf(stdout, "\n");
+    //fprintf(stdout, "\n");
 }
 
 //

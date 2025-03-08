@@ -10,7 +10,7 @@ BIN=build/bin
 
 # For benchmarking (Shorter- hopefully)
 OLEVELS=("O3")
-iters=10
+iters=20
 #threads=(8 16 32)
 #blocks=(2 4 16)
 #k_loop=(16 64 128)
