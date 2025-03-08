@@ -49,14 +49,15 @@ int main(int argc, char **argv) {
         (PERF_COUNT_HW_CACHE_DTLB) | (PERF_COUNT_HW_CACHE_OP_READ << 8) | (PERF_COUNT_HW_CACHE_RESULT_MISS << 16),
         (PERF_COUNT_HW_CACHE_L1D) | (PERF_COUNT_HW_CACHE_OP_READ << 8) | (PERF_COUNT_HW_CACHE_RESULT_ACCESS << 16),
         (PERF_COUNT_HW_CACHE_L1D) | (PERF_COUNT_HW_CACHE_OP_READ << 8) | (PERF_COUNT_HW_CACHE_RESULT_MISS << 16),
-        (PERF_COUNT_HW_CACHE_L1D) | (PERF_COUNT_HW_CACHE_OP_WRITE << 8) | (PERF_COUNT_HW_CACHE_RESULT_ACCESS << 16),
+        (PERF_COUNT_HW_CACHE_L1I) | (PERF_COUNT_HW_CACHE_OP_READ << 8) | (PERF_COUNT_HW_CACHE_RESULT_ACCESS << 16),
+        (PERF_COUNT_HW_CACHE_L1I) | (PERF_COUNT_HW_CACHE_OP_READ << 8) | (PERF_COUNT_HW_CACHE_RESULT_MISS << 16),
     };
 
     // File descriptors for each event
-    int event_fds[12];
+    int event_fds[13];
 
     // Configure and open file descriptors for each event
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 13; ++i) {
         struct perf_event_attr pe = base_pe;
         pe.config = event_configs[i];
 
@@ -80,7 +81,7 @@ int main(int argc, char **argv) {
     }
 
     // Reset and enable the counters
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 13; ++i) {
         ioctl(event_fds[i], PERF_EVENT_IOC_RESET, 0);
         ioctl(event_fds[i], PERF_EVENT_IOC_ENABLE, 0);
     }
@@ -89,13 +90,13 @@ int main(int argc, char **argv) {
     mtx.benchmark();
 
     // Disable the counters after benchmarking
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 13; ++i) {
         ioctl(event_fds[i], PERF_EVENT_IOC_DISABLE, 0);
     }
 
     // Read the results for each event and print them
-    long long values[12];
-    for (int i = 0; i < 12; ++i) {
+    long long values[13];
+    for (int i = 0; i < 13; ++i) {
         if (read(event_fds[i], &values[i], sizeof(long long)) < 0) {
             perror("read");
             return 1;
@@ -103,14 +104,14 @@ int main(int argc, char **argv) {
     }
 
     // Close the file descriptors
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 13; ++i) {
         close(event_fds[i]);
     }
 
     mtx.verify();
     mtx.report();
 
-    printf(",%lld,%lld,%lld,%lld,%.2f%%,%lld,%lld,%.2f%%,%lld,%lld,%.2f%%,%lld,%.2f%%,%lld,%lld,%.2f%%\n",
+    printf(",%lld,%lld,%lld,%lld,%.2f%%,%lld,%lld,%.2f%%,%lld,%lld,%.2f%%,%lld,%.2f%%,%lld,%lld,%.2f%%,%lld,%lld,%.2f%%\n",
        values[0],  // CPU Cycles
        values[1],  // Instructions
        values[2],  // Cache References
@@ -126,7 +127,10 @@ int main(int argc, char **argv) {
        values[1] ? (100.0 * values[6] / (values[10] + values[11])) : 0,  // Page Fault Rate
        values[9],  // L1D Cache Loads
        values[10], // L1D Cache Misses
-       values[9] ? (100.0 * values[10] / values[9]) : 0  // L1D Cache Miss Rate
+       values[9] ? (100.0 * values[10] / values[9]) : 0,  // L1D Cache Miss Rate
+       values[11],  // L1D Cache Loads
+       values[12], // L1D Cache Misses
+       values[11] ? (100.0 * values[12] / values[11]) : 0  // L1D Cache Miss Rate
 );
 
     return 0;
